@@ -7,9 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */; };
+		CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C7812AFE882700E53297 /* NetworkClient.swift */; };
 		CE4E2DA62AF3E75C00108F53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA52AF3E75C00108F53 /* Realm */; };
 		CE4E2DA82AF3E75C00108F53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA72AF3E75C00108F53 /* RealmSwift */; };
 		CE4E2DAB2AF3E83D00108F53 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DAA2AF3E83D00108F53 /* Alamofire */; };
+		CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */; };
+		CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */; };
+		CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */; };
+		CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB52AF5039500108F53 /* WikiListVC.swift */; };
+		CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */; };
+		CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */; };
+		CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DBC2AF5090500108F53 /* StoryboardEnum.swift */; };
+		CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4E2DBE2AF50B6800108F53 /* Wiki.storyboard */; };
+		CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC12AF52F6600108F53 /* MainVC.swift */; };
+		CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */; };
+		CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */; };
+		CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */; };
+		CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */; };
 		CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */; };
 		CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EBC2AF293B100BEB504 /* AppDelegate.swift */; };
 		CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EBE2AF293B100BEB504 /* SceneDelegate.swift */; };
@@ -17,7 +32,6 @@
 		CE907EC42AF293B100BEB504 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE907EC22AF293B100BEB504 /* Main.storyboard */; };
 		CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE907EC52AF293B300BEB504 /* Assets.xcassets */; };
 		CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE907EC72AF293B300BEB504 /* LaunchScreen.storyboard */; };
-		CE907ED42AF293B400BEB504 /* FoolstackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907ED32AF293B400BEB504 /* FoolstackTests.swift */; };
 		CE907EDE2AF293B400BEB504 /* FoolstackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EDD2AF293B400BEB504 /* FoolstackUITests.swift */; };
 		CE907EE02AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +54,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
+		CE17C7812AFE882700E53297 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFlowProtocols.swift; sourceTree = "<group>"; };
+		CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListPresenterImp.swift; sourceTree = "<group>"; };
+		CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListInteractor.swift; sourceTree = "<group>"; };
+		CE4E2DB52AF5039500108F53 /* WikiListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVC.swift; sourceTree = "<group>"; };
+		CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtenstions.swift; sourceTree = "<group>"; };
+		CE4E2DBC2AF5090500108F53 /* StoryboardEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardEnum.swift; sourceTree = "<group>"; };
+		CE4E2DBE2AF50B6800108F53 /* Wiki.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wiki.storyboard; sourceTree = "<group>"; };
+		CE4E2DC12AF52F6600108F53 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFlowBuilder.swift; sourceTree = "<group>"; };
+		CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListRouterImp.swift; sourceTree = "<group>"; };
+		CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntity.swift; sourceTree = "<group>"; };
+		CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListRepoImp.swift; sourceTree = "<group>"; };
 		CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncExtentions.swift; sourceTree = "<group>"; };
 		CE907EB92AF293B100BEB504 /* Foolstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foolstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE907EBC2AF293B100BEB504 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +79,6 @@
 		CE907EC82AF293B300BEB504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE907ECA2AF293B300BEB504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE907ECF2AF293B400BEB504 /* FoolstackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoolstackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE907ED32AF293B400BEB504 /* FoolstackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackTests.swift; sourceTree = "<group>"; };
 		CE907ED92AF293B400BEB504 /* FoolstackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoolstackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE907EDD2AF293B400BEB504 /* FoolstackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackUITests.swift; sourceTree = "<group>"; };
 		CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -84,12 +112,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE67BC8E2AF2CAA80096214C /* Utils */ = {
+		CE17C7792AFE870000E53297 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		CE17C77A2AFE872900E53297 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				CE17C77D2AFE879800E53297 /* Managers */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		CE17C77B2AFE877900E53297 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CE17C77C2AFE878900E53297 /* Networking */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CE17C77C2AFE878900E53297 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE17C7812AFE882700E53297 /* NetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CE17C77D2AFE879800E53297 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CE17C77E2AFE87A000E53297 /* Networking */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CE17C77E2AFE87A000E53297 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CE4E2DAC2AF3F23600108F53 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CE4E2DAD2AF5004B00108F53 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				CE4E2DC02AF52F4200108F53 /* MainFlow */,
+				CE4E2DAE2AF5005800108F53 /* WikiFlow */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		CE4E2DAE2AF5005800108F53 /* WikiFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */,
+				CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */,
+				CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */,
+				CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */,
+				CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */,
+				CE4E2DB52AF5039500108F53 /* WikiListVC.swift */,
+				CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */,
+				CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */,
+			);
+			path = WikiFlow;
+			sourceTree = "<group>";
+		};
+		CE4E2DBB2AF508EE00108F53 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE4E2DBC2AF5090500108F53 /* StoryboardEnum.swift */,
+				CE4E2DBE2AF50B6800108F53 /* Wiki.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CE4E2DC02AF52F4200108F53 /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CE4E2DC12AF52F6600108F53 /* MainVC.swift */,
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		CE67BC8E2AF2CAA80096214C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */,
+				CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */,
+				CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */,
 			);
-			path = Utils;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CE907EB02AF293B100BEB504 = {
@@ -115,7 +240,11 @@
 		CE907EBB2AF293B100BEB504 /* Foolstack */ = {
 			isa = PBXGroup;
 			children = (
-				CE67BC8E2AF2CAA80096214C /* Utils */,
+				CE17C77B2AFE877900E53297 /* Managers */,
+				CE4E2DAD2AF5004B00108F53 /* Flows */,
+				CE4E2DAC2AF3F23600108F53 /* Application */,
+				CE67BC8E2AF2CAA80096214C /* Extensions */,
+				CE4E2DBB2AF508EE00108F53 /* Storyboards */,
 				CE907EBC2AF293B100BEB504 /* AppDelegate.swift */,
 				CE907EBE2AF293B100BEB504 /* SceneDelegate.swift */,
 				CE907EC02AF293B100BEB504 /* ViewController.swift */,
@@ -130,7 +259,7 @@
 		CE907ED22AF293B400BEB504 /* FoolstackTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE907ED32AF293B400BEB504 /* FoolstackTests.swift */,
+				CE17C77A2AFE872900E53297 /* Cases */,
 			);
 			path = FoolstackTests;
 			sourceTree = "<group>";
@@ -138,6 +267,7 @@
 		CE907EDC2AF293B400BEB504 /* FoolstackUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CE17C7792AFE870000E53297 /* Cases */,
 				CE907EDD2AF293B400BEB504 /* FoolstackUITests.swift */,
 				CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */,
 			);
@@ -259,6 +389,7 @@
 			files = (
 				CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
+				CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */,
 				CE907EC42AF293B100BEB504 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,10 +415,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
+				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
+				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
+				CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
+				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
+				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
+				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
+				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
+				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
+				CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */,
+				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
+				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
+				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE907ED42AF293B400BEB504 /* FoolstackTests.swift in Sources */,
+				CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
