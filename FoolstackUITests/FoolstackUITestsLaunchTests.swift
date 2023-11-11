@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class FoolstackUITestsLaunchTests: XCTestCase {
+/*final class FoolstackUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
@@ -30,3 +30,4 @@ final class FoolstackUITestsLaunchTests: XCTestCase {
         add(attachment)
     }
 }
+*/

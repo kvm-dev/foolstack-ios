@@ -34,6 +34,14 @@
 		CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE907EC72AF293B300BEB504 /* LaunchScreen.storyboard */; };
 		CE907EDE2AF293B400BEB504 /* FoolstackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EDD2AF293B400BEB504 /* FoolstackUITests.swift */; };
 		CE907EE02AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */; };
+		CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF7B2AFEAD0900A64604 /* URLSessionProtocol.swift */; };
+		CEC4EF7E2AFEB4C600A64604 /* URLSessionProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF7D2AFEB4C600A64604 /* URLSessionProtocolTests.swift */; };
+		CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF7F2AFEC65B00A64604 /* ApiEnvironment.swift */; };
+		CEC4EF862AFECC5A00A64604 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */; };
+		CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF882AFED20B00A64604 /* WikiData.swift */; };
+		CEC4EF8C2AFFC79F00A64604 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF8B2AFFC79F00A64604 /* XCTExtension.swift */; };
+		CEC4EF8F2AFFCCF900A64604 /* MockWikiItems_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */; };
+		CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF902AFFD25F00A64604 /* DataExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +90,14 @@
 		CE907ED92AF293B400BEB504 /* FoolstackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoolstackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE907EDD2AF293B400BEB504 /* FoolstackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackUITests.swift; sourceTree = "<group>"; };
 		CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEC4EF7B2AFEAD0900A64604 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		CEC4EF7D2AFEB4C600A64604 /* URLSessionProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocolTests.swift; sourceTree = "<group>"; };
+		CEC4EF7F2AFEC65B00A64604 /* ApiEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEnvironment.swift; sourceTree = "<group>"; };
+		CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		CEC4EF882AFED20B00A64604 /* WikiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiData.swift; sourceTree = "<group>"; };
+		CEC4EF8B2AFFC79F00A64604 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
+		CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockWikiItems_JSON.json; sourceTree = "<group>"; };
+		CEC4EF902AFFD25F00A64604 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				CE17C7812AFE882700E53297 /* NetworkClient.swift */,
+				CEC4EF7B2AFEAD0900A64604 /* URLSessionProtocol.swift */,
+				CEC4EF7F2AFEC65B00A64604 /* ApiEnvironment.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -155,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */,
+				CEC4EF7D2AFEB4C600A64604 /* URLSessionProtocolTests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -213,6 +232,7 @@
 				CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */,
 				CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */,
 				CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */,
+				CEC4EF902AFFD25F00A64604 /* DataExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -240,11 +260,13 @@
 		CE907EBB2AF293B100BEB504 /* Foolstack */ = {
 			isa = PBXGroup;
 			children = (
+				CEC4EF872AFED1EB00A64604 /* Model */,
 				CE17C77B2AFE877900E53297 /* Managers */,
 				CE4E2DAD2AF5004B00108F53 /* Flows */,
 				CE4E2DAC2AF3F23600108F53 /* Application */,
 				CE67BC8E2AF2CAA80096214C /* Extensions */,
 				CE4E2DBB2AF508EE00108F53 /* Storyboards */,
+				CEC4EF8D2AFFCCA200A64604 /* Mocks */,
 				CE907EBC2AF293B100BEB504 /* AppDelegate.swift */,
 				CE907EBE2AF293B100BEB504 /* SceneDelegate.swift */,
 				CE907EC02AF293B100BEB504 /* ViewController.swift */,
@@ -259,7 +281,9 @@
 		CE907ED22AF293B400BEB504 /* FoolstackTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEC4EF8A2AFFC77C00A64604 /* Tests Extensions */,
 				CE17C77A2AFE872900E53297 /* Cases */,
+				CEC4EF812AFECBDF00A64604 /* Test Types */,
 			);
 			path = FoolstackTests;
 			sourceTree = "<group>";
@@ -272,6 +296,38 @@
 				CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */,
 			);
 			path = FoolstackUITests;
+			sourceTree = "<group>";
+		};
+		CEC4EF812AFECBDF00A64604 /* Test Types */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */,
+			);
+			path = "Test Types";
+			sourceTree = "<group>";
+		};
+		CEC4EF872AFED1EB00A64604 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EF882AFED20B00A64604 /* WikiData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEC4EF8A2AFFC77C00A64604 /* Tests Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EF8B2AFFC79F00A64604 /* XCTExtension.swift */,
+			);
+			path = "Tests Extensions";
+			sourceTree = "<group>";
+		};
+		CEC4EF8D2AFFCCA200A64604 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC4EF8F2AFFCCF900A64604 /* MockWikiItems_JSON.json in Resources */,
 				CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
 				CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */,
@@ -415,8 +472,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
 				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
+				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
@@ -424,6 +483,7 @@
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
+				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
@@ -431,6 +491,7 @@
 				CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */,
 				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
 				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
+				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +500,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC4EF862AFECC5A00A64604 /* MockURLSession.swift in Sources */,
+				CEC4EF8C2AFFC79F00A64604 /* XCTExtension.swift in Sources */,
+				CEC4EF7E2AFEB4C600A64604 /* URLSessionProtocolTests.swift in Sources */,
 				CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
