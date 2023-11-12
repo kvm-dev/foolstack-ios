@@ -8,6 +8,9 @@
 import Foundation
 
 struct WikiListEntity {
-    let title: String
+    let serverId: Int
+    let ask: String
     let shortAnswer: String
+    let fullAnswerExists: Bool
+    let fullAnswer: String?
 }

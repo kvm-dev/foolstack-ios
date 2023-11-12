@@ -8,11 +8,14 @@
 import Foundation
 
 struct WikiData: Codable, Equatable {
-  
-  // MARK: - Identifier Properties
-  let id: String
-  
-  // MARK: - Instance Properties
-  let imageURL: URL?
-  let name: String
+    
+    // MARK: - Identifier Properties
+    let id: Int
+    
+    // MARK: - Instance Properties
+    let imageURL: URL?
+    let ask: String
+    let shortAnswer: String
+    let fullAnswerExists: Bool
+    let fullAnswer: String?
 }

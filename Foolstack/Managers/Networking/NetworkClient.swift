@@ -14,7 +14,7 @@ enum NetworkAPIError: Error {
 
 class NetworkClient {
     static let shared = NetworkClient(
-        baseUrl: <#T##URL#>, session: <#T##URLSessionProtocol#>)
+        baseUrl: URL(string: "https://foolstack.ru/api/v1/")!, session: URLSession(configuration: .default))
     
     let baseUrl: URL// = "https://foolstack.ru/api/v1/"
     let session: URLSessionProtocol// = URLSession(configuration: .default)

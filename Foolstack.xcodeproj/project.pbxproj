@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */; };
 		CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C7812AFE882700E53297 /* NetworkClient.swift */; };
+		CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */; };
 		CE4E2DA62AF3E75C00108F53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA52AF3E75C00108F53 /* Realm */; };
 		CE4E2DA82AF3E75C00108F53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA72AF3E75C00108F53 /* RealmSwift */; };
 		CE4E2DAB2AF3E83D00108F53 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DAA2AF3E83D00108F53 /* Alamofire */; };
@@ -42,6 +43,15 @@
 		CEC4EF8C2AFFC79F00A64604 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF8B2AFFC79F00A64604 /* XCTExtension.swift */; };
 		CEC4EF8F2AFFCCF900A64604 /* MockWikiItems_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */; };
 		CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF902AFFD25F00A64604 /* DataExtensions.swift */; };
+		CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF932AFFF02A00A64604 /* DataCacheService.swift */; };
+		CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF952AFFF08900A64604 /* DataCache.swift */; };
+		CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF982B00B8D900A64604 /* DataStorage.swift */; };
+		CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */; };
+		CEC4EF9D2B00BA9500A64604 /* LocalStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF9C2B00BA9500A64604 /* LocalStorageConfig.swift */; };
+		CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF9E2B00D01700A64604 /* RealmActor.swift */; };
+		CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */; };
+		CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */; };
+		CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +74,7 @@
 /* Begin PBXFileReference section */
 		CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		CE17C7812AFE882700E53297 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFlowProtocols.swift; sourceTree = "<group>"; };
 		CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListPresenterImp.swift; sourceTree = "<group>"; };
 		CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListInteractor.swift; sourceTree = "<group>"; };
@@ -98,6 +109,15 @@
 		CEC4EF8B2AFFC79F00A64604 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
 		CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockWikiItems_JSON.json; sourceTree = "<group>"; };
 		CEC4EF902AFFD25F00A64604 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
+		CEC4EF932AFFF02A00A64604 /* DataCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheService.swift; sourceTree = "<group>"; };
+		CEC4EF952AFFF08900A64604 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
+		CEC4EF982B00B8D900A64604 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageConfig.swift; sourceTree = "<group>"; };
+		CEC4EF9C2B00BA9500A64604 /* LocalStorageConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageConfig.swift; sourceTree = "<group>"; };
+		CEC4EF9E2B00D01700A64604 /* RealmActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmActor.swift; sourceTree = "<group>"; };
+		CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiItemRLM.swift; sourceTree = "<group>"; };
+		CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnswerRLM.swift; sourceTree = "<group>"; };
+		CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiTagRLM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +166,8 @@
 		CE17C77B2AFE877900E53297 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CEC4EF972B00B8B200A64604 /* DataStorage */,
+				CEC4EF922AFFEFFB00A64604 /* CacheService */,
 				CE17C77C2AFE878900E53297 /* Networking */,
 			);
 			path = Managers;
@@ -164,6 +186,7 @@
 		CE17C77D2AFE879800E53297 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CE19DD5C2B012CB500541E93 /* DataStorage */,
 				CE17C77E2AFE87A000E53297 /* Networking */,
 			);
 			path = Managers;
@@ -176,6 +199,14 @@
 				CEC4EF7D2AFEB4C600A64604 /* URLSessionProtocolTests.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		CE19DD5C2B012CB500541E93 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */,
+			);
+			path = DataStorage;
 			sourceTree = "<group>";
 		};
 		CE4E2DAC2AF3F23600108F53 /* Application */ = {
@@ -330,6 +361,37 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		CEC4EF922AFFEFFB00A64604 /* CacheService */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EF932AFFF02A00A64604 /* DataCacheService.swift */,
+				CEC4EF952AFFF08900A64604 /* DataCache.swift */,
+			);
+			path = CacheService;
+			sourceTree = "<group>";
+		};
+		CEC4EF972B00B8B200A64604 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EF982B00B8D900A64604 /* DataStorage.swift */,
+				CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */,
+				CEC4EF9C2B00BA9500A64604 /* LocalStorageConfig.swift */,
+				CEC4EF9E2B00D01700A64604 /* RealmActor.swift */,
+				CEC4EFA02B00D8B300A64604 /* Realm Model */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		CEC4EFA02B00D8B300A64604 /* Realm Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */,
+				CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */,
+				CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */,
+			);
+			path = "Realm Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,23 +537,32 @@
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
 				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
+				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
 				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
 				CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */,
+				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
+				CEC4EF9D2B00BA9500A64604 /* LocalStorageConfig.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
+				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
+				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
+				CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
+				CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */,
 				CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */,
+				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,
 				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
 				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
 				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
+				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +573,7 @@
 			files = (
 				CEC4EF862AFECC5A00A64604 /* MockURLSession.swift in Sources */,
 				CEC4EF8C2AFFC79F00A64604 /* XCTExtension.swift in Sources */,
+				CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */,
 				CEC4EF7E2AFEB4C600A64604 /* URLSessionProtocolTests.swift in Sources */,
 				CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */,
 			);
