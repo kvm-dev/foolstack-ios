@@ -14,7 +14,8 @@ class WikiItemRLM: Object {
     @Persisted var shortAnswer = ""
     @Persisted var fullAnswerExist = false
     @Persisted var fullAnswer: WikiAnswerRLM?
-    @Persisted (originProperty: "items") var tags: LinkingObjects<WikiTagRLM>
+    //@Persisted (originProperty: "items") var tags: LinkingObjects<WikiTagRLM>
+    @Persisted var tags: MutableSet<ServerKey>
     
     convenience init(_ data: WikiData) {
         self.init()
@@ -26,6 +27,7 @@ class WikiItemRLM: Object {
         if let fullAnswer = data.fullAnswer {
             self.fullAnswer = WikiAnswerRLM(content: fullAnswer)
         }
+        self.tags.insert(objectsIn: data.tags)
     }
 }
 

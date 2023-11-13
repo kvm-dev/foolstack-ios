@@ -8,7 +8,7 @@
 import RealmSwift
 
 class WikiTagRLM: Object {
-    @Persisted (primaryKey: true) var serverId: Int
+    @Persisted (primaryKey: true) var serverId: ServerKey
     @Persisted var name = ""
     @Persisted var items: List<WikiItemRLM>
     
@@ -17,5 +17,11 @@ class WikiTagRLM: Object {
         self.serverId = serverId
         self.name = name
         self.items.append(objectsIn: items)
+    }
+    
+    convenience init(_ data: TagData) {
+        self.init()
+        self.serverId = data.id
+        self.name = data.name
     }
 }

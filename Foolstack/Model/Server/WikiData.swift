@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct WikiData: Codable, Equatable {
+struct WikiData: Codable {
     
     // MARK: - Identifier Properties
-    let id: Int
+    let id: ServerKey
     
     // MARK: - Instance Properties
     let imageURL: URL?
@@ -18,4 +18,16 @@ struct WikiData: Codable, Equatable {
     let shortAnswer: String
     let fullAnswerExists: Bool
     let fullAnswer: String?
+    let tags: [ServerKey]
+}
+
+extension WikiData: Hashable {
+    static func == (lhs: WikiData, rhs: WikiData) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

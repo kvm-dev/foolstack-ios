@@ -11,13 +11,17 @@ import RealmSwift
 
 final class LocalStorageTests: XCTestCase {
     var sut: DataStorage!
-
+    var db: RealmActor!
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
         
         self.sut = DataStorage(config: LocalStorageConfig())
+        //        Task {
+        //            self.db = try await RealmActor(config: LocalStorageConfig().getRealmConfig())
+        //        }
     }
-
+    
     override func tearDownWithError() throws {
         sut = nil
         
@@ -26,25 +30,76 @@ final class LocalStorageTests: XCTestCase {
     
     func giveSomeData() -> [WikiData] {
         return [
-            WikiData(id: 1, imageURL: nil, ask: "Ask 1", shortAnswer: "Answer 1", fullAnswerExists: true, fullAnswer: nil),
-            WikiData(id: 2, imageURL: nil, ask: "Ask 2", shortAnswer: "Answer 2", fullAnswerExists: false, fullAnswer: nil),
+            WikiData(id: 1, imageURL: nil, ask: "Ask 1", shortAnswer: "Answer 1", fullAnswerExists: true, fullAnswer: nil, tags: [1,3,5]),
+            WikiData(id: 2, imageURL: nil, ask: "Ask 2", shortAnswer: "Answer 2", fullAnswerExists: false, fullAnswer: nil, tags: [3,6]),
         ]
     }
     
+    func createSomeTags() -> [TagData] {
+        let tags: [TagData] = (1...6).map{i in TagData(id: i, name: "Tag \(i)")}
+        return tags
+    }
+    
     func convertRealmItemsToServerData(_ items: [WikiListEntity]) -> [WikiData] {
-        items.map { WikiData(id: $0.serverId, imageURL: nil, ask: $0.ask, shortAnswer: $0.shortAnswer, fullAnswerExists: $0.fullAnswerExists, fullAnswer: nil)}//$0.fullAnswer?.content)}
+        items.map { WikiData(id: $0.serverId, imageURL: nil, ask: $0.ask, shortAnswer: $0.shortAnswer, fullAnswerExists: $0.fullAnswerExists, fullAnswer: nil, tags: [])}
+    }
+    
+    func convertRealmTagsToServerData(_ items: [TagEntity]) -> [TagData] {
+        items.map { TagData(id: $0.serverId, name: $0.name)}
     }
 
     func test_createNewWikis_dataCreated() async throws {
-        try await Task.sleep(1.0)
+        //try await Task.sleep(1.0)
         
         let data = giveSomeData()
-        try await sut.addItems(data)
-        let addedItems = await sut.getWikiEntities()
+        let tags = Array(Set(data.flatMap{$0.tags}))
+        _ = await sut.addItems(data)
+        let addedItems = await sut.getWikiEntities(for: tags)
         
         let convertedData = convertRealmItemsToServerData(addedItems)
         XCTAssertEqual(data, convertedData)
     }
+    
+    func test_db() async throws {
+        //        try await Task.sleep(1.0)
+        let db = RealmActor(config: LocalStorageConfig().getRealmConfig())
+        let data = giveSomeData()
+        let tags = Array(Set(data.flatMap{$0.tags}))
+        _ = try await db.addWikiItems(data)
+        let addedItems = try await db.getWikiEntities(for: tags)
+        
+        let convertedData = convertRealmItemsToServerData(addedItems)
+        XCTAssertEqual(data, convertedData)
+    }
+    
+    func test_addTagsToStorage() async {
+        let data = createSomeTags()
+        _ = await sut.addTags(data)
+        
+        let tagsIds = data.map{$0.id}
+        let addedTags = await sut.getTagEntities(for: tagsIds)
+        
+        let convertedData = convertRealmTagsToServerData(addedTags)
+        XCTAssertEqual(data, convertedData)
+    }
 
+    func test_addWikiItemsToTags() async {
+        let data = createSomeTags()
+        _ = await sut.addTags(data)
+        
+        let itemData = giveSomeData()
+        let itemsTagIds = Array(Set(itemData.flatMap{$0.tags}))
 
+        _ = await sut.addItems(itemData)
+        let itemsTags = await sut.getTagEntities(for: itemsTagIds)
+        let filteredTagsData = data.filter{ itemsTagIds.contains($0.id) }
+        
+        let wikiEnts = await sut.getWikiEntities(for: itemsTagIds)
+
+        let convertedData = convertRealmTagsToServerData(itemsTags)
+        let convertedWikiData = convertRealmItemsToServerData(wikiEnts)
+        
+        XCTAssertEqual(filteredTagsData, convertedData)
+        XCTAssertEqual(itemData, convertedWikiData)
+    }
 }

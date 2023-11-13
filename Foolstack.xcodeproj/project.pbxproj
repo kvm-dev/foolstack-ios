@@ -52,6 +52,8 @@
 		CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */; };
 		CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */; };
 		CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */; };
+		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
+		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiItemRLM.swift; sourceTree = "<group>"; };
 		CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnswerRLM.swift; sourceTree = "<group>"; };
 		CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiTagRLM.swift; sourceTree = "<group>"; };
+		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
+		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +239,6 @@
 				CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */,
 				CE4E2DB52AF5039500108F53 /* WikiListVC.swift */,
 				CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */,
-				CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */,
 			);
 			path = WikiFlow;
 			sourceTree = "<group>";
@@ -340,7 +343,8 @@
 		CEC4EF872AFED1EB00A64604 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEC4EF882AFED20B00A64604 /* WikiData.swift */,
+				CEE588CD2B0266AD00A7EEAE /* Entities */,
+				CEE588CA2B02514500A7EEAE /* Server */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +394,24 @@
 				CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */,
 			);
 			path = "Realm Model";
+			sourceTree = "<group>";
+		};
+		CEE588CA2B02514500A7EEAE /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				CEC4EF882AFED20B00A64604 /* WikiData.swift */,
+				CEE588C82B024F0900A7EEAE /* TagData.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		CEE588CD2B0266AD00A7EEAE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CEE588CB2B02516200A7EEAE /* TagEntity.swift */,
+				CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +559,7 @@
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
 				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
+				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
 				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
@@ -550,6 +573,7 @@
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
+				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,

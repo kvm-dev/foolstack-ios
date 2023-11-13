@@ -13,4 +13,5 @@ struct WikiListEntity {
     let shortAnswer: String
     let fullAnswerExists: Bool
     let fullAnswer: String?
+    let tags: [ServerKey]
 }

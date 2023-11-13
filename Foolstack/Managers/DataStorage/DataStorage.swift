@@ -14,23 +14,49 @@ final class DataStorage: @unchecked Sendable {
     
     init(config: StorageConfig) {
         let realmConfig = config.getRealmConfig()
-        Task {
-            do {
-                self.database = try await RealmActor(config: realmConfig)
-            } catch {
-                print("Create DB error:", error)
-            }
+        self.database = RealmActor(config: realmConfig)
+    }
+    
+    func addItems(_ data: [WikiData]) async -> [WikiListEntity] {
+        do {
+            let items = try await database.addWikiItems(data)
+            return items
+        } catch {
+            print("Create wiki items failed:", error)
         }
+        return []
     }
     
-    func addItems(_ data: [WikiData]) async throws {
-        let items = try await database.createWikiItems(data)
-        
+    func getWikiEntities(for tags: [ServerKey]) async -> [WikiListEntity] {
+        do {
+            let items = try await database.getWikiEntities(for: tags)
+            return items
+        } catch {
+            print("Get wiki items failed:", error)
+        }
+        return []
     }
     
-    func getWikiEntities() async -> [WikiListEntity] {
-        let items = await database.getWikiEntities()
-        return items
+    //MARK: TAGS
+    
+    func addTags(_ data: [TagData]) async -> [TagEntity] {
+        do {
+            let items = try await database.addTags(from: data)
+            return items
+        } catch {
+            print("Create wiki tags failed:", error)
+        }
+        return []
     }
     
+    func getTagEntities(for ids: [ServerKey]) async -> [TagEntity] {
+        do {
+            let items = try await database.getTagEntities(for: ids)
+            return items
+        } catch {
+            print("Get wiki tags failed:", error)
+        }
+        return []
+    }
+
 }
