@@ -16,7 +16,7 @@ final class LocalStorageTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        self.sut = DataStorage(config: LocalStorageConfig())
+        self.sut = DataStorage(config: MemoryStorageConfig())
         //        Task {
         //            self.db = try await RealmActor(config: LocalStorageConfig().getRealmConfig())
         //        }
@@ -40,14 +40,6 @@ final class LocalStorageTests: XCTestCase {
         return tags
     }
     
-    func convertRealmItemsToServerData(_ items: [WikiListEntity]) -> [WikiData] {
-        items.map { WikiData(id: $0.serverId, imageURL: nil, ask: $0.ask, shortAnswer: $0.shortAnswer, fullAnswerExists: $0.fullAnswerExists, fullAnswer: nil, tags: [])}
-    }
-    
-    func convertRealmTagsToServerData(_ items: [TagEntity]) -> [TagData] {
-        items.map { TagData(id: $0.serverId, name: $0.name)}
-    }
-
     func test_createNewWikis_dataCreated() async throws {
         //try await Task.sleep(1.0)
         
@@ -62,7 +54,7 @@ final class LocalStorageTests: XCTestCase {
     
     func test_db() async throws {
         //        try await Task.sleep(1.0)
-        let db = RealmActor(config: LocalStorageConfig().getRealmConfig())
+        let db = RealmActor(config: MemoryStorageConfig().getRealmConfig())
         let data = giveSomeData()
         let tags = Array(Set(data.flatMap{$0.tags}))
         _ = try await db.addWikiItems(data)

@@ -11,13 +11,13 @@ import XCTest
 final class NetworkClientTests: XCTestCase {
     var mockSession: MockURLSession!
     var baseUrl: URL!
-    var sut: NetworkClient!
+    var sut: NetworkService!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
         mockSession = MockURLSession()
         baseUrl = URL(string: "https://foolstack.ru/api/v1/")
-        sut = NetworkClient(baseUrl: baseUrl, session: mockSession)
+        sut = MockNetworkClient()
     }
 
     override func tearDownWithError() throws {
@@ -28,14 +28,9 @@ final class NetworkClientTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func test_whenStarted_setBaseUrl() {
-        
-        XCTAssertEqual(sut.baseUrl, baseUrl)
-    }
-
     func test_request() async throws {
         
-        guard let data = Data.fromJSON(fileName: "MockWikiItems_JSON") else {
+        guard let data = Data.fromJSON(fileName: "Mock_wikis_JSON") else {
             XCTFail()
             return
         }
@@ -50,14 +45,14 @@ final class NetworkClientTests: XCTestCase {
         let session = mockSession as MockURLSession
         session.response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
         session.data = data
-        let resultItems = try await sut.getWikis()
+        let resultItems = try await sut.getWikis(tags: [])
         
         XCTAssertNotNil(resultItems)
-        XCTAssertEqual(2, resultItems?.count ?? 0)
+        XCTAssertEqual(6, resultItems?.count ?? 0)
     }
     
     func test_get_receivedError() async throws {
-        let url: URL = baseUrl
+        let url: URL = URL(string: "wikis", relativeTo: baseUrl)!
         let session = mockSession as MockURLSession
         session.response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)
         var result = try await session.get(with: url)

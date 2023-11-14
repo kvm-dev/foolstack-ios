@@ -85,10 +85,14 @@ actor RealmActor {
     
     private func getWikiItems(for tags: [ServerKey]) async throws -> [WikiItemRLM] {
         let realm = try await getRealm()
-        let result = realm.objects(WikiItemRLM.self).where { query in
-            query.tags.containsAny(in: tags)
+        let predicate = NSPredicate(format: "ANY tags IN %@", tags)
+        let result = realm.objects(WikiItemRLM.self)//.filter(predicate)
+            .where {
+            $0.tags.containsAny(in: tags)
         }
-        return Array(result)
+        let res = Array(result)
+//        print(res)
+        return res
     }
     
     func getWikiEntities(for tags: [ServerKey]) async throws -> [WikiListEntity] {
@@ -163,10 +167,15 @@ actor RealmActor {
     
     private func getTags(for ids: [ServerKey]) async throws -> any Sequence<WikiTagRLM> {
         let realm = try await getRealm()
-        let result = realm.objects(WikiTagRLM.self).where {
-            $0.serverId.in(ids)
+        if ids.isEmpty {
+            let result = realm.objects(WikiTagRLM.self)
+            return result
+        } else {
+            let result = realm.objects(WikiTagRLM.self).where {
+                $0.serverId.in(ids)
+            }
+            return result
         }
-        return result
     }
     
     func getTagEntities(for ids: [ServerKey]) async throws -> [TagEntity] {

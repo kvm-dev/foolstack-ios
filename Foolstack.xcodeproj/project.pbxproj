@@ -35,19 +35,23 @@
 		CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE907EC72AF293B300BEB504 /* LaunchScreen.storyboard */; };
 		CE907EDE2AF293B400BEB504 /* FoolstackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EDD2AF293B400BEB504 /* FoolstackUITests.swift */; };
 		CE907EE02AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */; };
+		CEC3DDB62B02B15F005B0A5F /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */; };
+		CEC3DDBA2B02C666005B0A5F /* CacheServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB92B02C666005B0A5F /* CacheServiceTests.swift */; };
+		CEC3DDBD2B035A00005B0A5F /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDBC2B035A00005B0A5F /* DataConverter.swift */; };
+		CEC3DDBE2B035C96005B0A5F /* Mock_tags_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC3DDB72B02B68B005B0A5F /* Mock_tags_JSON.json */; };
+		CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDBF2B03CDB4005B0A5F /* NetworkService.swift */; };
+		CEC3DDC22B03CE2B005B0A5F /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDC12B03CE2B005B0A5F /* MockNetworkClient.swift */; };
 		CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF7B2AFEAD0900A64604 /* URLSessionProtocol.swift */; };
 		CEC4EF7E2AFEB4C600A64604 /* URLSessionProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF7D2AFEB4C600A64604 /* URLSessionProtocolTests.swift */; };
 		CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF7F2AFEC65B00A64604 /* ApiEnvironment.swift */; };
-		CEC4EF862AFECC5A00A64604 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */; };
 		CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF882AFED20B00A64604 /* WikiData.swift */; };
 		CEC4EF8C2AFFC79F00A64604 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF8B2AFFC79F00A64604 /* XCTExtension.swift */; };
-		CEC4EF8F2AFFCCF900A64604 /* MockWikiItems_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */; };
+		CEC4EF8F2AFFCCF900A64604 /* Mock_wikis_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC4EF8E2AFFCCF900A64604 /* Mock_wikis_JSON.json */; };
 		CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF902AFFD25F00A64604 /* DataExtensions.swift */; };
 		CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF932AFFF02A00A64604 /* DataCacheService.swift */; };
 		CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF952AFFF08900A64604 /* DataCache.swift */; };
 		CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF982B00B8D900A64604 /* DataStorage.swift */; };
 		CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */; };
-		CEC4EF9D2B00BA9500A64604 /* LocalStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF9C2B00BA9500A64604 /* LocalStorageConfig.swift */; };
 		CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF9E2B00D01700A64604 /* RealmActor.swift */; };
 		CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */; };
 		CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */; };
@@ -103,19 +107,23 @@
 		CE907ED92AF293B400BEB504 /* FoolstackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoolstackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE907EDD2AF293B400BEB504 /* FoolstackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackUITests.swift; sourceTree = "<group>"; };
 		CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEC3DDB72B02B68B005B0A5F /* Mock_tags_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_tags_JSON.json; sourceTree = "<group>"; };
+		CEC3DDB92B02C666005B0A5F /* CacheServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheServiceTests.swift; sourceTree = "<group>"; };
+		CEC3DDBC2B035A00005B0A5F /* DataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
+		CEC3DDBF2B03CDB4005B0A5F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CEC3DDC12B03CE2B005B0A5F /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 		CEC4EF7B2AFEAD0900A64604 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		CEC4EF7D2AFEB4C600A64604 /* URLSessionProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocolTests.swift; sourceTree = "<group>"; };
 		CEC4EF7F2AFEC65B00A64604 /* ApiEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEnvironment.swift; sourceTree = "<group>"; };
 		CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		CEC4EF882AFED20B00A64604 /* WikiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiData.swift; sourceTree = "<group>"; };
 		CEC4EF8B2AFFC79F00A64604 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
-		CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockWikiItems_JSON.json; sourceTree = "<group>"; };
+		CEC4EF8E2AFFCCF900A64604 /* Mock_wikis_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_wikis_JSON.json; sourceTree = "<group>"; };
 		CEC4EF902AFFD25F00A64604 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		CEC4EF932AFFF02A00A64604 /* DataCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheService.swift; sourceTree = "<group>"; };
 		CEC4EF952AFFF08900A64604 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		CEC4EF982B00B8D900A64604 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageConfig.swift; sourceTree = "<group>"; };
-		CEC4EF9C2B00BA9500A64604 /* LocalStorageConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageConfig.swift; sourceTree = "<group>"; };
 		CEC4EF9E2B00D01700A64604 /* RealmActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmActor.swift; sourceTree = "<group>"; };
 		CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiItemRLM.swift; sourceTree = "<group>"; };
 		CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnswerRLM.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 		CE17C77A2AFE872900E53297 /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3DDBB2B0359E4005B0A5F /* Helpers */,
 				CE17C77D2AFE879800E53297 /* Managers */,
 			);
 			path = Cases;
@@ -180,9 +189,12 @@
 		CE17C77C2AFE878900E53297 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3DDBF2B03CDB4005B0A5F /* NetworkService.swift */,
 				CE17C7812AFE882700E53297 /* NetworkClient.swift */,
+				CEC3DDC12B03CE2B005B0A5F /* MockNetworkClient.swift */,
 				CEC4EF7B2AFEAD0900A64604 /* URLSessionProtocol.swift */,
 				CEC4EF7F2AFEC65B00A64604 /* ApiEnvironment.swift */,
+				CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -190,6 +202,7 @@
 		CE17C77D2AFE879800E53297 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3DDB82B02C63A005B0A5F /* CasheService */,
 				CE19DD5C2B012CB500541E93 /* DataStorage */,
 				CE17C77E2AFE87A000E53297 /* Networking */,
 			);
@@ -332,10 +345,25 @@
 			path = FoolstackUITests;
 			sourceTree = "<group>";
 		};
+		CEC3DDB82B02C63A005B0A5F /* CasheService */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3DDB92B02C666005B0A5F /* CacheServiceTests.swift */,
+			);
+			path = CasheService;
+			sourceTree = "<group>";
+		};
+		CEC3DDBB2B0359E4005B0A5F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3DDBC2B035A00005B0A5F /* DataConverter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CEC4EF812AFECBDF00A64604 /* Test Types */ = {
 			isa = PBXGroup;
 			children = (
-				CEC4EF852AFECC5A00A64604 /* MockURLSession.swift */,
 			);
 			path = "Test Types";
 			sourceTree = "<group>";
@@ -360,7 +388,8 @@
 		CEC4EF8D2AFFCCA200A64604 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				CEC4EF8E2AFFCCF900A64604 /* MockWikiItems_JSON.json */,
+				CEC3DDB72B02B68B005B0A5F /* Mock_tags_JSON.json */,
+				CEC4EF8E2AFFCCF900A64604 /* Mock_wikis_JSON.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -379,7 +408,6 @@
 			children = (
 				CEC4EF982B00B8D900A64604 /* DataStorage.swift */,
 				CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */,
-				CEC4EF9C2B00BA9500A64604 /* LocalStorageConfig.swift */,
 				CEC4EF9E2B00D01700A64604 /* RealmActor.swift */,
 				CEC4EFA02B00D8B300A64604 /* Realm Model */,
 			);
@@ -527,7 +555,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC4EF8F2AFFCCF900A64604 /* MockWikiItems_JSON.json in Resources */,
+				CEC3DDBE2B035C96005B0A5F /* Mock_tags_JSON.json in Resources */,
+				CEC4EF8F2AFFCCF900A64604 /* Mock_wikis_JSON.json in Resources */,
 				CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
 				CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */,
@@ -559,6 +588,7 @@
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
 				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
+				CEC3DDB62B02B15F005B0A5F /* MockURLSession.swift in Sources */,
 				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
 				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
@@ -567,7 +597,6 @@
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
 				CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */,
 				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
-				CEC4EF9D2B00BA9500A64604 /* LocalStorageConfig.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
@@ -575,9 +604,11 @@
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
+				CEC3DDC22B03CE2B005B0A5F /* MockNetworkClient.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
+				CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */,
 				CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
 				CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */,
@@ -595,10 +626,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC4EF862AFECC5A00A64604 /* MockURLSession.swift in Sources */,
 				CEC4EF8C2AFFC79F00A64604 /* XCTExtension.swift in Sources */,
 				CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */,
+				CEC3DDBA2B02C666005B0A5F /* CacheServiceTests.swift in Sources */,
 				CEC4EF7E2AFEB4C600A64604 /* URLSessionProtocolTests.swift in Sources */,
+				CEC3DDBD2B035A00005B0A5F /* DataConverter.swift in Sources */,
 				CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

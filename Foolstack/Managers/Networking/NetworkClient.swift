@@ -12,7 +12,7 @@ enum NetworkAPIError: Error {
     case invalidResponseFormat
 }
 
-class NetworkClient {
+class NetworkClient: NetworkService {
     static let shared = NetworkClient(
         baseUrl: URL(string: "https://foolstack.ru/api/v1/")!, session: URLSession(configuration: .default))
     
@@ -24,7 +24,7 @@ class NetworkClient {
         self.session = session
     }
     
-    func getWikis() async throws -> [WikiData]? {
+    func getWikis(tags: [ServerKey]) async throws -> [WikiData]? {
         let url = URL(string: "wikis", relativeTo: baseUrl)!
         
         let apiData = try await session.get(with: url)
@@ -33,6 +33,24 @@ class NetworkClient {
             let decoder = JSONDecoder()
             do {
                 return try decoder.decode([WikiData].self, from: data)
+            } catch {
+                throw NetworkAPIError.invalidResponseFormat
+            }
+            
+        case .failure(let error):
+            throw error
+        }
+    }
+    
+    func getTags() async throws -> [TagData]? {
+        let url = URL(string: "tags", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        switch apiData {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            do {
+                return try decoder.decode([TagData].self, from: data)
             } catch {
                 throw NetworkAPIError.invalidResponseFormat
             }

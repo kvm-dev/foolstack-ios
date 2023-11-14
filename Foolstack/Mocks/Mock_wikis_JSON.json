@@ -1,0 +1,44 @@
+[
+  {
+    "shortAnswer" : "Answer 1",
+    "ask" : "Ask 1",
+    "id" : 1,
+    "tags" : [1,3,5],
+    "fullAnswerExists" : true
+  },
+  {
+    "shortAnswer" : "Answer 2",
+    "fullAnswerExists" : false,
+    "id" : 2,
+    "tags" : [3,6],
+    "ask" : "Ask 2"
+  },
+  {
+    "shortAnswer" : "Answer 3",
+    "ask" : "Ask 3",
+    "id" : 3,
+    "tags" : [3,4],
+    "fullAnswerExists" : false
+  },
+  {
+    "shortAnswer" : "Answer 4",
+    "ask" : "Ask 4",
+    "id" : 4,
+    "tags" : [6],
+    "fullAnswerExists" : true
+  },
+  {
+    "shortAnswer" : "Answer 5",
+    "ask" : "Ask 5",
+    "id" : 5,
+    "tags" : [8,11],
+    "fullAnswerExists" : true
+  },
+  {
+    "shortAnswer" : "Answer 6",
+    "ask" : "Ask 6",
+    "id" : 6,
+    "tags" : [],
+    "fullAnswerExists" : true
+  }
+]

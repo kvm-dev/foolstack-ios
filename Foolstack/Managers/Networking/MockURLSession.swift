@@ -5,7 +5,6 @@
 //  Created by Evgeniy Zolkin on 10.11.2023.
 //
 
-@testable import Foolstack
 import Foundation
 
 class MockURLSession: URLSessionProtocol {
@@ -13,7 +12,20 @@ class MockURLSession: URLSessionProtocol {
     var data: Data?
     
     func get(with url: URL) async throws -> Result<Data, Error> {
+        if let response = self.response {
+            return verifyResponse(data: data, response: response)
+        }
         
+        let fileName = "Mock_\(url.lastPathComponent)_JSON"
+        guard let data = Data.fromJSON(fileName: fileName) else {
+            let response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)
+            return verifyResponse(data: nil, response: response)
+        }
+        
+//        let jsonString = String(data: data, encoding: .utf8)!
+//        print(jsonString)
+        
+        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
         return verifyResponse(data: data, response: response)
     }
     
