@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class WikiListPresenterImp: WikiListPresenter {
     private weak var view: WikiListView?
     private let router: WikiListRouter
@@ -36,5 +37,11 @@ extension WikiListPresenterImp : WikiListInteractorOutput {
         
     }
     
+    func fetchTagsSuccess(items: [TagEntity]) {
+        view?.show(tags: items)
+    }
     
+    func fetchTagsFailure(error: Error) {
+        
+    }
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Evgeniy Zolkin on 03.11.2023.
 //
-
+@MainActor
 final class WikiListInteractor : WikiListInteractorInput {
     
     weak var output: WikiListInteractorOutput?
@@ -25,4 +25,15 @@ final class WikiListInteractor : WikiListInteractorInput {
         }
     }
 
+    func fetchTags(keys: [ServerKey]) {
+        Task { [weak self, output] in
+            guard let self = self else {return}
+            do {
+                let items = try await self.repo.fetchTags(keys: keys)
+                output?.fetchTagsSuccess(items: items)
+            } catch {
+                output?.fetchTagsFailure(error: error)
+            }
+        }
+    }
 }
