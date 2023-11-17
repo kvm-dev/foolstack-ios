@@ -6,9 +6,10 @@
 //
 @MainActor
 final class WikiListInteractor : WikiListInteractorInput {
-    
     weak var output: WikiListInteractorOutput?
     private let repo: WikiListRepo
+    
+    private var loadedTags: [TagEntity] = []
     
     init(repo: WikiListRepo) {
         self.repo = repo
@@ -36,4 +37,5 @@ final class WikiListInteractor : WikiListInteractorInput {
             }
         }
     }
+    
 }

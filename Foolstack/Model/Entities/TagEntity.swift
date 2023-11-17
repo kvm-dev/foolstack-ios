@@ -8,4 +8,6 @@
 struct TagEntity {
     let serverId: Int
     let name: String
+    
+    //var selected: Bool
 }

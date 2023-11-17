@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+@MainActor
 final class WikiListRouterImp : WikiListRouter {
     weak var viewController: UIViewController?
+    
+    func openTagList(tags: [TagEntity]) {
+        let vc = TagListVC(tags: tags)
+        viewController?.present(vc, animated: true)
+    }
 }

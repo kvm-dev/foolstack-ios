@@ -21,10 +21,13 @@ final class WikiListPresenterImp: WikiListPresenter {
     func viewDidLoad(view: WikiListView) {
         self.view = view
         
-        interactor.fetchEntities()
+        //interactor.fetchEntities()
+        interactor.fetchTags(keys: [])
     }
     
-    
+    func selectTag(index: Int) {
+        
+    }
 }
 
 
@@ -38,7 +41,8 @@ extension WikiListPresenterImp : WikiListInteractorOutput {
     }
     
     func fetchTagsSuccess(items: [TagEntity]) {
-        view?.show(tags: items)
+//        view?.show(tags: items)
+        router.openTagList(tags: items)
     }
     
     func fetchTagsFailure(error: Error) {
