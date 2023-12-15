@@ -12,7 +12,10 @@ import UIKit
 final class WikiFlowBuilder {
     class func build() -> UIViewController {
         let router = WikiListRouterImp()
-        let repo = WikiListRepoImp()
+        let cacheService = DataCacheImp(
+            network: MockNetworkClient(),
+            storageConfig: LocalStorageConfig())
+        let repo = WikiListRepoImp(cacheService: cacheService)
         let interactor = WikiListInteractor(repo: repo)
         let presenter = WikiListPresenterImp(router: router, interactor: interactor)
         let view = WikiListVC.controllerFromStoryboard(.wiki)

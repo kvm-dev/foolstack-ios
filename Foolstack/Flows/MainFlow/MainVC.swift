@@ -17,6 +17,10 @@ final class MainVC : UITabBarController {
             return
         }
 
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let dir = urls[0]
+        print(dir)
+
         showWikiFlow()
     }
     
