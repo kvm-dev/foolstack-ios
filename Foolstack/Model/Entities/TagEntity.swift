@@ -10,4 +10,14 @@ struct TagEntity {
     let name: String
     
     //var selected: Bool
+    
+    init(data: TagData) {
+        self.serverId = data.id
+        self.name = data.name
+    }
+    
+    init(serverId: Int, name: String) {
+        self.serverId = serverId
+        self.name = name
+    }
 }

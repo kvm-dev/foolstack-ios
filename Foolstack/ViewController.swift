@@ -12,6 +12,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let vc = CatFlowBuilder.build()
+        self.add(vc)
+        self.view.addSubview(vc.view)
+        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        vc.didMove(toParent: self)
     }
 
     

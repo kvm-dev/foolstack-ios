@@ -28,7 +28,9 @@ final class MainVC : UITabBarController {
         self.selectedIndex = 0
         guard let controller = viewControllers?[0] as? UINavigationController else { return }
 
-        let vc = WikiFlowBuilder.build()
+        controller.isNavigationBarHidden = true
+        //let vc = WikiFlowBuilder.build()
+        let vc = CatFlowBuilder.build()
         controller.setViewControllers([vc], animated: false)
     }
 }

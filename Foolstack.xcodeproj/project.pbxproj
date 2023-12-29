@@ -27,6 +27,21 @@
 		CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */; };
 		CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */; };
 		CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */; };
+		CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */; };
+		CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF742B3C66650081E64B /* CatEntity.swift */; };
+		CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF762B3C66EF0081E64B /* CatData.swift */; };
+		CE8CFF7A2B3CBF760081E64B /* CatListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF792B3CBF760081E64B /* CatListPresenterImp.swift */; };
+		CE8CFF7C2B3CCA950081E64B /* CatListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF7B2B3CCA950081E64B /* CatListInteractor.swift */; };
+		CE8CFF7E2B3DCF780081E64B /* CatListRouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF7D2B3DCF780081E64B /* CatListRouterImp.swift */; };
+		CE8CFF802B3DCF900081E64B /* CatListRepoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF7F2B3DCF900081E64B /* CatListRepoImp.swift */; };
+		CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF812B3DCFA70081E64B /* CatListVC.swift */; };
+		CE8CFF842B3DD0940081E64B /* CatFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */; };
+		CE8CFF862B3ED7AA0081E64B /* CatProfListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF852B3ED7AA0081E64B /* CatProfListVC.swift */; };
+		CE8CFF882B3ED7DD0081E64B /* CatSpecListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF872B3ED7DD0081E64B /* CatSpecListVC.swift */; };
+		CE8CFF8F2B3EEC250081E64B /* DataCacheTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF8E2B3EEC250081E64B /* DataCacheTemp.swift */; };
+		CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF902B3EECB50081E64B /* Constants.swift */; };
+		CE8CFF982B3F071D0081E64B /* cache in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFF972B3F071C0081E64B /* cache */; };
+		CE8CFF9B2B3F4BED0081E64B /* HeaderBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFF9A2B3F4BED0081E64B /* HeaderBar.xib */; };
 		CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EBC2AF293B100BEB504 /* AppDelegate.swift */; };
 		CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EBE2AF293B100BEB504 /* SceneDelegate.swift */; };
 		CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EC02AF293B100BEB504 /* ViewController.swift */; };
@@ -37,7 +52,7 @@
 		CE907EE02AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */; };
 		CEA1EDF42B04D6B50050CA34 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EDF32B04D6B50050CA34 /* UIView+Constraints.swift */; };
 		CEA1EDF72B04E10E0050CA34 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EDF62B04E10E0050CA34 /* NibView.swift */; };
-		CEA1EDFA2B04E14F0050CA34 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EDF92B04E14F0050CA34 /* HeaderView.swift */; };
+		CEA1EDFA2B04E14F0050CA34 /* HeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EDF92B04E14F0050CA34 /* HeaderBar.swift */; };
 		CEA1EDFC2B04E3250050CA34 /* UIButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EDFB2B04E3250050CA34 /* UIButtonCustom.swift */; };
 		CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EDFE2B05130C0050CA34 /* IconNames.swift */; };
 		CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EE002B05176F0050CA34 /* UIColorExtension.swift */; };
@@ -106,6 +121,22 @@
 		CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntity.swift; sourceTree = "<group>"; };
 		CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListRepoImp.swift; sourceTree = "<group>"; };
 		CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncExtentions.swift; sourceTree = "<group>"; };
+		CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowProtocols.swift; sourceTree = "<group>"; };
+		CE8CFF742B3C66650081E64B /* CatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntity.swift; sourceTree = "<group>"; };
+		CE8CFF762B3C66EF0081E64B /* CatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatData.swift; sourceTree = "<group>"; };
+		CE8CFF782B3C689E0081E64B /* Mock_cats_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_cats_JSON.json; sourceTree = "<group>"; };
+		CE8CFF792B3CBF760081E64B /* CatListPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListPresenterImp.swift; sourceTree = "<group>"; };
+		CE8CFF7B2B3CCA950081E64B /* CatListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListInteractor.swift; sourceTree = "<group>"; };
+		CE8CFF7D2B3DCF780081E64B /* CatListRouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListRouterImp.swift; sourceTree = "<group>"; };
+		CE8CFF7F2B3DCF900081E64B /* CatListRepoImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListRepoImp.swift; sourceTree = "<group>"; };
+		CE8CFF812B3DCFA70081E64B /* CatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListVC.swift; sourceTree = "<group>"; };
+		CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowBuilder.swift; sourceTree = "<group>"; };
+		CE8CFF852B3ED7AA0081E64B /* CatProfListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfListVC.swift; sourceTree = "<group>"; };
+		CE8CFF872B3ED7DD0081E64B /* CatSpecListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecListVC.swift; sourceTree = "<group>"; };
+		CE8CFF8E2B3EEC250081E64B /* DataCacheTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheTemp.swift; sourceTree = "<group>"; };
+		CE8CFF902B3EECB50081E64B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE8CFF972B3F071C0081E64B /* cache */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cache; sourceTree = "<group>"; };
+		CE8CFF9A2B3F4BED0081E64B /* HeaderBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderBar.xib; sourceTree = "<group>"; };
 		CE907EB92AF293B100BEB504 /* Foolstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foolstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE907EBC2AF293B100BEB504 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE907EBE2AF293B100BEB504 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +151,7 @@
 		CE907EDF2AF293B400BEB504 /* FoolstackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolstackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA1EDF32B04D6B50050CA34 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		CEA1EDF62B04E10E0050CA34 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
-		CEA1EDF92B04E14F0050CA34 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		CEA1EDF92B04E14F0050CA34 /* HeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBar.swift; sourceTree = "<group>"; };
 		CEA1EDFB2B04E3250050CA34 /* UIButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCustom.swift; sourceTree = "<group>"; };
 		CEA1EDFE2B05130C0050CA34 /* IconNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNames.swift; sourceTree = "<group>"; };
 		CEA1EE002B05176F0050CA34 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -258,6 +289,7 @@
 		CE4E2DAD2AF5004B00108F53 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CE8CFF712B3C64080081E64B /* CategoriesFlow */,
 				CE4E2DC02AF52F4200108F53 /* MainFlow */,
 				CE4E2DAE2AF5005800108F53 /* WikiFlow */,
 				CEC3DDC32B04C2CF005B0A5F /* TagsFlow */,
@@ -309,9 +341,43 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CE8CFF712B3C64080081E64B /* CategoriesFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */,
+				CE8CFF792B3CBF760081E64B /* CatListPresenterImp.swift */,
+				CE8CFF7B2B3CCA950081E64B /* CatListInteractor.swift */,
+				CE8CFF7D2B3DCF780081E64B /* CatListRouterImp.swift */,
+				CE8CFF7F2B3DCF900081E64B /* CatListRepoImp.swift */,
+				CE8CFF812B3DCFA70081E64B /* CatListVC.swift */,
+				CE8CFF852B3ED7AA0081E64B /* CatProfListVC.swift */,
+				CE8CFF872B3ED7DD0081E64B /* CatSpecListVC.swift */,
+				CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */,
+			);
+			path = CategoriesFlow;
+			sourceTree = "<group>";
+		};
+		CE8CFF962B3F06FA0081E64B /* TempResources */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFF972B3F071C0081E64B /* cache */,
+			);
+			path = TempResources;
+			sourceTree = "<group>";
+		};
+		CE8CFF992B3F4BB50081E64B /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1EDF92B04E14F0050CA34 /* HeaderBar.swift */,
+				CE8CFF9A2B3F4BED0081E64B /* HeaderBar.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		CE907EB02AF293B100BEB504 = {
 			isa = PBXGroup;
 			children = (
+				CE8CFF962B3F06FA0081E64B /* TempResources */,
 				CE907EBB2AF293B100BEB504 /* Foolstack */,
 				CE907ED22AF293B400BEB504 /* FoolstackTests */,
 				CE907EDC2AF293B400BEB504 /* FoolstackUITests */,
@@ -384,8 +450,8 @@
 		CEA1EDF82B04E1310050CA34 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE8CFF992B3F4BB50081E64B /* HeaderView */,
 				CEA1EE062B0526920050CA34 /* TableViewCells */,
-				CEA1EDF92B04E14F0050CA34 /* HeaderView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -398,6 +464,7 @@
 				CEA1EE042B051C7D0050CA34 /* UIImageExtensions.swift */,
 				CEA1EE022B051C0C0050CA34 /* ValueConstants.swift */,
 				CEA1EE092B0529220050CA34 /* FontExtension.swift */,
+				CE8CFF902B3EECB50081E64B /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -461,6 +528,7 @@
 		CEC4EF8D2AFFCCA200A64604 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				CE8CFF782B3C689E0081E64B /* Mock_cats_JSON.json */,
 				CEC3DDB72B02B68B005B0A5F /* Mock_tags_JSON.json */,
 				CEC4EF8E2AFFCCF900A64604 /* Mock_wikis_JSON.json */,
 			);
@@ -472,6 +540,7 @@
 			children = (
 				CEC4EF932AFFF02A00A64604 /* DataCacheService.swift */,
 				CEC4EF952AFFF08900A64604 /* DataCache.swift */,
+				CE8CFF8E2B3EEC250081E64B /* DataCacheTemp.swift */,
 			);
 			path = CacheService;
 			sourceTree = "<group>";
@@ -502,6 +571,7 @@
 			children = (
 				CEC4EF882AFED20B00A64604 /* WikiData.swift */,
 				CEE588C82B024F0900A7EEAE /* TagData.swift */,
+				CE8CFF762B3C66EF0081E64B /* CatData.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -511,6 +581,7 @@
 			children = (
 				CEE588CB2B02516200A7EEAE /* TagEntity.swift */,
 				CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */,
+				CE8CFF742B3C66650081E64B /* CatEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -632,8 +703,10 @@
 				CEC4EF8F2AFFCCF900A64604 /* Mock_wikis_JSON.json in Resources */,
 				CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
+				CE8CFF9B2B3F4BED0081E64B /* HeaderBar.xib in Resources */,
 				CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */,
 				CE907EC42AF293B100BEB504 /* Main.storyboard in Resources */,
+				CE8CFF982B3F071D0081E64B /* cache in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +736,7 @@
 				CEA1EDFC2B04E3250050CA34 /* UIButtonCustom.swift in Sources */,
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
 				CEA1EDF42B04D6B50050CA34 /* UIView+Constraints.swift in Sources */,
+				CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */,
 				CEC3DDB62B02B15F005B0A5F /* MockURLSession.swift in Sources */,
 				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
@@ -670,6 +744,7 @@
 				CEA1EDF72B04E10E0050CA34 /* NibView.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
+				CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */,
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
 				CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */,
 				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
@@ -677,18 +752,25 @@
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
+				CE8CFF862B3ED7AA0081E64B /* CatProfListVC.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
+				CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */,
+				CE8CFF7E2B3DCF780081E64B /* CatListRouterImp.swift in Sources */,
+				CE8CFF882B3ED7DD0081E64B /* CatSpecListVC.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CEA1EE082B0527CB0050CA34 /* SimpleTableCell.swift in Sources */,
+				CE8CFF802B3DCF900081E64B /* CatListRepoImp.swift in Sources */,
+				CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */,
 				CEC3DDC22B03CE2B005B0A5F /* MockNetworkClient.swift in Sources */,
 				CEA1EE032B051C0C0050CA34 /* ValueConstants.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
+				CE8CFF7C2B3CCA950081E64B /* CatListInteractor.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
 				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
-				CEA1EDFA2B04E14F0050CA34 /* HeaderView.swift in Sources */,
+				CEA1EDFA2B04E14F0050CA34 /* HeaderBar.swift in Sources */,
 				CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */,
 				CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
@@ -697,12 +779,16 @@
 				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,
 				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
 				CEA1EE052B051C7D0050CA34 /* UIImageExtensions.swift in Sources */,
+				CE8CFF7A2B3CBF760081E64B /* CatListPresenterImp.swift in Sources */,
 				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
 				CEC3DDC52B04C347005B0A5F /* TagListVC.swift in Sources */,
+				CE8CFF842B3DD0940081E64B /* CatFlowBuilder.swift in Sources */,
+				CE8CFF8F2B3EEC250081E64B /* DataCacheTemp.swift in Sources */,
 				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
+				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,12 @@ final class DataCacheImp : DataCacheService {
     init(network: NetworkService, storageConfig: StorageConfig) {
         self.network = network
         self.storage = DataStorage(config: storageConfig)
+        
+        DataCacheImp.createMockResources()
+    }
+    
+    func getCategories(parentId: ServerKey) async throws -> [CatEntity] {
+        return []
     }
     
     func getWikis(tags: [ServerKey]) async throws -> [WikiListEntity] {

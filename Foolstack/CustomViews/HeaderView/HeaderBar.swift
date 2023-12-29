@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  HeaderBar.swift
 //  Foolstack
 //
 //  Created by Evgeniy Zolkin on 15.11.2023.
