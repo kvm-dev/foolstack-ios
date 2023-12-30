@@ -14,11 +14,11 @@ extension UIImage {
 //  }
   static func symbolImage(iconName: IconNames, pointSize: CGFloat = 20) -> UIImage {
     let conf = UIImage.SymbolConfiguration(pointSize: pointSize)
-    return UIImage(named: iconName.name, in: nil, with: conf) ?? UIImage()
+      return UIImage(named: iconName.name, in: nil, with: conf)?.withRenderingMode(.alwaysTemplate) ?? UIImage()
   }
   static func symbolImage(_ iconName: IconNames, pointSize: CGFloat = 20) -> UIImage {
     let conf = UIImage.SymbolConfiguration(pointSize: pointSize)
-    return UIImage(named: iconName.name, in: nil, with: conf) ?? UIImage()
+    return UIImage(named: iconName.name, in: nil, with: conf)?.withRenderingMode(.alwaysTemplate) ?? UIImage()
   }
   static func checkboxImage(checked: Bool) -> UIImage {
     return checked ? symbolImage(iconName: .checkboxActive) : symbolImage(iconName: .checkbox)

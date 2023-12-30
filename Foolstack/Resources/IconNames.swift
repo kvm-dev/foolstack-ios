@@ -28,7 +28,7 @@ enum IconNames {
     switch self {
     case .none:           return ""
     case .close:          return "exit.1"
-    case .back:           return "arrow.left.1"
+    case .back:           return "chevron-left"
     case .help:           return "help.1"
     case .sort:           return "sort.1"
     case .plus:           return "plus.1"

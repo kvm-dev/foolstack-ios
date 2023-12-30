@@ -16,7 +16,9 @@ extension UIColor {
     static let themeBackgroundMain = UIColor(named: "Color1")!
     static let themeBackgroundTop = UIColor(named: "Color4")!
     static let themeStandartIcon = UIColor(named: "Color3")!
-    
+    static let themeAccent = UIColor(named: "Color5")!
+
     //MARK: Text
     static let themeTextMain = UIColor(named: "TextColor1")!
+    static let themeTextSecondary = UIColor(named: "TextColor2")!
 }
