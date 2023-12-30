@@ -19,7 +19,17 @@ final class DataCacheImp : DataCacheService {
     }
     
     func getCategories(parentId: ServerKey) async throws -> [CatEntity] {
-        return []
+        let items = [
+            CatData(id: 1, type: 1, name: "Cat 1", image: "prof_1.svg", categories: [
+                CatData(id: 11, type: 2, name: "SubCat 11", image: nil, categories: [], tags: [
+                    TagData(id: 1, name: "Tag 1")
+                ])], tags: []),
+            CatData(id: 2, type: 1, name: "Cat 2", image: "prof_2.svg", categories: [
+                CatData(id: 21, type: 2, name: "SubCat 21", image: nil, categories: [], tags: [
+                    TagData(id: 211, name: "Tag 211")
+                ])], tags: []),
+        ]
+        return items.map(CatEntity.init)
     }
     
     func getWikis(tags: [ServerKey]) async throws -> [WikiListEntity] {

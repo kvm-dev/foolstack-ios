@@ -9,9 +9,12 @@ import Foundation
 
 extension DataCacheImp {
     static func createMockResources() {
-        copyFileToDocuments(sourcePath: "cache/images/professions", filename: "prof_1.svg")
-        copyFileToDocuments(sourcePath: "cache/images/professions", filename: "prof_2.svg")
-        copyFileToDocuments(sourcePath: "cache/images/professions", filename: "prof_3.svg")
+//        copyFileToDocuments(sourcePath: "cache/images/professions", filename: "prof_1.svg")
+//        copyFileToDocuments(sourcePath: "cache/images/professions", filename: "prof_2.svg")
+//        copyFileToDocuments(sourcePath: "cache/images/professions", filename: "prof_3.svg")
+        
+        copyImageToCache(sourcePath: "cache/images/professions", filename: "prof_1.svg", subfolder: "professions")
+        copyImageToCache(sourcePath: "cache/images/professions", filename: "prof_2.svg", subfolder: "professions")
     }
     
     func copyFolderToDocuments(path: String) {
@@ -93,5 +96,33 @@ extension DataCacheImp {
             print("Saving file failed.", error)
         }
         
+    }
+    
+    static func copyImageToCache(sourcePath: String, filename: String, subfolder: String) {
+        let folderParts = sourcePath.components(separatedBy: ["/", "\\"])
+
+        guard var resourceURL = Bundle.main.resourceURL else {
+            return
+        }
+        folderParts.forEach { resourceURL = resourceURL.appendingPathComponent($0) }
+
+        guard let path = URL.cacheURL(subfolders: subfolder) else {
+          printToConsole("Get cache folder 'covers' failed")
+          return
+        }
+        
+        let fm = FileManager.default
+
+        let sourceFileUrl = resourceURL.appendingPathComponent(filename)
+        let fileUrl = path.appendingPathComponent(filename)
+        let fileExist = fm.fileExists(atPath: fileUrl.path)
+        do {
+            if !fileExist {
+                try fm.copyItem(at: sourceFileUrl, to: fileUrl)
+            }
+        } catch {
+          printToConsole("Failed to save image to cache")
+        }
+
     }
 }
