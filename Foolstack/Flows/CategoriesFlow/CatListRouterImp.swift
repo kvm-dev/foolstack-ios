@@ -12,7 +12,8 @@ import UIKit
 final class CatListRouterImp : CatListRouter {
     weak var viewController: UIViewController?
     
-    func openCatList(tags: [CatEntity]) {
+    func openCatList(parentId: ServerKey) {
+        
 //        let vc = TagListVC(tags: tags)
 //        viewController?.present(vc, animated: true)
     }

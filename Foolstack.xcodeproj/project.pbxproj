@@ -59,6 +59,8 @@
 		CE8CFFBF2B40A0A10081E64B /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFFBE2B40A0A10081E64B /* WebImageView.swift */; };
 		CE8CFFC12B40A1290081E64B /* PrintDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFFC02B40A1290081E64B /* PrintDebug.swift */; };
 		CE8CFFC32B40A1700081E64B /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFFC22B40A1700081E64B /* URL+Ext.swift */; };
+		CE8CFFC62B4322610081E64B /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CFFC52B4322610081E64B /* SVGKit */; };
+		CE8CFFC82B4322610081E64B /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CFFC72B4322610081E64B /* SVGKitSwift */; };
 		CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EBC2AF293B100BEB504 /* AppDelegate.swift */; };
 		CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EBE2AF293B100BEB504 /* SceneDelegate.swift */; };
 		CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE907EC02AF293B100BEB504 /* ViewController.swift */; };
@@ -99,6 +101,11 @@
 		CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */; };
 		CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */; };
 		CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */; };
+		CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4690D2B434ED300283B43 /* StringExtension.swift */; };
+		CED469102B4420D500283B43 /* CatProfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4690F2B4420D500283B43 /* CatProfView.swift */; };
+		CED469122B4420E400283B43 /* CatSpecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469112B4420E400283B43 /* CatSpecView.swift */; };
+		CED469142B44246500283B43 /* CatListViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469132B44246500283B43 /* CatListViewBase.swift */; };
+		CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469152B44615E00283B43 /* CatSpecCell.swift */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
 /* End PBXBuildFile section */
@@ -215,6 +222,11 @@
 		CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiItemRLM.swift; sourceTree = "<group>"; };
 		CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnswerRLM.swift; sourceTree = "<group>"; };
 		CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiTagRLM.swift; sourceTree = "<group>"; };
+		CED4690D2B434ED300283B43 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		CED4690F2B4420D500283B43 /* CatProfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfView.swift; sourceTree = "<group>"; };
+		CED469112B4420E400283B43 /* CatSpecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecView.swift; sourceTree = "<group>"; };
+		CED469132B44246500283B43 /* CatListViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewBase.swift; sourceTree = "<group>"; };
+		CED469152B44615E00283B43 /* CatSpecCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecCell.swift; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +238,8 @@
 			files = (
 				CE4E2DAB2AF3E83D00108F53 /* Alamofire in Frameworks */,
 				CE4E2DA82AF3E75C00108F53 /* RealmSwift in Frameworks */,
+				CE8CFFC82B4322610081E64B /* SVGKitSwift in Frameworks */,
+				CE8CFFC62B4322610081E64B /* SVGKit in Frameworks */,
 				CE4E2DA62AF3E75C00108F53 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +387,7 @@
 				CEA1EDF32B04D6B50050CA34 /* UIView+Constraints.swift */,
 				CE8CFFC02B40A1290081E64B /* PrintDebug.swift */,
 				CE8CFFC22B40A1700081E64B /* URL+Ext.swift */,
+				CED4690D2B434ED300283B43 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,11 +400,15 @@
 				CE8CFF7B2B3CCA950081E64B /* CatListInteractor.swift */,
 				CE8CFF7D2B3DCF780081E64B /* CatListRouterImp.swift */,
 				CE8CFF7F2B3DCF900081E64B /* CatListRepoImp.swift */,
+				CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */,
 				CE8CFF812B3DCFA70081E64B /* CatListVC.swift */,
 				CE8CFF852B3ED7AA0081E64B /* CatProfListVC.swift */,
-				CE8CFF9E2B4052310081E64B /* CatProfCell.swift */,
 				CE8CFF872B3ED7DD0081E64B /* CatSpecListVC.swift */,
-				CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */,
+				CED469132B44246500283B43 /* CatListViewBase.swift */,
+				CED4690F2B4420D500283B43 /* CatProfView.swift */,
+				CED469112B4420E400283B43 /* CatSpecView.swift */,
+				CE8CFF9E2B4052310081E64B /* CatProfCell.swift */,
+				CED469152B44615E00283B43 /* CatSpecCell.swift */,
 			);
 			path = CategoriesFlow;
 			sourceTree = "<group>";
@@ -689,6 +708,8 @@
 				CE4E2DA52AF3E75C00108F53 /* Realm */,
 				CE4E2DA72AF3E75C00108F53 /* RealmSwift */,
 				CE4E2DAA2AF3E83D00108F53 /* Alamofire */,
+				CE8CFFC52B4322610081E64B /* SVGKit */,
+				CE8CFFC72B4322610081E64B /* SVGKitSwift */,
 			);
 			productName = Foolstack;
 			productReference = CE907EB92AF293B100BEB504 /* Foolstack.app */;
@@ -765,6 +786,7 @@
 			packageReferences = (
 				CE4E2DA42AF3E75C00108F53 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				CE4E2DA92AF3E83D00108F53 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CE8CFFC42B4322610081E64B /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = CE907EBA2AF293B100BEB504 /* Products */;
 			projectDirPath = "";
@@ -826,6 +848,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED469102B4420D500283B43 /* CatProfView.swift in Sources */,
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
 				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
 				CEA1EDFC2B04E3250050CA34 /* UIButtonCustom.swift in Sources */,
@@ -843,6 +866,7 @@
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
 				CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */,
 				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
+				CED469142B44246500283B43 /* CatListViewBase.swift in Sources */,
 				CEA1EE0A2B0529220050CA34 /* FontExtension.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
@@ -853,15 +877,18 @@
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
 				CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */,
+				CED469122B4420E400283B43 /* CatSpecView.swift in Sources */,
 				CE8CFF7E2B3DCF780081E64B /* CatListRouterImp.swift in Sources */,
 				CE8CFF882B3ED7DD0081E64B /* CatSpecListVC.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CEA1EE082B0527CB0050CA34 /* SimpleTableCell.swift in Sources */,
 				CE8CFF802B3DCF900081E64B /* CatListRepoImp.swift in Sources */,
+				CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */,
 				CE8CFF9F2B4052310081E64B /* CatProfCell.swift in Sources */,
 				CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */,
 				CEC3DDC22B03CE2B005B0A5F /* MockNetworkClient.swift in Sources */,
 				CEA1EE032B051C0C0050CA34 /* ValueConstants.swift in Sources */,
+				CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CE8CFF7C2B3CCA950081E64B /* CatListInteractor.swift in Sources */,
@@ -1266,6 +1293,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		CE8CFFC42B4322610081E64B /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1283,6 +1318,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE4E2DA92AF3E83D00108F53 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CE8CFFC52B4322610081E64B /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8CFFC42B4322610081E64B /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		CE8CFFC72B4322610081E64B /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8CFFC42B4322610081E64B /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

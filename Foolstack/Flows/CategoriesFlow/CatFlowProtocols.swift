@@ -11,12 +11,13 @@ import Foundation
 protocol CatListPresenter: AnyObject {
     func viewDidLoad(view: CatListView)
     
-    func selectEntity(index: Int)
+    func selectEntity(entity: CatEntity) -> Bool
 }
 
 @MainActor
 protocol CatListInteractorInput: AnyObject {
     func fetchEntities(parentId: ServerKey)
+    func selectEntity(entity: CatEntity) -> Bool
 }
 
 @MainActor
@@ -28,7 +29,7 @@ protocol CatListInteractorOutput: AnyObject {
 
 @MainActor
 protocol CatListRouter: AnyObject {
-    func openCatList(tags: [CatEntity])
+    func openCatList(parentId: ServerKey)
 }
 
 protocol CatListRepo: AnyObject {

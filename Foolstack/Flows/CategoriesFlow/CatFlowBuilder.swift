@@ -18,7 +18,7 @@ final class CatFlowBuilder {
         let repo = CatListRepoImp(cacheService: cacheService)
         let interactor = CatListInteractor(repo: repo)
         let presenter = CatListPresenterImp(router: router, interactor: interactor)
-        let view = CatProfListVC()
+        let view = CatListVC()
 //        view.navigationController?.isNavigationBarHidden = true
         
         view.presenter = presenter

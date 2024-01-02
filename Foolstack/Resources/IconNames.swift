@@ -11,7 +11,6 @@ enum IconNames {
   case none
   case close
   case back
-  case help
   case sort
   case plus
   case delete
@@ -29,7 +28,6 @@ enum IconNames {
     case .none:           return ""
     case .close:          return "exit.1"
     case .back:           return "chevron-left"
-    case .help:           return "help.1"
     case .sort:           return "sort.1"
     case .plus:           return "plus.1"
     case .delete:         return "delete.1"
@@ -44,24 +42,22 @@ enum IconNames {
     }
   }
   
-/*  var color: UIColor {
+  var color: UIColor {
     switch self {
-    case .help:
-      return .themeSpecialIcon
     case .checkbox:
-      return .themeDragLine
-    case .checkboxActive, .eyeActive:
-      return .themeSpecialIcon
+      return .themeButtonUnselected
+    case .checkboxActive:
+      return .themeButtonSelected
     case .radiobox:
-      return .themeDragLine
+      return .themeButtonUnselected
     case .radioboxActive:
-      return .themeSpecialIcon
+      return .themeButtonSelected
     default:
       return .themeStandartIcon
     }
   }
   
-  var colorActive: UIColor {
+/*  var colorActive: UIColor {
     switch self {
     case .favorite:
       return .themeFavoriteIcon
@@ -70,7 +66,7 @@ enum IconNames {
     default:
       return color
     }
-  }
+  }*/
   
   static func checkboxIcon(checked: Bool) -> IconNames {
     return checked ? .checkboxActive : .checkbox
@@ -79,5 +75,5 @@ enum IconNames {
   static func radioboxIcon(checked: Bool) -> IconNames {
     return checked ? .radioboxActive : .radiobox
   }
-*/
+
 }

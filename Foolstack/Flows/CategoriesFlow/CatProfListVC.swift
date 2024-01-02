@@ -82,7 +82,6 @@ final class CatProfListVC : UIViewController, CatListView {
         mainImage.translatesAutoresizingMaskIntoConstraints = false
         mainImage.contentMode = .center
         mainImage.image = UIImage(named: "prof_main")
-        mainImage.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
             mainImage.topAnchor.constraint(equalTo: self.headerBar.bottomAnchor, constant: 30),
@@ -177,7 +176,11 @@ extension CatProfListVC: UICollectionViewDataSource {
       
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatProfCell.reuseIdentifier, for: indexPath) as! CatProfCell
       cell.configure(title: item.name, description: "Description kjsdhfk skdjfh ksjdhf hsdkjf hskdfhkshfkjwehf fdjfhks", imagePath: item.image, index: indexPath.row)
-      cell.onAction = { [weak self] index in  }
+      cell.onAction = { [weak self] index in
+          guard let self = self else {return}
+          let selectedItem = items[index]
+          
+      }
       return cell
   }
 }

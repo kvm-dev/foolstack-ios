@@ -15,6 +15,7 @@ class CatProfCell: UICollectionViewCell {
     var descriptionLabel: UILabel!
     var imageView: WebImageView!
     
+    var index = 0
     var onAction: ((Int) -> Void)?
     
     override init(frame: CGRect) {
@@ -67,13 +68,14 @@ class CatProfCell: UICollectionViewCell {
         commonView.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(NSLocalizedString("Choice", comment: ""), for: .normal)
-        
         button.pinEdges(to: commonView, leading: padding, trailing: -padding, bottom: -padding)
         button.pinSize(height: 56)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
         imageView = WebImageView()
         commonView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
             imageView.leftAnchor.constraint(equalTo: commonView.leftAnchor, constant: padding),
             imageView.rightAnchor.constraint(equalTo: commonView.rightAnchor, constant: -padding),
@@ -84,11 +86,16 @@ class CatProfCell: UICollectionViewCell {
     }
     
     func configure(title: String, description: String, imagePath: String?, index: Int) {
+        self.index = index
         titleLabel.text = title
         descriptionLabel.text = description
         
         if let imagePath = imagePath {
-            //imageView.load(urlString: imagePath, folder: "professions")
+            imageView.load(urlString: imagePath, folder: "professions")
         }
+    }
+    
+    @objc func buttonTapped(_ sender: UIButton) {
+        onAction?(index)
     }
 }

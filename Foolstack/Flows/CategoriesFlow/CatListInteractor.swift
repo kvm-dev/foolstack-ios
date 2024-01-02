@@ -12,7 +12,7 @@ final class CatListInteractor : CatListInteractorInput {
     weak var output: CatListInteractorOutput?
     private let repo: CatListRepo
     
-    private var loadedTags: [TagEntity] = []
+    private var selectedEntities = Set<ServerKey>()
     
     init(repo: CatListRepo) {
         self.repo = repo
@@ -27,6 +27,19 @@ final class CatListInteractor : CatListInteractorInput {
             } catch {
                 output?.fetchEntitiesFailure(error: error)
             }
+        }
+    }
+    
+    /// Add or remove entity to selected set
+    /// - Parameter entity:
+    /// - Returns: is entity selected
+    func selectEntity(entity: CatEntity) -> Bool {
+        if let index = selectedEntities.firstIndex(of: entity.serverId) {
+            selectedEntities.remove(at: index)
+            return false
+        } else {
+            selectedEntities.insert(entity.serverId)
+            return true
         }
     }
     

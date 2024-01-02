@@ -25,8 +25,15 @@ final class CatListPresenterImp: CatListPresenter {
         interactor.fetchEntities(parentId: 0)
     }
     
-    func selectEntity(index: Int) {
-        
+    func selectEntity(entity: CatEntity) -> Bool {
+        //router.openCatList(tags: <#T##[CatEntity]#>)
+        switch entity.type {
+        case .profession:
+            interactor.fetchEntities(parentId: entity.serverId)
+            return true
+        case .specialisation:
+            return interactor.selectEntity(entity: entity)
+        }
     }
     
 }
@@ -34,7 +41,11 @@ final class CatListPresenterImp: CatListPresenter {
 
 extension CatListPresenterImp : CatListInteractorOutput {
     func fetchEntitiesSuccess(items: [CatEntity]) {
-        view?.show(items: items)
+        if !items.isEmpty {
+            view?.show(items: items)
+        } else {
+            // fetch tags
+        }
     }
     
     func fetchEntitiesFailure(error: Error) {

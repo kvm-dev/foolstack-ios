@@ -15,6 +15,9 @@ extension DataCacheImp {
         
         copyImageToCache(sourcePath: "cache/images/professions", filename: "prof_1.svg", subfolder: "professions")
         copyImageToCache(sourcePath: "cache/images/professions", filename: "prof_2.svg", subfolder: "professions")
+        copyImageToCache(sourcePath: "cache/images/professions", filename: "spec_droid.svg", subfolder: "professions")
+        copyImageToCache(sourcePath: "cache/images/professions", filename: "spec_apple.svg", subfolder: "professions")
+        copyImageToCache(sourcePath: "cache/images/professions", filename: "spec_cross.svg", subfolder: "professions")
     }
     
     func copyFolderToDocuments(path: String) {
