@@ -9,23 +9,23 @@ import Foundation
 import UIKit
 
 @MainActor
-final class CatListVC : UIViewController, CatListView {
+final class CatListVC : UIViewController {
     
-    var presenter: CatListPresenter!
+    var viewModel: CatChoiceVM!
     
     var headerBar: HeaderBar!
     var profView: CatProfView!
     var specView: CatSpecView!
     
-    //    init(presenter: WikiListPresenter) {
-    //        self.presenter = presenter
-    //
-    //        super.init(nibName: nil, bundle: nil)
-    //    }
-    //
-    //    required init?(coder: NSCoder) {
-    //        fatalError("init(coder:) has not been implemented")
-    //    }
+    init(viewModel: CatChoiceVM) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,14 @@ final class CatListVC : UIViewController, CatListView {
         createHeader()
         createContent()
         
-        profView.onAction = { [weak self] entity in self?.entitySelected(entity) }
-        
-        presenter.viewDidLoad(view: self)
+        viewModel.onShowProfessions = { [unowned self] vm in
+            self.showProfessions(viewModel: vm)
+        }
+        viewModel.onShowSpecializations = { [unowned self] vm in
+            self.showSpecialisations(viewModel: vm)
+        }
+
+        viewModel.getCategories(parentIds: [])
     }
     
     private func createHeader() {
@@ -75,7 +80,7 @@ final class CatListVC : UIViewController, CatListView {
             bgrdView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
 
-        profView = CatProfView(frame: .zero)
+        profView = CatProfView()
         self.view.addSubview(profView)
         profView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -86,7 +91,7 @@ final class CatListVC : UIViewController, CatListView {
             profView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
 
-        specView = CatSpecView(presenter: presenter)
+        specView = CatSpecView()
         self.view.addSubview(specView)
         specView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -112,28 +117,16 @@ final class CatListVC : UIViewController, CatListView {
         
     }
     
-    func show(items: [CatEntity]) {
-        switch items.first!.type {
-        case .profession:
-            showProfessions(items: items)
-        case .specialisation:
-            showSpecialisations(items: items)
-        }
-    }
-    
-    private func showProfessions(items: [CatEntity]) {
+    private func showProfessions(viewModel: CatProfListVM) {
         specView.isHidden = true
         profView.isHidden = false
-        profView.show(items: items)
+        profView.show(viewModel: viewModel)
     }
     
-    private func showSpecialisations(items: [CatEntity]) {
+    private func showSpecialisations(viewModel: CatSpecListVM) {
         profView.isHidden = true
         specView.isHidden = false
-        specView.show(items: items)
+        specView.show(viewModel: viewModel)
     }
     
-    private func entitySelected(_ entity: CatEntity) {
-        presenter.selectEntity(entity: entity)
-    }
 }

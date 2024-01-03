@@ -11,15 +11,12 @@ import UIKit
 @MainActor
 final class CatProfView : UIView {
     
-    var presenter: CatListPresenter!
+    var viewModel: CatProfListVM!
     
     var collectionView: UICollectionView!
     
-    var items: [CatEntity] = []
-    var onAction: ((CatEntity) -> Void)?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: .zero)
         self.initialize()
     }
     
@@ -27,9 +24,9 @@ final class CatProfView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func show(items: [CatEntity]) {
+    func show(viewModel: CatProfListVM) {
         print("Show Prof List")
-        self.items = items
+        self.viewModel = viewModel
         self.collectionView.reloadData()
     }
     
@@ -88,18 +85,20 @@ extension CatProfView: UICollectionViewDelegateFlowLayout {
 
 extension CatProfView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return items.count
+      if let viewModel = self.viewModel {
+          return viewModel.entities.count
+      } else {
+          return 0
+      }
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let item = items[indexPath.row]
+      let item = viewModel.entities[indexPath.row]
       
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatProfCell.reuseIdentifier, for: indexPath) as! CatProfCell
       cell.configure(title: item.name, description: "Description kjsdhfk skdjfh ksjdhf hsdkjf hskdfhkshfkjwehf fdjfhks", imagePath: item.image, index: indexPath.row)
-      cell.onAction = { [weak self] index in
-          guard let self = self else {return}
-          let selectedItem = items[index]
-          self.onAction?(selectedItem)
+      cell.onAction = { [unowned self] index in
+          self.viewModel.confirm(index: index)
       }
       return cell
   }

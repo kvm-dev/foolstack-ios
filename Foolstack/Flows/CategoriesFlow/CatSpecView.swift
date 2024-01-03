@@ -11,15 +11,12 @@ import UIKit
 @MainActor
 final class CatSpecView : UIView {
     
-    var presenter: CatListPresenter!
+    var viewModel: CatSpecListVM!
     
     var collectionView: UICollectionView!
     
-    var items: [CatEntity] = []
-    
-    init(presenter: CatListPresenter) {
+    init() {
         super.init(frame: .zero)
-        self.presenter = presenter
         self.initialize()
     }
     
@@ -27,9 +24,9 @@ final class CatSpecView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func show(items: [CatEntity]) {
+    func show(viewModel: CatSpecListVM) {
         print("Show Spec List")
-        self.items = items
+        self.viewModel = viewModel
         self.collectionView.reloadData()
     }
     
@@ -79,7 +76,7 @@ final class CatSpecView : UIView {
 extension CatSpecView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellPadding: CGFloat = 20 + 52
-        let termData = self.items[indexPath.row]
+        let termData = self.viewModel.entities[indexPath.row]
         let text = termData.name
         //let existInDict = termData.isExistInDictionary
         let textWidth = collectionView.frame.width - cellPadding * 2
@@ -97,11 +94,15 @@ extension CatSpecView: UICollectionViewDelegateFlowLayout {
 
 extension CatSpecView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        if let viewModel = self.viewModel {
+            return viewModel.entities.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = items[indexPath.row]
+        let item = viewModel.entities[indexPath.row]
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatSpecCell.reuseIdentifier, for: indexPath) as! CatSpecCell
         cell.configure(title: item.name, imagePath: item.image, index: indexPath.row)
@@ -113,8 +114,8 @@ extension CatSpecView: UICollectionViewDataSource {
 
 extension CatSpecView: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      let ent = items[indexPath.row]
-      let selected = presenter.selectEntity(entity: ent)
+      let ent = viewModel.entities[indexPath.row]
+      let selected = viewModel.select(entity: ent)
       let cell = collectionView.cellForItem(at: indexPath) as! CatSpecCell
       cell.setToggled(selected)
   }

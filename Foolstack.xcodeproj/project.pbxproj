@@ -30,14 +30,8 @@
 		CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */; };
 		CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF742B3C66650081E64B /* CatEntity.swift */; };
 		CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF762B3C66EF0081E64B /* CatData.swift */; };
-		CE8CFF7A2B3CBF760081E64B /* CatListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF792B3CBF760081E64B /* CatListPresenterImp.swift */; };
-		CE8CFF7C2B3CCA950081E64B /* CatListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF7B2B3CCA950081E64B /* CatListInteractor.swift */; };
-		CE8CFF7E2B3DCF780081E64B /* CatListRouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF7D2B3DCF780081E64B /* CatListRouterImp.swift */; };
-		CE8CFF802B3DCF900081E64B /* CatListRepoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF7F2B3DCF900081E64B /* CatListRepoImp.swift */; };
 		CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF812B3DCFA70081E64B /* CatListVC.swift */; };
 		CE8CFF842B3DD0940081E64B /* CatFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */; };
-		CE8CFF862B3ED7AA0081E64B /* CatProfListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF852B3ED7AA0081E64B /* CatProfListVC.swift */; };
-		CE8CFF882B3ED7DD0081E64B /* CatSpecListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF872B3ED7DD0081E64B /* CatSpecListVC.swift */; };
 		CE8CFF8F2B3EEC250081E64B /* DataCacheTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF8E2B3EEC250081E64B /* DataCacheTemp.swift */; };
 		CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF902B3EECB50081E64B /* Constants.swift */; };
 		CE8CFF982B3F071D0081E64B /* cache in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFF972B3F071C0081E64B /* cache */; };
@@ -106,6 +100,9 @@
 		CED469122B4420E400283B43 /* CatSpecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469112B4420E400283B43 /* CatSpecView.swift */; };
 		CED469142B44246500283B43 /* CatListViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469132B44246500283B43 /* CatListViewBase.swift */; };
 		CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469152B44615E00283B43 /* CatSpecCell.swift */; };
+		CED469182B44A66600283B43 /* CatListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469172B44A66600283B43 /* CatListVM.swift */; };
+		CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469192B44A7A700283B43 /* CatProfListVM.swift */; };
+		CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4691B2B44A8D000283B43 /* CatSpecListVM.swift */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
 /* End PBXBuildFile section */
@@ -149,14 +146,8 @@
 		CE8CFF742B3C66650081E64B /* CatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntity.swift; sourceTree = "<group>"; };
 		CE8CFF762B3C66EF0081E64B /* CatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatData.swift; sourceTree = "<group>"; };
 		CE8CFF782B3C689E0081E64B /* Mock_cats_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_cats_JSON.json; sourceTree = "<group>"; };
-		CE8CFF792B3CBF760081E64B /* CatListPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListPresenterImp.swift; sourceTree = "<group>"; };
-		CE8CFF7B2B3CCA950081E64B /* CatListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListInteractor.swift; sourceTree = "<group>"; };
-		CE8CFF7D2B3DCF780081E64B /* CatListRouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListRouterImp.swift; sourceTree = "<group>"; };
-		CE8CFF7F2B3DCF900081E64B /* CatListRepoImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListRepoImp.swift; sourceTree = "<group>"; };
 		CE8CFF812B3DCFA70081E64B /* CatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListVC.swift; sourceTree = "<group>"; };
 		CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowBuilder.swift; sourceTree = "<group>"; };
-		CE8CFF852B3ED7AA0081E64B /* CatProfListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfListVC.swift; sourceTree = "<group>"; };
-		CE8CFF872B3ED7DD0081E64B /* CatSpecListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecListVC.swift; sourceTree = "<group>"; };
 		CE8CFF8E2B3EEC250081E64B /* DataCacheTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheTemp.swift; sourceTree = "<group>"; };
 		CE8CFF902B3EECB50081E64B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE8CFF972B3F071C0081E64B /* cache */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cache; sourceTree = "<group>"; };
@@ -227,6 +218,9 @@
 		CED469112B4420E400283B43 /* CatSpecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecView.swift; sourceTree = "<group>"; };
 		CED469132B44246500283B43 /* CatListViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewBase.swift; sourceTree = "<group>"; };
 		CED469152B44615E00283B43 /* CatSpecCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecCell.swift; sourceTree = "<group>"; };
+		CED469172B44A66600283B43 /* CatListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListVM.swift; sourceTree = "<group>"; };
+		CED469192B44A7A700283B43 /* CatProfListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfListVM.swift; sourceTree = "<group>"; };
+		CED4691B2B44A8D000283B43 /* CatSpecListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecListVM.swift; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -396,14 +390,11 @@
 			isa = PBXGroup;
 			children = (
 				CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */,
-				CE8CFF792B3CBF760081E64B /* CatListPresenterImp.swift */,
-				CE8CFF7B2B3CCA950081E64B /* CatListInteractor.swift */,
-				CE8CFF7D2B3DCF780081E64B /* CatListRouterImp.swift */,
-				CE8CFF7F2B3DCF900081E64B /* CatListRepoImp.swift */,
 				CE8CFF832B3DD0940081E64B /* CatFlowBuilder.swift */,
+				CED469172B44A66600283B43 /* CatListVM.swift */,
+				CED469192B44A7A700283B43 /* CatProfListVM.swift */,
+				CED4691B2B44A8D000283B43 /* CatSpecListVM.swift */,
 				CE8CFF812B3DCFA70081E64B /* CatListVC.swift */,
-				CE8CFF852B3ED7AA0081E64B /* CatProfListVC.swift */,
-				CE8CFF872B3ED7DD0081E64B /* CatSpecListVC.swift */,
 				CED469132B44246500283B43 /* CatListViewBase.swift */,
 				CED4690F2B4420D500283B43 /* CatProfView.swift */,
 				CED469112B4420E400283B43 /* CatSpecView.swift */,
@@ -868,21 +859,19 @@
 				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
 				CED469142B44246500283B43 /* CatListViewBase.swift in Sources */,
 				CEA1EE0A2B0529220050CA34 /* FontExtension.swift in Sources */,
+				CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
-				CE8CFF862B3ED7AA0081E64B /* CatProfListVC.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
 				CE8CFFBC2B4072010081E64B /* BorderButton.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
 				CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */,
 				CED469122B4420E400283B43 /* CatSpecView.swift in Sources */,
-				CE8CFF7E2B3DCF780081E64B /* CatListRouterImp.swift in Sources */,
-				CE8CFF882B3ED7DD0081E64B /* CatSpecListVC.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CEA1EE082B0527CB0050CA34 /* SimpleTableCell.swift in Sources */,
-				CE8CFF802B3DCF900081E64B /* CatListRepoImp.swift in Sources */,
+				CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */,
 				CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */,
 				CE8CFF9F2B4052310081E64B /* CatProfCell.swift in Sources */,
 				CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */,
@@ -891,7 +880,6 @@
 				CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
-				CE8CFF7C2B3CCA950081E64B /* CatListInteractor.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
 				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
 				CE8CFFBF2B40A0A10081E64B /* WebImageView.swift in Sources */,
@@ -904,7 +892,6 @@
 				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,
 				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
 				CEA1EE052B051C7D0050CA34 /* UIImageExtensions.swift in Sources */,
-				CE8CFF7A2B3CBF760081E64B /* CatListPresenterImp.swift in Sources */,
 				CE8CFFC32B40A1700081E64B /* URL+Ext.swift in Sources */,
 				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
 				CEC3DDC52B04C347005B0A5F /* TagListVC.swift in Sources */,
@@ -912,6 +899,7 @@
 				CE8CFF8F2B3EEC250081E64B /* DataCacheTemp.swift in Sources */,
 				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
 				CE8CFFC12B40A1290081E64B /* PrintDebug.swift in Sources */,
+				CED469182B44A66600283B43 /* CatListVM.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,

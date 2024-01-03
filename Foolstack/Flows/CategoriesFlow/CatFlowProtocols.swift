@@ -47,3 +47,9 @@ protocol SpecListView: AnyObject {
     func show(tags: [TagEntity])
 }
 
+
+
+@MainActor
+protocol CatChoiceVMP: AnyObject {
+    
+}

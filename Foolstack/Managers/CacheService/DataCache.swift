@@ -18,25 +18,24 @@ final class DataCacheImp : DataCacheService {
         DataCacheImp.createMockResources()
     }
     
-    func getCategories(parentId: ServerKey) async throws -> [CatEntity] {
-        
+    func getCategories(parentIds: [ServerKey]) async throws -> [CatEntity] {
+
         let items = [
-            CatData(id: 1, type: 1, name: "Cat 1", image: "prof_1.svg", categories: [
+            CatData(id: 1, type: 1, name: "Cat 1", image: "prof_1.svg", categories: [], tags: []),
+            CatData(id: 2, type: 1, name: "Cat 2", image: "prof_2.svg", categories: [
+                CatData(id: 21, type: 2, name: "SubCat 21", image: nil, categories: [], tags: [
+                    TagData(id: 211, name: "Tag 211")
+                ])], tags: []),
+        ]
+        if !parentIds.isEmpty {
+            return [
                 CatData(id: 11, type: 2, name: "SubCat 11 kjlf sdkfjsdjf eiowjf sdfu8f ewf23 38 wfe09f83209f fe9f80293f 98309", image: "spec_droid.svg", categories: [], tags: [
                     TagData(id: 111, name: "Tag 111")
                 ]),
                 CatData(id: 12, type: 2, name: "SubCat 12", image: "spec_apple.svg", categories: [], tags: [
                     TagData(id: 112, name: "Tag 112")
                 ])
-            ], tags: []),
-            CatData(id: 2, type: 1, name: "Cat 2", image: "prof_2.svg", categories: [
-                CatData(id: 21, type: 2, name: "SubCat 21", image: nil, categories: [], tags: [
-                    TagData(id: 211, name: "Tag 211")
-                ])], tags: []),
-        ]
-        if parentId > 0 {
-            let parentItem = items.first(where: { $0.id == parentId })!
-            return parentItem.categories.map(CatEntity.init)
+            ].map(CatEntity.init)
         }
         return items.map(CatEntity.init)
     }

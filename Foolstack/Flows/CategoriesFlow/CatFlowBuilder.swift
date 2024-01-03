@@ -10,21 +10,31 @@ import UIKit
 
 @MainActor
 final class CatFlowBuilder {
+    //    class func build() -> UIViewController {
+    //        let router = CatListRouterImp()
+    //        let cacheService = DataCacheImp(
+    //            network: MockNetworkClient(),
+    //            storageConfig: LocalStorageConfig())
+    //        let repo = CatListRepoImp(cacheService: cacheService)
+    //        let interactor = CatListInteractor(repo: repo)
+    //        let presenter = CatListPresenterImp(router: router, interactor: interactor)
+    //        let view = CatListVC()
+    ////        view.navigationController?.isNavigationBarHidden = true
+    //
+    //        view.presenter = presenter
+    //        router.viewController = view
+    //        interactor.output = presenter
+    //
+    //        return view
+    //    }
+    
     class func build() -> UIViewController {
-        let router = CatListRouterImp()
         let cacheService = DataCacheImp(
             network: MockNetworkClient(),
             storageConfig: LocalStorageConfig())
-        let repo = CatListRepoImp(cacheService: cacheService)
-        let interactor = CatListInteractor(repo: repo)
-        let presenter = CatListPresenterImp(router: router, interactor: interactor)
-        let view = CatListVC()
-//        view.navigationController?.isNavigationBarHidden = true
+        let vm = CatChoiceVM(cacheService: cacheService)
         
-        view.presenter = presenter
-        router.viewController = view
-        interactor.output = presenter
-        
+        let view = CatListVC(viewModel: vm)
         return view
     }
 }
