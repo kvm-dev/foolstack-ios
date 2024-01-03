@@ -14,6 +14,7 @@ final class CatListVC : UIViewController {
     var viewModel: CatChoiceVM!
     
     var headerBar: HeaderBar!
+    var mainImage: UIImageView!
     var profView: CatProfView!
     var specView: CatSpecView!
     
@@ -102,7 +103,7 @@ final class CatListVC : UIViewController {
             specView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
 
-        let mainImage = UIImageView()
+        mainImage = UIImageView()
         self.view.addSubview(mainImage)
         mainImage.translatesAutoresizingMaskIntoConstraints = false
         mainImage.contentMode = .center
@@ -124,9 +125,44 @@ final class CatListVC : UIViewController {
     }
     
     private func showSpecialisations(viewModel: CatSpecListVM) {
-        profView.isHidden = true
-        specView.isHidden = false
+        if let profImageView = profView.getCurrentCellImage() {
+            let r = self.view.convert(profImageView.frame, from: profImageView.superview!)
+            print("Converted frame \(r)")
+            NSLayoutConstraint.deactivate(profImageView.constraints)
+            profImageView.removeFromSuperview()
+            self.view.addSubview(profImageView)
+            //profImageView.translatesAutoresizingMaskIntoConstraints = true
+            profImageView.frame = r
+            //profImageView.center.y += 100
+            NSLayoutConstraint.activate([
+                profImageView.topAnchor.constraint(equalTo: self.headerBar.bottomAnchor, constant: 30),
+                profImageView.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -30),
+                profImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30),
+                profImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
+            ])
+            UIView.animate(withDuration: 0.5) {
+                profImageView.superview!.layoutIfNeeded()
+            }
+        }
+
+        //UIView.animate(withDuration: 3, delay: 0, options: [.bo], animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+        //UIView.transition(from: profView, to: specView, duration: 3, options: [.showHideTransitionViews, .transitionCurlUp])
+//        profView.isHidden = true
+//        specView.isHidden = false
+        
+        specView.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
+        UIView.animate(withDuration: 0.5) {
+            self.specView.isHidden = false
+            self.profView.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
+            self.specView.transform = CGAffineTransform.identity
+            self.mainImage.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
+        } completion: { fin in
+            self.profView.isHidden = true
+        }
+
+        
         specView.show(viewModel: viewModel)
+        
     }
     
 }

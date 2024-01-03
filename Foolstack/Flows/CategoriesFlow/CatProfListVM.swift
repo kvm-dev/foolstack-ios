@@ -10,7 +10,7 @@ import Foundation
 final class CatProfListVM: CatListVMP {
     let onConfirm: (CatEntity) -> Void
     
-    let entities: [CatEntity]
+    var entities: [CatEntity]
     
     init(entities: [CatEntity], onConfirm: @escaping (CatEntity) -> Void) {
         self.entities = entities
@@ -21,4 +21,7 @@ final class CatProfListVM: CatListVMP {
         onConfirm(entities[index])
     }
     
+    func clear() {
+        entities = []
+    }
 }

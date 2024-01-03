@@ -30,6 +30,10 @@ final class CatProfView : UIView {
         self.collectionView.reloadData()
     }
     
+    func animatedReload() {
+        
+    }
+    
     private func initialize() {
         
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -69,6 +73,11 @@ final class CatProfView : UIView {
         // Register cell classes
         collectionView?.register(CatProfCell.self, forCellWithReuseIdentifier: CatProfCell.reuseIdentifier)
 
+    }
+    
+    func getCurrentCellImage() -> UIImageView? {
+        let cell = collectionView.visibleCells.first as? CatProfCell
+        return cell?.imageView
     }
 }
 
