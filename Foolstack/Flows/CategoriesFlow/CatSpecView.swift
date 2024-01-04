@@ -9,21 +9,27 @@ import Foundation
 import UIKit
 
 @MainActor
-final class CatSpecView : UIView {
+final class CatSpecView : UIViewController {
     
     var viewModel: CatSpecListVM!
     
     var collectionView: UICollectionView!
     
-    init() {
-        super.init(frame: .zero)
-        self.initialize()
+    init(viewModel: CatSpecListVM) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initialize()
+    }
+
     func show(viewModel: CatSpecListVM) {
         print("Show Spec List")
         self.viewModel = viewModel
@@ -53,7 +59,7 @@ final class CatSpecView : UIView {
         collectionView.isScrollEnabled = true
         collectionView.isUserInteractionEnabled = true
         
-        self.addSubview(collectionView)
+        self.view.addSubview(collectionView)
         
         //        if #available(iOS 11.0, *) {
         //          collectionView.contentInsetAdjustmentBehavior = .never
@@ -63,7 +69,7 @@ final class CatSpecView : UIView {
         //          collectionView.isPrefetchingEnabled = true
         //        }
         
-        collectionView.pinEdges(to: self)
+        collectionView.pinEdges(to: self.view)
         
         // Register cell classes
         collectionView?.register(CatSpecCell.self, forCellWithReuseIdentifier: CatSpecCell.reuseIdentifier)

@@ -23,4 +23,5 @@ extension UIColor {
     //MARK: Text
     static let themeTextMain = UIColor(named: "TextColor1")!
     static let themeTextSecondary = UIColor(named: "TextColor2")!
+    static let themeTextViewTitle = UIColor(named: "Color4")!
 }

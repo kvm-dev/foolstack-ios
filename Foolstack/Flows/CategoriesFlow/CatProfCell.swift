@@ -20,7 +20,7 @@ class CatProfCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
       super.init(frame: frame)
-      self.backgroundColor = nil//UIColor.orange
+      self.backgroundColor = nil//UIColor.green
       createContent()
     }
     
@@ -34,6 +34,7 @@ class CatProfCell: UICollectionViewCell {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = CustomFonts.defaultBold(size: .fontMainSize)
         titleLabel.textColor = .themeTextMain
+        titleLabel.numberOfLines = 0
         
         titleLabel.pinEdges(to: contentView, leading: 24, trailing: -24, top: 8)
         
@@ -82,6 +83,7 @@ class CatProfCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 30),
             imageView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -30)
         ])
+        imageView.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
         
     }
     
@@ -93,6 +95,7 @@ class CatProfCell: UICollectionViewCell {
         if let imagePath = imagePath {
             imageView.load(urlString: imagePath, folder: "professions")
         }
+        self.contentView.layoutIfNeeded()
     }
     
     @objc func buttonTapped(_ sender: UIButton) {

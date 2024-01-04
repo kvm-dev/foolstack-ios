@@ -36,7 +36,7 @@ class WebImageView: UIImageView {
             return false
         }
         let filePath = path.appendingPathComponent(fileName)
-        print(filePath.relativePath)
+        //print(filePath.relativePath)
         if filePath.pathExtension.lowercased() == "svg",
            let svgImage = SVGKImage(contentsOf: filePath) {
             let img = svgImage.uiImage

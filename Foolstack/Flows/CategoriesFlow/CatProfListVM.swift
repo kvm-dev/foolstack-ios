@@ -10,9 +10,11 @@ import Foundation
 final class CatProfListVM: CatListVMP {
     let onConfirm: (CatEntity) -> Void
     
-    var entities: [CatEntity]
+    private(set) var parentEntity: CatEntity?
+    private(set) var entities: [CatEntity]
     
-    init(entities: [CatEntity], onConfirm: @escaping (CatEntity) -> Void) {
+    init(/*parentEntity: CatEntity?,*/ entities: [CatEntity], onConfirm: @escaping (CatEntity) -> Void) {
+        //self.parentEntity = parentEntity
         self.entities = entities
         self.onConfirm = onConfirm
     }

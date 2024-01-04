@@ -14,10 +14,12 @@ final class CatListVC : UIViewController {
     var viewModel: CatChoiceVM!
     
     var headerBar: HeaderBar!
+    var backButton: UIButton!
     var mainImage: UIImageView!
-    var profView: CatProfView!
-    var specView: CatSpecView!
-    
+    var bottomNC: UINavigationController!
+    private let transition = CustomNavigationAnimator(operation: .push)
+    private var transitionImages: [UIView] = []
+
     init(viewModel: CatChoiceVM) {
         self.viewModel = viewModel
         
@@ -49,6 +51,8 @@ final class CatListVC : UIViewController {
         headerBar.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(headerBar)
         headerBar.color = .clear
+        headerBar.titleLabel.font = CustomFonts.defaultMedium(size: 22)
+        headerBar.titleLabel.textColor = .themeTextViewTitle
         //headerBar.headerView.backgroundColor = .themeBackgroundMain
         //headerBar.pinEdges(to: view, leading: 8, trailing: -8, top: 0)
         headerBar.titleLabel.text = NSLocalizedString("Choice profession", comment: "")
@@ -59,10 +63,11 @@ final class CatListVC : UIViewController {
             headerBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 37)
         ])
         
-//        let closeButton = UIButton.customBack()
-//        headerBar.addLeftButton(button: closeButton)
-        //closeButton.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
-        
+        backButton = UIButton.customBack()
+        backButton.tintColor = .themeTextViewTitle
+        headerBar.addLeftButton(button: backButton)
+        backButton.addTarget(self, action: #selector(backPressed), for: .touchUpInside)
+        backButton.isHidden = true
     }
 
     private func createContent() {
@@ -81,28 +86,6 @@ final class CatListVC : UIViewController {
             bgrdView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
 
-        profView = CatProfView()
-        self.view.addSubview(profView)
-        profView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            profView.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
-            profView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-            profView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            profView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-        ])
-
-        specView = CatSpecView()
-        self.view.addSubview(specView)
-        specView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            specView.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
-            specView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-            specView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            specView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-        ])
-
         mainImage = UIImageView()
         self.view.addSubview(mainImage)
         mainImage.translatesAutoresizingMaskIntoConstraints = false
@@ -115,24 +98,66 @@ final class CatListVC : UIViewController {
             mainImage.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30),
             mainImage.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
         ])
+        self.transitionImages.append(mainImage)
         
+        createBottomView()
+    }
+    
+    private func createBottomView() {
+        bottomNC = UINavigationController(rootViewController: UIViewController())
+        self.add(bottomNC)
+        self.view.addSubview(bottomNC.view)
+        bottomNC.view.translatesAutoresizingMaskIntoConstraints = false
+        bottomNC.didMove(toParent: self)
+        bottomNC.setNavigationBarHidden(true, animated: false)
+        bottomNC.delegate = self
+
+        NSLayoutConstraint.activate([
+            bottomNC.view.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
+            bottomNC.view.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            bottomNC.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            bottomNC.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+        ])
+    }
+    
+    private func showListView(_ listView: UIViewController) {
+        bottomNC.pushViewController(listView, animated: true)
+        updateNavigationBar()
     }
     
     private func showProfessions(viewModel: CatProfListVM) {
-        specView.isHidden = true
-        profView.isHidden = false
-        profView.show(viewModel: viewModel)
+        animateTransitionImages()
+
+        let vc = CatProfView(viewModel: viewModel)
+        vc.title = NSLocalizedString("Choice profession", comment: "")
+        showListView(vc)
     }
     
     private func showSpecialisations(viewModel: CatSpecListVM) {
-        if let profImageView = profView.getCurrentCellImage() {
-            let r = self.view.convert(profImageView.frame, from: profImageView.superview!)
-            print("Converted frame \(r)")
-            NSLayoutConstraint.deactivate(profImageView.constraints)
-            profImageView.removeFromSuperview()
+        animateTransitionImages()
+
+        let vc = CatSpecView(viewModel: viewModel)
+        vc.title = NSLocalizedString("Choice specialization", comment: "")
+        showListView(vc)
+    }
+    
+    private func animateTransitionImages() {
+        let outImageView = transitionImages.last
+        if let imageGetter = bottomNC.viewControllers.last as? TransitionImageGetter,
+           let img = imageGetter.getNextTransitionImageView() {
+           let profImageView = UIImageView(image: img.image) //} img.snapshotView(afterScreenUpdates: false) {
+            profImageView.contentMode = .scaleAspectFit
+            // img.superview?.addSubview(v)
+            // v.frame = cell.imageView.frame
+
+            let r1 = self.view.convert(img.frame, from: img.superview!)
+            //let r = self.view.convert(profImageView.frame, from: profImageView.superview!)
+            //print("Converted frame \(r)")
+            //NSLayoutConstraint.deactivate(profImageView.constraints)
+            //profImageView.removeFromSuperview()
             self.view.addSubview(profImageView)
-            //profImageView.translatesAutoresizingMaskIntoConstraints = true
-            profImageView.frame = r
+            profImageView.translatesAutoresizingMaskIntoConstraints = false
+            profImageView.frame = r1
             //profImageView.center.y += 100
             NSLayoutConstraint.activate([
                 profImageView.topAnchor.constraint(equalTo: self.headerBar.bottomAnchor, constant: 30),
@@ -143,26 +168,68 @@ final class CatListVC : UIViewController {
             UIView.animate(withDuration: 0.5) {
                 profImageView.superview!.layoutIfNeeded()
             }
+            self.transitionImages.append(profImageView)
         }
 
-        //UIView.animate(withDuration: 3, delay: 0, options: [.bo], animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
-        //UIView.transition(from: profView, to: specView, duration: 3, options: [.showHideTransitionViews, .transitionCurlUp])
-//        profView.isHidden = true
-//        specView.isHidden = false
-        
-        specView.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
+        if transitionImages.count <= 1 {
+            return
+        }
+//        specView.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
         UIView.animate(withDuration: 0.5) {
-            self.specView.isHidden = false
-            self.profView.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
-            self.specView.transform = CGAffineTransform.identity
-            self.mainImage.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
+//            self.specView.isHidden = false
+//            self.profView.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
+//            self.specView.transform = CGAffineTransform.identity
+            outImageView?.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
         } completion: { fin in
-            self.profView.isHidden = true
+//            self.profView.isHidden = true
+            
         }
-
-        
-        specView.show(viewModel: viewModel)
-        
     }
     
+    private func updateNavigationBar() {
+        backButton.isHidden = bottomNC.viewControllers.count <= 2
+        headerBar.titleLabel.text = bottomNC.viewControllers.last?.title
+    }
+    
+    @objc private func backPressed() {
+        bottomNC.popViewController(animated: true)
+        updateNavigationBar()
+
+        let currentImageView = transitionImages.last
+        if currentImageView != nil {
+            transitionImages.removeLast()
+        }
+        let prevImageView = transitionImages.last
+        UIView.animate(withDuration: 0.5) {
+//            self.specView.isHidden = false
+//            self.profView.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
+//            self.specView.transform = CGAffineTransform.identity
+            prevImageView?.transform = CGAffineTransform.identity//(translationX: -self.view.bounds.width, y: 0)
+            currentImageView?.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
+        } completion: { fin in
+//            self.profView.isHidden = true
+            currentImageView?.removeFromSuperview()
+            
+        }
+    }
+}
+
+extension CatListVC: UINavigationControllerDelegate {
+  func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.operation = operation
+    return transition
+  }
+}
+
+
+@MainActor
+protocol TransitionImageGetter {
+    func getNextTransitionImageView() -> UIImageView?
+    func setPreviousImageView(imageView: UIImageView)
+    func getPreviousTransitionImageView() -> UIImageView?
+}
+
+@MainActor
+protocol ViewTitleGetter  {
+    //func get
 }

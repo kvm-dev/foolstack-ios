@@ -103,6 +103,7 @@
 		CED469182B44A66600283B43 /* CatListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469172B44A66600283B43 /* CatListVM.swift */; };
 		CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469192B44A7A700283B43 /* CatProfListVM.swift */; };
 		CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4691B2B44A8D000283B43 /* CatSpecListVM.swift */; };
+		CED469232B45FD4500283B43 /* CustomNavigationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469222B45FD4500283B43 /* CustomNavigationAnimator.swift */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
 /* End PBXBuildFile section */
@@ -221,6 +222,7 @@
 		CED469172B44A66600283B43 /* CatListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListVM.swift; sourceTree = "<group>"; };
 		CED469192B44A7A700283B43 /* CatProfListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfListVM.swift; sourceTree = "<group>"; };
 		CED4691B2B44A8D000283B43 /* CatSpecListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecListVM.swift; sourceTree = "<group>"; };
+		CED469222B45FD4500283B43 /* CustomNavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimator.swift; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -373,6 +375,7 @@
 		CE67BC8E2AF2CAA80096214C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CED469212B45FD0B00283B43 /* Transitions */,
 				CEA1EDF52B04E0EB0050CA34 /* View Extensions */,
 				CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */,
 				CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */,
@@ -659,6 +662,14 @@
 			path = "Realm Model";
 			sourceTree = "<group>";
 		};
+		CED469212B45FD0B00283B43 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				CED469222B45FD4500283B43 /* CustomNavigationAnimator.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		CEE588CA2B02514500A7EEAE /* Server */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,6 +907,7 @@
 				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
 				CEC3DDC52B04C347005B0A5F /* TagListVC.swift in Sources */,
 				CE8CFF842B3DD0940081E64B /* CatFlowBuilder.swift in Sources */,
+				CED469232B45FD4500283B43 /* CustomNavigationAnimator.swift in Sources */,
 				CE8CFF8F2B3EEC250081E64B /* DataCacheTemp.swift in Sources */,
 				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
 				CE8CFFC12B40A1290081E64B /* PrintDebug.swift in Sources */,

@@ -9,31 +9,30 @@ import Foundation
 import UIKit
 
 @MainActor
-final class CatProfView : UIView {
+final class CatProfView : UIViewController {
     
     var viewModel: CatProfListVM!
     
     var collectionView: UICollectionView!
     
-    init() {
-        super.init(frame: .zero)
-        self.initialize()
-    }
+    /// Image from parent ViewController
+    weak var outImageView: UIImageView?
     
+    init(viewModel: CatProfListVM) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func show(viewModel: CatProfListVM) {
-        print("Show Prof List")
-        self.viewModel = viewModel
-        self.collectionView.reloadData()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initialize()
     }
-    
-    func animatedReload() {
-        
-    }
-    
+
     private func initialize() {
         
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -58,7 +57,7 @@ final class CatProfView : UIView {
         collectionView.isUserInteractionEnabled = true
         collectionView.alwaysBounceHorizontal = true
 
-        self.addSubview(collectionView)
+        self.view.addSubview(collectionView)
         
         if #available(iOS 11.0, *) {
           collectionView.contentInsetAdjustmentBehavior = .never
@@ -68,7 +67,7 @@ final class CatProfView : UIView {
           collectionView.isPrefetchingEnabled = true
         }
         
-        collectionView.pinEdges(to: self)
+        collectionView.pinEdges(to: self.view)
         
         // Register cell classes
         collectionView?.register(CatProfCell.self, forCellWithReuseIdentifier: CatProfCell.reuseIdentifier)
@@ -114,3 +113,16 @@ extension CatProfView: UICollectionViewDataSource {
 }
 
 
+extension CatProfView: TransitionImageGetter {
+    func getNextTransitionImageView() -> UIImageView? {
+        return getCurrentCellImage()
+    }
+    
+    func getPreviousTransitionImageView() -> UIImageView? {
+        return outImageView
+    }
+    
+    func setPreviousImageView(imageView: UIImageView) {
+        self.outImageView = imageView
+    }
+}
