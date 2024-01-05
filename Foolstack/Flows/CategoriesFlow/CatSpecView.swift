@@ -69,10 +69,25 @@ final class CatSpecView : UIViewController {
         //          collectionView.isPrefetchingEnabled = true
         //        }
         
-        collectionView.pinEdges(to: self.view)
+        collectionView.pinEdges(to: self.view, leading: 0, trailing: 0, top: 0, bottom: -84)
         
         // Register cell classes
         collectionView?.register(CatSpecCell.self, forCellWithReuseIdentifier: CatSpecCell.reuseIdentifier)
+        
+        let buttonPadding: CGFloat = 40
+
+        let button = BorderButton(backgroundColor: .themeAccent)
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("Choice", comment: ""), for: .normal)
+        button.pinEdges(to: view, leading: buttonPadding, trailing: -buttonPadding, bottom: -buttonPadding)
+        button.pinSize(height: 56)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
+    }
+    
+    @objc func buttonTapped() {
+        viewModel.confirm()
     }
 }
 

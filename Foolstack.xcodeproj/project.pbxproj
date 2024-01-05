@@ -104,6 +104,9 @@
 		CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469192B44A7A700283B43 /* CatProfListVM.swift */; };
 		CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4691B2B44A8D000283B43 /* CatSpecListVM.swift */; };
 		CED469232B45FD4500283B43 /* CustomNavigationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469222B45FD4500283B43 /* CustomNavigationAnimator.swift */; };
+		CED469252B46E83100283B43 /* TagListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469242B46E83100283B43 /* TagListVM.swift */; };
+		CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469262B47008200283B43 /* TagsCollectionLayout.swift */; };
+		CED469292B48960C00283B43 /* TagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469282B48960C00283B43 /* TagListCell.swift */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
 /* End PBXBuildFile section */
@@ -223,6 +226,9 @@
 		CED469192B44A7A700283B43 /* CatProfListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfListVM.swift; sourceTree = "<group>"; };
 		CED4691B2B44A8D000283B43 /* CatSpecListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecListVM.swift; sourceTree = "<group>"; };
 		CED469222B45FD4500283B43 /* CustomNavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimator.swift; sourceTree = "<group>"; };
+		CED469242B46E83100283B43 /* TagListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListVM.swift; sourceTree = "<group>"; };
+		CED469262B47008200283B43 /* TagsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionLayout.swift; sourceTree = "<group>"; };
+		CED469282B48960C00283B43 /* TagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListCell.swift; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -593,6 +599,9 @@
 			isa = PBXGroup;
 			children = (
 				CEC3DDC42B04C347005B0A5F /* TagListVC.swift */,
+				CED469282B48960C00283B43 /* TagListCell.swift */,
+				CED469262B47008200283B43 /* TagsCollectionLayout.swift */,
+				CED469242B46E83100283B43 /* TagListVM.swift */,
 			);
 			path = TagsFlow;
 			sourceTree = "<group>";
@@ -873,6 +882,7 @@
 				CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
+				CED469292B48960C00283B43 /* TagListCell.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
 				CE8CFFBC2B4072010081E64B /* BorderButton.swift in Sources */,
@@ -912,10 +922,12 @@
 				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
 				CE8CFFC12B40A1290081E64B /* PrintDebug.swift in Sources */,
 				CED469182B44A66600283B43 /* CatListVM.swift in Sources */,
+				CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
 				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
+				CED469252B46E83100283B43 /* TagListVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

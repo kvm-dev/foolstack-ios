@@ -42,6 +42,9 @@ final class CatListVC : UIViewController {
         viewModel.onShowSpecializations = { [unowned self] vm in
             self.showSpecialisations(viewModel: vm)
         }
+        viewModel.onShowTags = { [unowned self] vm in
+            self.showTags(viewModel: vm)
+        }
 
         viewModel.getCategories(parentIds: [])
     }
@@ -139,6 +142,11 @@ final class CatListVC : UIViewController {
         let vc = CatSpecView(viewModel: viewModel)
         vc.title = NSLocalizedString("Choice specialization", comment: "")
         showListView(vc)
+    }
+    
+    private func showTags(viewModel: TagListVM) {
+        let vc = TagListVC(viewModel: viewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func animateTransitionImages() {

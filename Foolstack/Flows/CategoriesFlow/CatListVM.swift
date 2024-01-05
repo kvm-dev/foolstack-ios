@@ -11,6 +11,7 @@ import Foundation
 final class CatChoiceVM: CatChoiceVMP {
     var onShowProfessions: ((CatProfListVM) -> Void)?
     var onShowSpecializations: ((CatSpecListVM) -> Void)?
+    var onShowTags: ((TagListVM) -> Void)?
 
     private let cacheService: DataCacheService
     private var collectionStack: [CatListVMP] = []
@@ -46,6 +47,22 @@ final class CatChoiceVM: CatChoiceVMP {
     }
     
     func getTags(parentIds: [ServerKey]) {
+        Task { [weak self] in
+            guard let self = self else {return}
+            do {
+                let items = try await self.cacheService.getTags(for: parentIds)
+                self.fetchTagsSuccess(items: items, parentIds: parentIds)
+            } catch {
+                self.fetchTagsFailure(error: error)
+            }
+        }
+    }
+    
+    func fetchTagsSuccess(items: [TagEntity], parentIds: [ServerKey]) {
+        showTags(items: items)
+    }
+    
+    func fetchTagsFailure(error: Error) {
         
     }
     
@@ -76,6 +93,10 @@ final class CatChoiceVM: CatChoiceVMP {
         onShowSpecializations?(vm)
     }
     
+    func showTags(items: [TagEntity]) {
+        let vm = TagListVM(items: items, cacheService: cacheService)
+        onShowTags?(vm)
+    }
 }
 
 

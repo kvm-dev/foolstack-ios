@@ -18,10 +18,12 @@ class ViewController: UIViewController {
         print(dir)
 
         let vc = CatFlowBuilder.build()
-        self.add(vc)
-        self.view.addSubview(vc.view)
-        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        vc.didMove(toParent: self)
+        let nc = UINavigationController(rootViewController: vc)
+        nc.isNavigationBarHidden = true
+        self.add(nc)
+        self.view.addSubview(nc.view)
+        nc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        nc.didMove(toParent: self)
     }
 
     
