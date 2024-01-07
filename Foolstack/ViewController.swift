@@ -17,7 +17,8 @@ class ViewController: UIViewController {
         let dir = urls[0]
         print(dir)
 
-        let vc = CatFlowBuilder.build()
+        //let vc = CatFlowBuilder.build()
+        let vc = WikiFlowBuilder.build()
         let nc = UINavigationController(rootViewController: vc)
         nc.isNavigationBarHidden = true
         self.add(nc)

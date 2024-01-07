@@ -13,9 +13,6 @@
 		CE4E2DA62AF3E75C00108F53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA52AF3E75C00108F53 /* Realm */; };
 		CE4E2DA82AF3E75C00108F53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA72AF3E75C00108F53 /* RealmSwift */; };
 		CE4E2DAB2AF3E83D00108F53 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DAA2AF3E83D00108F53 /* Alamofire */; };
-		CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */; };
-		CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */; };
-		CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */; };
 		CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB52AF5039500108F53 /* WikiListVC.swift */; };
 		CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */; };
 		CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */; };
@@ -23,9 +20,7 @@
 		CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4E2DBE2AF50B6800108F53 /* Wiki.storyboard */; };
 		CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC12AF52F6600108F53 /* MainVC.swift */; };
 		CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */; };
-		CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */; };
 		CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */; };
-		CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */; };
 		CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */; };
 		CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */; };
 		CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF742B3C66650081E64B /* CatEntity.swift */; };
@@ -109,6 +104,13 @@
 		CED469292B48960C00283B43 /* TagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469282B48960C00283B43 /* TagListCell.swift */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
+		CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */; };
+		CEF0AC912B49747F0000B241 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC902B49747F0000B241 /* UserStorage.swift */; };
+		CEF0AC932B4974D80000B241 /* UserStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */; };
+		CEF0AC962B49F1E20000B241 /* WikiListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC952B49F1E20000B241 /* WikiListCell.swift */; };
+		CEF0AC992B4A0DED0000B241 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */; };
+		CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */; };
+		CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,9 +134,6 @@
 		CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		CE17C7812AFE882700E53297 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
-		CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFlowProtocols.swift; sourceTree = "<group>"; };
-		CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListPresenterImp.swift; sourceTree = "<group>"; };
-		CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListInteractor.swift; sourceTree = "<group>"; };
 		CE4E2DB52AF5039500108F53 /* WikiListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVC.swift; sourceTree = "<group>"; };
 		CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtenstions.swift; sourceTree = "<group>"; };
@@ -142,9 +141,7 @@
 		CE4E2DBE2AF50B6800108F53 /* Wiki.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wiki.storyboard; sourceTree = "<group>"; };
 		CE4E2DC12AF52F6600108F53 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFlowBuilder.swift; sourceTree = "<group>"; };
-		CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListRouterImp.swift; sourceTree = "<group>"; };
 		CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntity.swift; sourceTree = "<group>"; };
-		CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListRepoImp.swift; sourceTree = "<group>"; };
 		CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncExtentions.swift; sourceTree = "<group>"; };
 		CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowProtocols.swift; sourceTree = "<group>"; };
 		CE8CFF742B3C66650081E64B /* CatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntity.swift; sourceTree = "<group>"; };
@@ -231,6 +228,13 @@
 		CED469282B48960C00283B43 /* TagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListCell.swift; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
+		CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVM.swift; sourceTree = "<group>"; };
+		CEF0AC902B49747F0000B241 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageConfig.swift; sourceTree = "<group>"; };
+		CEF0AC952B49F1E20000B241 /* WikiListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListCell.swift; sourceTree = "<group>"; };
+		CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,7 @@
 		CE17C77B2AFE877900E53297 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0AC8F2B49742F0000B241 /* UserStorage */,
 				CEC4EF972B00B8B200A64604 /* DataStorage */,
 				CEC4EF922AFFEFFB00A64604 /* CacheService */,
 				CE17C77C2AFE878900E53297 /* Networking */,
@@ -350,13 +355,10 @@
 		CE4E2DAE2AF5005800108F53 /* WikiFlow */ = {
 			isa = PBXGroup;
 			children = (
-				CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */,
-				CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */,
-				CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */,
-				CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */,
-				CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */,
-				CE4E2DB52AF5039500108F53 /* WikiListVC.swift */,
 				CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */,
+				CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */,
+				CE4E2DB52AF5039500108F53 /* WikiListVC.swift */,
+				CEF0AC942B49F12B0000B241 /* WikiListCell */,
 			);
 			path = WikiFlow;
 			sourceTree = "<group>";
@@ -391,6 +393,7 @@
 				CE8CFFC02B40A1290081E64B /* PrintDebug.swift */,
 				CE8CFFC22B40A1700081E64B /* URL+Ext.swift */,
 				CED4690D2B434ED300283B43 /* StringExtension.swift */,
+				CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +552,8 @@
 		CEA1EDF82B04E1310050CA34 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0AC9A2B4AD2C40000B241 /* TextViews */,
+				CEF0AC972B4A0DDA0000B241 /* SearchBar */,
 				CE8CFFBD2B40A0830081E64B /* WebImage */,
 				CE8CFFBA2B4071320081E64B /* Buttons */,
 				CE8CFF992B3F4BB50081E64B /* HeaderView */,
@@ -697,6 +702,39 @@
 				CE8CFF742B3C66650081E64B /* CatEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		CEF0AC8F2B49742F0000B241 /* UserStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC902B49747F0000B241 /* UserStorage.swift */,
+				CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */,
+			);
+			path = UserStorage;
+			sourceTree = "<group>";
+		};
+		CEF0AC942B49F12B0000B241 /* WikiListCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC952B49F1E20000B241 /* WikiListCell.swift */,
+			);
+			path = WikiListCell;
+			sourceTree = "<group>";
+		};
+		CEF0AC972B4A0DDA0000B241 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		CEF0AC9A2B4AD2C40000B241 /* TextViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */,
+			);
+			path = TextViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -861,8 +899,8 @@
 			files = (
 				CED469102B4420D500283B43 /* CatProfView.swift in Sources */,
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
-				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
 				CEA1EDFC2B04E3250050CA34 /* UIButtonCustom.swift in Sources */,
+				CEF0AC932B4974D80000B241 /* UserStorageConfig.swift in Sources */,
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
 				CEA1EDF42B04D6B50050CA34 /* UIView+Constraints.swift in Sources */,
 				CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */,
@@ -873,9 +911,9 @@
 				CEA1EDF72B04E10E0050CA34 /* NibView.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
+				CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */,
 				CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */,
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
-				CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */,
 				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
 				CED469142B44246500283B43 /* CatListViewBase.swift in Sources */,
 				CEA1EE0A2B0529220050CA34 /* FontExtension.swift in Sources */,
@@ -885,6 +923,7 @@
 				CED469292B48960C00283B43 /* TagListCell.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
+				CEF0AC912B49747F0000B241 /* UserStorage.swift in Sources */,
 				CE8CFFBC2B4072010081E64B /* BorderButton.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
@@ -892,6 +931,7 @@
 				CED469122B4420E400283B43 /* CatSpecView.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CEA1EE082B0527CB0050CA34 /* SimpleTableCell.swift in Sources */,
+				CEF0AC962B49F1E20000B241 /* WikiListCell.swift in Sources */,
 				CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */,
 				CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */,
 				CE8CFF9F2B4052310081E64B /* CatProfCell.swift in Sources */,
@@ -902,19 +942,18 @@
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
-				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
+				CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */,
 				CE8CFFBF2B40A0A10081E64B /* WebImageView.swift in Sources */,
 				CEA1EDFA2B04E14F0050CA34 /* HeaderBar.swift in Sources */,
 				CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */,
 				CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
 				CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */,
-				CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */,
 				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,
 				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
+				CEF0AC992B4A0DED0000B241 /* SearchBarView.swift in Sources */,
 				CEA1EE052B051C7D0050CA34 /* UIImageExtensions.swift in Sources */,
 				CE8CFFC32B40A1700081E64B /* URL+Ext.swift in Sources */,
-				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
 				CEC3DDC52B04C347005B0A5F /* TagListVC.swift in Sources */,
 				CE8CFF842B3DD0940081E64B /* CatFlowBuilder.swift in Sources */,
 				CED469232B45FD4500283B43 /* CustomNavigationAnimator.swift in Sources */,
@@ -925,6 +964,7 @@
 				CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
+				CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
 				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
 				CED469252B46E83100283B43 /* TagListVM.swift in Sources */,
