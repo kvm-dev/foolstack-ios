@@ -111,6 +111,7 @@
 		CEF0AC992B4A0DED0000B241 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */; };
 		CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */; };
 		CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */; };
+		CEF0ACA12B4C078C0000B241 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +236,7 @@
 		CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicExtensions.swift; sourceTree = "<group>"; };
+		CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +346,7 @@
 		CE4E2DAD2AF5004B00108F53 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0AC9F2B4C075D0000B241 /* MainTabController */,
 				CE8CFF712B3C64080081E64B /* CategoriesFlow */,
 				CE4E2DC02AF52F4200108F53 /* MainFlow */,
 				CE4E2DAE2AF5005800108F53 /* WikiFlow */,
@@ -737,6 +740,14 @@
 			path = TextViews;
 			sourceTree = "<group>";
 		};
+		CEF0AC9F2B4C075D0000B241 /* MainTabController */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */,
+			);
+			path = MainTabController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -904,6 +915,7 @@
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
 				CEA1EDF42B04D6B50050CA34 /* UIView+Constraints.swift in Sources */,
 				CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */,
+				CEF0ACA12B4C078C0000B241 /* MainTabVC.swift in Sources */,
 				CEC3DDB62B02B15F005B0A5F /* MockURLSession.swift in Sources */,
 				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,

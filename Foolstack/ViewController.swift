@@ -17,16 +17,12 @@ class ViewController: UIViewController {
         let dir = urls[0]
         print(dir)
 
-        //let vc = CatFlowBuilder.build()
-        let vc = WikiFlowBuilder.build()
-        let nc = UINavigationController(rootViewController: vc)
-        nc.isNavigationBarHidden = true
-        self.add(nc)
-        self.view.addSubview(nc.view)
-        nc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        nc.didMove(toParent: self)
-    }
-
-    
+        //let vc = WikiFlowBuilder.build()
+        let vc = MainTabVC()
+        self.add(vc)
+        self.view.addSubview(vc.view)
+        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        vc.didMove(toParent: self)
+    }    
 }
 

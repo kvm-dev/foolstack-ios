@@ -34,8 +34,10 @@ final class WikiFlowBuilder {
         let userStorage = UserStorage(config: LocalUserStarageConfig())
         let vm = WikiListVM(cacheService: cacheService, userStorage: userStorage)
         
-        let view = WikiListVC(viewModel: vm)
-        return view
+        let vc = WikiListVC(viewModel: vm)
+        let nc = UINavigationController(rootViewController: vc)
+        nc.isNavigationBarHidden = true
+        return nc
     }
 
 }
