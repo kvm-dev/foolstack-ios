@@ -10,6 +10,9 @@
 		CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */; };
 		CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C7812AFE882700E53297 /* NetworkClient.swift */; };
 		CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */; };
+		CE40FED02B4D919500BC5F02 /* TestingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */; };
+		CE40FED22B4DA89E00BC5F02 /* Mock_tickets_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */; };
+		CE40FED42B4DAD6A00BC5F02 /* TestingFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */; };
 		CE4E2DA62AF3E75C00108F53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA52AF3E75C00108F53 /* Realm */; };
 		CE4E2DA82AF3E75C00108F53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA72AF3E75C00108F53 /* RealmSwift */; };
 		CE4E2DAB2AF3E83D00108F53 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DAA2AF3E83D00108F53 /* Alamofire */; };
@@ -112,6 +115,15 @@
 		CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */; };
 		CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */; };
 		CEF0ACA12B4C078C0000B241 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */; };
+		CEF0ACA42B4C40C30000B241 /* TestingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA32B4C40C30000B241 /* TestingVC.swift */; };
+		CEF0ACA62B4C40CD0000B241 /* TestingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA52B4C40CD0000B241 /* TestingVM.swift */; };
+		CEF0ACA82B4C5EA30000B241 /* TicketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA72B4C5EA30000B241 /* TicketEntity.swift */; };
+		CEF0ACAA2B4C5EE30000B241 /* TicketRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA92B4C5EE30000B241 /* TicketRLM.swift */; };
+		CEF0ACAC2B4C5F330000B241 /* TicketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACAB2B4C5F330000B241 /* TicketData.swift */; };
+		CEF0ACAE2B4C60AB0000B241 /* TicketQuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACAD2B4C60AB0000B241 /* TicketQuestionData.swift */; };
+		CEF0ACB02B4C92E20000B241 /* TicketQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACAF2B4C92E20000B241 /* TicketQuestionEntity.swift */; };
+		CEF0ACB22B4C94720000B241 /* TicketQuestionRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACB12B4C94720000B241 /* TicketQuestionRLM.swift */; };
+		CEF0ACB42B4C9D110000B241 /* Ticket+RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACB32B4C9D110000B241 /* Ticket+RLM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +147,9 @@
 		CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		CE17C7812AFE882700E53297 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
+		CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableCell.swift; sourceTree = "<group>"; };
+		CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_tickets_JSON.json; sourceTree = "<group>"; };
+		CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlowBuilder.swift; sourceTree = "<group>"; };
 		CE4E2DB52AF5039500108F53 /* WikiListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVC.swift; sourceTree = "<group>"; };
 		CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtenstions.swift; sourceTree = "<group>"; };
@@ -237,6 +252,15 @@
 		CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicExtensions.swift; sourceTree = "<group>"; };
 		CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		CEF0ACA32B4C40C30000B241 /* TestingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingVC.swift; sourceTree = "<group>"; };
+		CEF0ACA52B4C40CD0000B241 /* TestingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingVM.swift; sourceTree = "<group>"; };
+		CEF0ACA72B4C5EA30000B241 /* TicketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEntity.swift; sourceTree = "<group>"; };
+		CEF0ACA92B4C5EE30000B241 /* TicketRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRLM.swift; sourceTree = "<group>"; };
+		CEF0ACAB2B4C5F330000B241 /* TicketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketData.swift; sourceTree = "<group>"; };
+		CEF0ACAD2B4C60AB0000B241 /* TicketQuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuestionData.swift; sourceTree = "<group>"; };
+		CEF0ACAF2B4C92E20000B241 /* TicketQuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuestionEntity.swift; sourceTree = "<group>"; };
+		CEF0ACB12B4C94720000B241 /* TicketQuestionRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuestionRLM.swift; sourceTree = "<group>"; };
+		CEF0ACB32B4C9D110000B241 /* Ticket+RLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+RLM.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +375,7 @@
 				CE4E2DC02AF52F4200108F53 /* MainFlow */,
 				CE4E2DAE2AF5005800108F53 /* WikiFlow */,
 				CEC3DDC32B04C2CF005B0A5F /* TagsFlow */,
+				CEF0ACA22B4C403D0000B241 /* TestingFlow */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -644,6 +669,7 @@
 				CE8CFF782B3C689E0081E64B /* Mock_cats_JSON.json */,
 				CEC3DDB72B02B68B005B0A5F /* Mock_tags_JSON.json */,
 				CEC4EF8E2AFFCCF900A64604 /* Mock_wikis_JSON.json */,
+				CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -664,6 +690,7 @@
 				CEC4EF982B00B8D900A64604 /* DataStorage.swift */,
 				CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */,
 				CEC4EF9E2B00D01700A64604 /* RealmActor.swift */,
+				CEF0ACB32B4C9D110000B241 /* Ticket+RLM.swift */,
 				CEC4EFA02B00D8B300A64604 /* Realm Model */,
 			);
 			path = DataStorage;
@@ -675,6 +702,8 @@
 				CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */,
 				CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */,
 				CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */,
+				CEF0ACA92B4C5EE30000B241 /* TicketRLM.swift */,
+				CEF0ACB12B4C94720000B241 /* TicketQuestionRLM.swift */,
 			);
 			path = "Realm Model";
 			sourceTree = "<group>";
@@ -693,6 +722,8 @@
 				CEC4EF882AFED20B00A64604 /* WikiData.swift */,
 				CEE588C82B024F0900A7EEAE /* TagData.swift */,
 				CE8CFF762B3C66EF0081E64B /* CatData.swift */,
+				CEF0ACAB2B4C5F330000B241 /* TicketData.swift */,
+				CEF0ACAD2B4C60AB0000B241 /* TicketQuestionData.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -703,6 +734,8 @@
 				CEE588CB2B02516200A7EEAE /* TagEntity.swift */,
 				CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */,
 				CE8CFF742B3C66650081E64B /* CatEntity.swift */,
+				CEF0ACA72B4C5EA30000B241 /* TicketEntity.swift */,
+				CEF0ACAF2B4C92E20000B241 /* TicketQuestionEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -746,6 +779,17 @@
 				CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */,
 			);
 			path = MainTabController;
+			sourceTree = "<group>";
+		};
+		CEF0ACA22B4C403D0000B241 /* TestingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0ACA52B4C40CD0000B241 /* TestingVM.swift */,
+				CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */,
+				CEF0ACA32B4C40C30000B241 /* TestingVC.swift */,
+				CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */,
+			);
+			path = TestingFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -872,6 +916,7 @@
 				CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */,
 				CE8CFFB42B4054F00081E64B /* sf-ui-text-bold-italic.ttf in Resources */,
 				CE8CFFB82B4054F00081E64B /* sf-ui-text-semibold-italic.ttf in Resources */,
+				CE40FED22B4DA89E00BC5F02 /* Mock_tickets_JSON.json in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
 				CE8CFFB12B4054F00081E64B /* sf-ui-text-italic.ttf in Resources */,
 				CE8CFFB72B4054F00081E64B /* sf-ui-text-semibold.ttf in Resources */,
@@ -921,6 +966,7 @@
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
 				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
 				CEA1EDF72B04E10E0050CA34 /* NibView.swift in Sources */,
+				CE40FED02B4D919500BC5F02 /* TestingTableCell.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
 				CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */,
@@ -932,6 +978,8 @@
 				CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
+				CEF0ACA82B4C5EA30000B241 /* TicketEntity.swift in Sources */,
+				CEF0ACB22B4C94720000B241 /* TicketQuestionRLM.swift in Sources */,
 				CED469292B48960C00283B43 /* TagListCell.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
@@ -944,17 +992,20 @@
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CEA1EE082B0527CB0050CA34 /* SimpleTableCell.swift in Sources */,
 				CEF0AC962B49F1E20000B241 /* WikiListCell.swift in Sources */,
+				CEF0ACAC2B4C5F330000B241 /* TicketData.swift in Sources */,
 				CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */,
 				CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */,
 				CE8CFF9F2B4052310081E64B /* CatProfCell.swift in Sources */,
 				CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */,
 				CEC3DDC22B03CE2B005B0A5F /* MockNetworkClient.swift in Sources */,
+				CEF0ACAE2B4C60AB0000B241 /* TicketQuestionData.swift in Sources */,
 				CEA1EE032B051C0C0050CA34 /* ValueConstants.swift in Sources */,
 				CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
 				CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */,
+				CEF0ACB02B4C92E20000B241 /* TicketQuestionEntity.swift in Sources */,
 				CE8CFFBF2B40A0A10081E64B /* WebImageView.swift in Sources */,
 				CEA1EDFA2B04E14F0050CA34 /* HeaderBar.swift in Sources */,
 				CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */,
@@ -962,6 +1013,7 @@
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
 				CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */,
 				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,
+				CE40FED42B4DAD6A00BC5F02 /* TestingFlowBuilder.swift in Sources */,
 				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
 				CEF0AC992B4A0DED0000B241 /* SearchBarView.swift in Sources */,
 				CEA1EE052B051C7D0050CA34 /* UIImageExtensions.swift in Sources */,
@@ -975,11 +1027,15 @@
 				CED469182B44A66600283B43 /* CatListVM.swift in Sources */,
 				CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
+				CEF0ACB42B4C9D110000B241 /* Ticket+RLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 				CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
+				CEF0ACAA2B4C5EE30000B241 /* TicketRLM.swift in Sources */,
 				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
 				CED469252B46E83100283B43 /* TagListVM.swift in Sources */,
+				CEF0ACA42B4C40C30000B241 /* TestingVC.swift in Sources */,
+				CEF0ACA62B4C40CD0000B241 /* TestingVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

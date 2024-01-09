@@ -54,4 +54,23 @@ class MockNetworkClient: NetworkService {
             throw error
         }
     }
+    
+    func getTickets() async throws -> [TicketData]? {
+        let url = URL(string: "tickets", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        switch apiData {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            do {
+                return try decoder.decode([TicketData].self, from: data)
+            } catch {
+                printToConsole("JSON parsing error: \(error.localizedDescription)")
+                throw NetworkAPIError.invalidResponseFormat
+            }
+            
+        case .failure(let error):
+            throw error
+        }
+    }
 }

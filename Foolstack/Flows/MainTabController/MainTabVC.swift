@@ -44,7 +44,7 @@ class MainTabVC: UITabBarController {
         vc2.view.addSubview(v)
         v.pinEdges(to: vc2.view.safeAreaLayoutGuide, padding: 0)
 
-        let vc3 = UIViewController()
+        let vc3 = TestingFlowBuilder.build()
         vc3.view.backgroundColor = .blue
         vc3.tabBarItem = UITabBarItem(title: nil, image: .symbolImage(.tests, pointSize: 18), selectedImage: .symbolImage(.tests, pointSize: 18))
         vc3.tabBarItem.imageInsets = imageInsets

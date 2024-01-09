@@ -19,9 +19,11 @@ extension UIColor {
     static let themeAccent = UIColor(named: "Color5")!
     static let themeButtonUnselected = UIColor(named: "Color6")!
     static let themeButtonSelected = UIColor(named: "Color7")!
+    static let themeTestingCell1 = UIColor(named: "Color8")!
 
     //MARK: Text
     static let themeTextMain = UIColor(named: "TextColor1")!
+    static let themeTextMainAlpha50 = UIColor(named: "TextColor1")!.withAlphaComponent(0.5)
     static let themeTextSecondary = UIColor(named: "TextColor2")!
     static let themeTextViewTitle = UIColor(named: "Color4")!
 }

@@ -59,4 +59,26 @@ final class DataStorage: @unchecked Sendable {
         return []
     }
 
+    //MARK: TICKETS
+    
+    func addTickets(_ data: [TicketData]) async -> [TicketEntity] {
+        do {
+            let items = try await database.addTickets(data)
+            return items
+        } catch {
+            print("Create tickets failed:", error)
+        }
+        return []
+    }
+    
+    func getTicketEntities(for ids: [ServerKey]) async -> [TicketEntity] {
+        do {
+            let items = try await database.getTicketEntities(for: ids)
+            return items
+        } catch {
+            print("Get tickets failed:", error)
+        }
+        return []
+    }
+
 }
