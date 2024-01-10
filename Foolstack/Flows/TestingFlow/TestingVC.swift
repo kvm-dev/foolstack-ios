@@ -80,7 +80,7 @@ extension TestingVC: UITableViewDataSource {
         //print("cell for row at: section \(indexPath.section), row \(indexPath.row)")
         let cellInfo = viewModel.items[indexPath.row]
         let percents = "56%"
-        let subtitle = "\(cellInfo.questions.count) вопросов"
+        let subtitle = String(localized: "\(cellInfo.questions.count) bobs")
         let subtitle2 = "30 сек на ответ"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TestingTableCell.CellID, for: indexPath) as! TestingTableCell

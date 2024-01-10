@@ -105,6 +105,7 @@
 		CED469252B46E83100283B43 /* TagListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469242B46E83100283B43 /* TagListVM.swift */; };
 		CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469262B47008200283B43 /* TagsCollectionLayout.swift */; };
 		CED469292B48960C00283B43 /* TagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469282B48960C00283B43 /* TagListCell.swift */; };
+		CEE1DAD22B4DF65E00E70B70 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEE1DAD12B4DF65E00E70B70 /* Localizable.xcstrings */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
 		CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */; };
@@ -242,6 +243,9 @@
 		CED469242B46E83100283B43 /* TagListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListVM.swift; sourceTree = "<group>"; };
 		CED469262B47008200283B43 /* TagsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionLayout.swift; sourceTree = "<group>"; };
 		CED469282B48960C00283B43 /* TagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListCell.swift; sourceTree = "<group>"; };
+		CEE1DACF2B4DF03200E70B70 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		CEE1DAD02B4DF03200E70B70 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CEE1DAD12B4DF65E00E70B70 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 		CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVM.swift; sourceTree = "<group>"; };
@@ -528,6 +532,7 @@
 		CE907EBB2AF293B100BEB504 /* Foolstack */ = {
 			isa = PBXGroup;
 			children = (
+				CEE1DAD12B4DF65E00E70B70 /* Localizable.xcstrings */,
 				CEC4EF872AFED1EB00A64604 /* Model */,
 				CE17C77B2AFE877900E53297 /* Managers */,
 				CE4E2DAD2AF5004B00108F53 /* Flows */,
@@ -885,6 +890,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE907EB02AF293B100BEB504;
 			packageReferences = (
@@ -924,6 +930,7 @@
 				CE8CFFB02B4054F00081E64B /* sf-ui-text-bold.ttf in Resources */,
 				CE8CFF9B2B3F4BED0081E64B /* HeaderBar.xib in Resources */,
 				CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */,
+				CEE1DAD22B4DF65E00E70B70 /* Localizable.xcstrings in Resources */,
 				CE907EC42AF293B100BEB504 /* Main.storyboard in Resources */,
 				CE8CFF982B3F071D0081E64B /* cache in Resources */,
 				CE8CFFB62B4054F00081E64B /* sf-ui-text-medium.ttf in Resources */,
@@ -1081,6 +1088,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE907EC32AF293B100BEB504 /* Base */,
+				CEE1DACF2B4DF03200E70B70 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1089,6 +1097,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE907EC82AF293B300BEB504 /* Base */,
+				CEE1DAD02B4DF03200E70B70 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1101,6 +1110,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1164,6 +1174,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

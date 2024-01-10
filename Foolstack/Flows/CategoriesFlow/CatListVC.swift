@@ -58,7 +58,7 @@ final class CatListVC : UIViewController {
         headerBar.titleLabel.textColor = .themeTextViewTitle
         //headerBar.headerView.backgroundColor = .themeBackgroundMain
         //headerBar.pinEdges(to: view, leading: 8, trailing: -8, top: 0)
-        headerBar.titleLabel.text = NSLocalizedString("Choice profession", comment: "")
+        headerBar.titleLabel.text = String(localized: "Choice profession")
         
         NSLayoutConstraint.activate([
             headerBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 8),
@@ -132,7 +132,7 @@ final class CatListVC : UIViewController {
         animateTransitionImages()
 
         let vc = CatProfView(viewModel: viewModel)
-        vc.title = NSLocalizedString("Choice profession", comment: "")
+        vc.title = String(localized: "Choice profession", comment: "")
         showListView(vc)
     }
     
@@ -140,7 +140,7 @@ final class CatListVC : UIViewController {
         animateTransitionImages()
 
         let vc = CatSpecView(viewModel: viewModel)
-        vc.title = NSLocalizedString("Choice specialization", comment: "")
+        vc.title = String(localized: "Choice specialization", comment: "")
         showListView(vc)
     }
     

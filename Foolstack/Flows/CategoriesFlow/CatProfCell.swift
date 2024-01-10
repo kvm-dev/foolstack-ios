@@ -68,7 +68,7 @@ class CatProfCell: UICollectionViewCell {
         let button = BorderButton(backgroundColor: .themeAccent)
         commonView.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(NSLocalizedString("Choice", comment: ""), for: .normal)
+        button.setTitle(String(localized: "Choice", comment: ""), for: .normal)
         button.pinEdges(to: commonView, leading: padding, trailing: -padding, bottom: -padding)
         button.pinSize(height: 56)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)

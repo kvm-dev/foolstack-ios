@@ -79,7 +79,7 @@ class WikiListContentView: UIView, UIContentView {
         addSubview(buttonlabel)
         buttonlabel.translatesAutoresizingMaskIntoConstraints = false
         buttonlabel.numberOfLines = 1
-        buttonlabel.text = NSLocalizedString("Details...", comment: "")
+        buttonlabel.text = String(localized: "Details...", comment: "")
         
         NSLayoutConstraint.activate([
             buttonlabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -12),
@@ -115,7 +115,7 @@ class WikiListCell: UICollectionViewCell {
         var newConfig = WikiListCellConfiguration().updated(for: state)
         
         newConfig.text = self.text
-        newConfig.buttonTitle = NSLocalizedString("Detailed", comment: "")
+        newConfig.buttonTitle = String(localized: "Detailed", comment: "")
         
         contentConfiguration = newConfig
     }

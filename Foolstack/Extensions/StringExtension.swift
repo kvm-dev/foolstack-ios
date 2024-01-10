@@ -42,10 +42,6 @@ extension String {
         return String(data: data, encoding: .utf8)
     }
     
-    func localized(comment: String? = nil) -> String {
-        NSLocalizedString(self, comment: comment ?? String())
-    }
-    
     func placeholderAttributed() -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.themeTextSecondary,

@@ -50,7 +50,7 @@ final class WikiListVC : UIViewController {
         searchBar = SearchBarView()
         view.addSubview(searchBar)
         //searchBar.backgroundColor = .orange
-        searchBar.placeholder = NSLocalizedString("Search", comment: "")
+        searchBar.placeholder = String(localized: "Search", comment: "")
         
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

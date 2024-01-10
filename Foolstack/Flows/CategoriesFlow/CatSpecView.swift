@@ -79,7 +79,7 @@ final class CatSpecView : UIViewController {
         let button = BorderButton(backgroundColor: .themeAccent)
         view.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(NSLocalizedString("Choice", comment: ""), for: .normal)
+        button.setTitle(String(localized: "Choice", comment: ""), for: .normal)
         button.pinEdges(to: view, leading: buttonPadding, trailing: -buttonPadding, bottom: -buttonPadding)
         button.pinSize(height: 56)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
