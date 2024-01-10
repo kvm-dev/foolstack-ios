@@ -51,4 +51,10 @@ final class TestingVM {
     func fetchEntitiesFailure(error: Error) {
         
     }
+    
+    func createExamination(ticketIndex: Int) -> ExaminationVM {
+        let ticket = items[ticketIndex]
+        let vm = ExaminationVM(ticket: ticket, cacheService: cacheService, userStorage: userStorage)
+        return vm
+    }
 }

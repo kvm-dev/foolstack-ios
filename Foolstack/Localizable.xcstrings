@@ -109,6 +109,9 @@
         }
       }
     },
+    "Finish" : {
+
+    },
     "Knowledge area" : {
       "localizations" : {
         "ru" : {
@@ -119,8 +122,12 @@
         }
       }
     },
+    "Next" : {
+
+    },
     "NumberOfQuestionsFormat" : {
       "comment" : "Number of questions in test",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "variations" : {

@@ -62,6 +62,11 @@ final class TestingVC : UIViewController {
         
     }
     
+    func startExamination(ticketIndex: Int) {
+        let vm = viewModel.createExamination(ticketIndex: ticketIndex)
+        let vc = ExaminationVC(viewModel: vm)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 
@@ -92,6 +97,6 @@ extension TestingVC: UITableViewDataSource {
 
 extension TestingVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //viewModel.select(index: indexPath.row)
+        self.startExamination(ticketIndex: indexPath.row)
     }
 }

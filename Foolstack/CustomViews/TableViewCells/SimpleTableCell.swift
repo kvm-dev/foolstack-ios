@@ -13,7 +13,7 @@ class SimpleTableCell : UITableViewCell {
     
     var titleLabel: UILabel!
     var leftIcon: UIImageView!
-    var rightIcon: UIButton!
+    var rightIcon: UIImageView!
     var sidePadding: CGFloat = 0
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier:String?)
@@ -44,56 +44,64 @@ class SimpleTableCell : UITableViewCell {
         self.selectionStyle = .none
         self.backgroundColor = .clear
         
-        //borderView.backgroundColor = UIColor.themeBackgroundSecondary
-        
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(stackView)
+
         leftIcon = UIImageView()
-        contentView.addSubview(leftIcon)
-        leftIcon.translatesAutoresizingMaskIntoConstraints = false
+        //contentView.addSubview(leftIcon)
+        //leftIcon.translatesAutoresizingMaskIntoConstraints = false
         leftIcon.contentMode = .center
-        //leftIcon.image = UIImage(named: "book.1")
-        leftIcon.tintColor = UIColor.themeStandartIcon
+        //leftIcon.tintColor = UIColor.themeStandartIcon
         
-        NSLayoutConstraint.activate([
-            leftIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: sidePadding),
-            leftIcon.topAnchor.constraint(equalTo: contentView.topAnchor),
-            leftIcon.widthAnchor.constraint(equalToConstant: .buttonSize),
-            leftIcon.heightAnchor.constraint(equalToConstant: .buttonSize)
-        ])
+        stackView.addArrangedSubview(leftIcon)
+        
+//        NSLayoutConstraint.activate([
+//            leftIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: sidePadding),
+//            leftIcon.topAnchor.constraint(equalTo: contentView.topAnchor),
+//            leftIcon.widthAnchor.constraint(equalToConstant: .buttonSize),
+//            leftIcon.heightAnchor.constraint(equalToConstant: .buttonSize)
+//        ])
         
         titleLabel = UILabel()
-        contentView.addSubview(titleLabel)
+        //contentView.addSubview(titleLabel)
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: .fontMainSize)// UIFont(name: .fontSFSemibold, size: .fontMainSize)
         titleLabel.textColor = .themeTextMain
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        //titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.addArrangedSubview(titleLabel)
         
         let heightConstr: NSLayoutConstraint = contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: .buttonSize)
         heightConstr.priority = .defaultHigh
         let bottomConstr = contentView.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10)
         bottomConstr.priority = .defaultLow
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 11),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .buttonSize + sidePadding),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.buttonSize - sidePadding),
-            bottomConstr,
-            heightConstr
-        ])
+//        NSLayoutConstraint.activate([
+//            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 11),
+//            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .buttonSize + sidePadding),
+//            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.buttonSize - sidePadding),
+//            bottomConstr,
+//            heightConstr
+//        ])
         
-        rightIcon = UIButton()
-        contentView.addSubview(rightIcon)
-        rightIcon.translatesAutoresizingMaskIntoConstraints = false
+        rightIcon = UIImageView()
+        //contentView.addSubview(rightIcon)
+        //rightIcon.translatesAutoresizingMaskIntoConstraints = false
         rightIcon.contentMode = .center
-        //rightIcon.image = UIImage(named: "book.1")
-        rightIcon.tintColor = UIColor.themeStandartIcon
-        rightIcon.addTarget(self, action: #selector(rightIconPressed), for: .touchUpInside)
+        //rightIcon.tintColor = UIColor.themeStandartIcon
+//        rightIcon.addTarget(self, action: #selector(rightIconPressed), for: .touchUpInside)
         
-        NSLayoutConstraint.activate([
-            rightIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -sidePadding),
-            rightIcon.topAnchor.constraint(equalTo: contentView.topAnchor),
-            rightIcon.widthAnchor.constraint(equalToConstant: .buttonSize),
-            rightIcon.heightAnchor.constraint(equalToConstant: .buttonSize)
-        ])
+        stackView.addArrangedSubview(rightIcon)
+        
+//        NSLayoutConstraint.activate([
+//            rightIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -sidePadding),
+//            rightIcon.topAnchor.constraint(equalTo: contentView.topAnchor),
+//            rightIcon.widthAnchor.constraint(equalToConstant: .buttonSize),
+//            rightIcon.heightAnchor.constraint(equalToConstant: .buttonSize)
+//        ])
         
     }
     
