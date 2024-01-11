@@ -35,7 +35,7 @@ class ExamTableCell: UITableViewCell {
         bgrdView.translatesAutoresizingMaskIntoConstraints = false
         bgrdView.pinEdges(to: contentView, leading: .cellSideEdge, trailing: -.cellSideEdge, top: bgrdPadding, bottom: -bgrdPadding)
         
-        bgrdView.backgroundColor = .themeBackgroundMain
+        bgrdView.backgroundColor = .themeTestingCell2
         bgrdView.layer.cornerRadius = 12
         bgrdView.layer.shadowRadius = 8
         bgrdView.layer.shadowOffset = .zero
@@ -48,7 +48,7 @@ class ExamTableCell: UITableViewCell {
         borderView.translatesAutoresizingMaskIntoConstraints = false
         borderView.backgroundColor = .clear
         borderView.layer.cornerRadius = 15
-        borderView.layer.borderColor = UIColor.blue.cgColor
+        borderView.layer.borderColor = UIColor.themeAccent.cgColor
         borderView.layer.borderWidth = 2
         borderView.isHidden = true
         let borderPadding: CGFloat = 5
@@ -93,11 +93,11 @@ class ExamTableCell: UITableViewCell {
         titleLabel.text = title
     }
     
-    func setToggled(_ toggled: Bool) {
+    func setToggled(_ toggled: Bool, isRadioButton: Bool) {
         borderView.isHidden = true
-        bgrdView.backgroundColor = .themeBackgroundMain
+        bgrdView.backgroundColor = .themeTestingCell2
 
-        let iconName = IconNames.checkboxIcon(checked: toggled)
+        let iconName: IconNames = isRadioButton ? IconNames.radioboxIcon(checked: toggled) : IconNames.checkboxIcon(checked: toggled)
         toggleImage.image = .symbolImage(iconName)
         toggleImage.tintColor = iconName.color
     }

@@ -122,7 +122,13 @@
         }
       }
     },
+    "learn the next %d words" : {
+
+    },
     "Next" : {
+
+    },
+    "NO WORDS. EXIT" : {
 
     },
     "NumberOfQuestionsFormat" : {

@@ -16,11 +16,14 @@ extension UIColor {
     static let themeBackgroundMain = UIColor(named: "Color1")!
     static let themeBackgroundSecondary = UIColor(named: "Color2")!
     static let themeBackgroundTop = UIColor(named: "Color4")!
+    static let themeHeader = UIColor(named: "Color9")!
     static let themeStandartIcon = UIColor(named: "Color3")!
     static let themeAccent = UIColor(named: "Color5")!
     static let themeButtonUnselected = UIColor(named: "Color6")!
     static let themeButtonSelected = UIColor(named: "Color7")!
     static let themeTestingCell1 = UIColor(named: "Color8")!
+    static let themeTestingCell2 = UIColor(named: "Color8_2")!
+    static let themeShadow1 = UIColor(named: "ShadowColor1")!
 
     //MARK: Text
     static let themeTextMain = UIColor(named: "TextColor1")!

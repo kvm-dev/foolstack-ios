@@ -31,7 +31,7 @@ enum IconNames {
     var name: String {
         switch self {
         case .none:           return ""
-        case .close:          return "exit.1"
+        case .close:          return "xmark.app"
         case .back:           return "chevron-left"
         case .sort:           return "sort.1"
         case .plus:           return "plus.1"

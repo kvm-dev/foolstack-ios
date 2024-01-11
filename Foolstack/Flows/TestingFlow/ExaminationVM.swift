@@ -14,14 +14,21 @@ struct QuestionResult {
     let myWrongAnswers: [Int]
 }
 
+struct ExamResult {
+    let correctAnswers: Int
+    let wrongAnswers: Int
+}
+
 @MainActor
 final class ExaminationVM {
-    //var onQuestionResult: ((QuestionResult) -> Void)?
-    
+    var onShowNextQuestion: ((ExamQuestionVM) -> Void)?
+    var onShowExamResult: ((ExamResult) -> Void)?
+
     let ticket: TicketEntity
-    var currentQuestionNumber: Int = 0
+    var currentQuestionNumber: Int = -1
     
     private var examResults: [Int : Bool] = [:]
+    private var currentQuestionVM: ExamQuestionVM?
     
     private let cacheService: DataCacheService
     private let userStorage: UserStorage
@@ -37,52 +44,50 @@ final class ExaminationVM {
         ticket.questions[currentQuestionNumber]
     }
     
-    private var selectedAnswers = Set<Int>()
-
-    func select(answer: Int) -> Bool {
-        if let index = selectedAnswers.firstIndex(of: answer) {
-            selectedAnswers.remove(at: index)
-            return false
+    private func createCurrentQuestionViewModel() -> ExamQuestionVM {
+        let title = "\(currentQuestionNumber+1) / \(ticket.questions.count)"
+        let vm = ExamQuestionVM(question: currentQuestion, title: title)
+        vm.onFinish = { [unowned self] result in
+            self.questionFinished(result: result)
+        }
+        currentQuestionVM = vm
+        return vm
+    }
+    
+    private func questionFinished(result: QuestionResult) {
+        addQuestionResult(result)
+        goNext()
+    }
+    
+    func goNext() {
+        if canGoNext() {
+            nextQuestion()
         } else {
-            selectedAnswers.insert(answer)
-            return true
+            finishExam()
         }
     }
     
-    var isMultiSelection: Bool {
-        currentQuestion.answers.count > 1
-    }
-    
-    func confirm() -> QuestionResult {
-        let targetAnswers = currentQuestion.answers.sorted()
-        let myAnswers = selectedAnswers.sorted()
-
-        let success = targetAnswers.elementsEqual(myAnswers)
-        examResults[currentQuestionNumber] = success
-        
-        return QuestionResult(
-            isSuccess: success,
-            targetAnswers: targetAnswers,
-            myCorrectAnswers: myAnswers.filter { targetAnswers.contains($0) },
-            myWrongAnswers: myAnswers.filter { !targetAnswers.contains($0) }
-        )
-    }
-    
-    func canGoNext() -> Bool {
+    private func canGoNext() -> Bool {
         currentQuestionNumber < ticket.questions.count - 1
     }
     
-    func nextQuestion() {
+    private func nextQuestion() {
         currentQuestionNumber += 1
-        selectedAnswers.removeAll()
+        let vm = createCurrentQuestionViewModel()
+        currentQuestionVM = vm
+        onShowNextQuestion?(vm)
+    }
+    
+    private func addQuestionResult(_ result: QuestionResult) {
+        examResults[currentQuestionNumber] = result.isSuccess
     }
     
     func finishExam() {
-        
+        let result = ExamResult(
+            correctAnswers: examResults.filter{ $0.value == true }.count,
+            wrongAnswers: examResults.filter{ $0.value == false }.count)
+        onShowExamResult?(result)
     }
 }
 
 
-class ExamResult {
-    
-}

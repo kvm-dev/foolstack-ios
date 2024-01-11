@@ -33,6 +33,7 @@ class TestingTableCell: UITableViewCell {
     
     private func createContent() {
         contentView.backgroundColor = nil
+        selectionStyle = .none
         //    contentView.layer.borderWidth = 4
         //    contentView.layer.borderColor = UIColor.themeBackgroundPopup.cgColor
         //    contentView.layer.cornerRadius = 12
