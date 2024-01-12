@@ -89,7 +89,7 @@ class ExamFinishView: UIViewController {
         centerView.clipsToBounds = true
 
         let w: CGFloat = 271
-        let statsView = ExamStatsView(frame:.zero, color1: .green, color2: .red)
+        let statsView = ExamStatsView(frame:.zero, color1: .themeStatGood, color2: .themeStatBad)
         self.statsView = statsView
         statsView.translatesAutoresizingMaskIntoConstraints = false
         self.centerView.addSubview(statsView)
@@ -122,9 +122,9 @@ class ExamFinishView: UIViewController {
         self.centerView.addSubview(stack)
         stack.pinEdges(to: self.centerView, centerX: 0, centerY: 0)
         
-        firstCounter = createLabelView(color: .green, on: stack)
+        firstCounter = createLabelView(color: .themeStatGood, on: stack)
         firstCounter.format = "+%d"
-        secondCounter = createLabelView(color: .red, on: stack)
+        secondCounter = createLabelView(color: .themeStatBad, on: stack)
         secondCounter.format = "-%d"
     }
     
@@ -178,7 +178,7 @@ extension UIImage {
             let y: CGFloat = frame.height/2
             
             if learned > 0 {
-                ctx.cgContext.setFillColor(UIColor.green.cgColor)
+                ctx.cgContext.setFillColor(UIColor.themeStatGood.cgColor)
                 ctx.cgContext.addArc(center: CGPoint(x: x, y: y), radius: radiusSmall, startAngle: -.pi/2 + angleOffsetSmall, endAngle: -.pi/2 + learnedAngle - angleOffsetSmall, clockwise: false)
                 ctx.cgContext.addArc(center: CGPoint(x: x, y: y), radius: radiusBig, startAngle: -.pi/2 + learnedAngle - angleOffsetBig, endAngle: -.pi/2 + angleOffsetBig, clockwise: true)
                 
@@ -186,7 +186,7 @@ extension UIImage {
             }
             
             if unlearned > 0 {
-                ctx.cgContext.setFillColor(UIColor.red.cgColor)
+                ctx.cgContext.setFillColor(UIColor.themeStatBad.cgColor)
                 
                 ctx.cgContext.addArc(center: CGPoint(x: x, y: y), radius: radiusSmall, startAngle: -.pi/2 - angleOffsetSmall, endAngle: -.pi/2 - unlearnedAngle + angleOffsetSmall, clockwise: true)
                 ctx.cgContext.addArc(center: CGPoint(x: x, y: y), radius: radiusBig, startAngle: -.pi/2 - unlearnedAngle + angleOffsetBig, endAngle: -.pi/2 - angleOffsetBig, clockwise: false)

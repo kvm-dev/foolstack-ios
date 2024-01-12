@@ -87,6 +87,9 @@ final class ExaminationVM {
             correctAnswers: examResults.filter{ $0.value == true }.count,
             wrongAnswers: examResults.filter{ $0.value == false }.count)
         onShowExamResult?(result)
+        
+        let percent = Double(result.correctAnswers) / Double(examResults.count) * 100
+        userStorage.saveTicketResult(ticketId: ticket.serverId, completionPercent: Int(percent))
     }
 }
 

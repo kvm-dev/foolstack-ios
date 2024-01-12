@@ -7,7 +7,8 @@
 
 import Foundation
 
-fileprivate let saveKey_SelectedTags = "SelectedTags"
+fileprivate let key_SelectedTags = "SelectedTags"
+fileprivate let key_TicketsResults = "TicketsResults"
 
 final class UserStorage {
     private var config: UserStorageConfig
@@ -17,7 +18,30 @@ final class UserStorage {
     }
     
     func getSelectedTags() -> [ServerKey] {
-        config.getUserDefaults().array(forKey: saveKey_SelectedTags) as? [Int] ?? []
+        config.getUserDefaults().array(forKey: key_SelectedTags) as? [Int] ?? []
+    }
+    
+    func saveTicketResult(ticketId: Int, completionPercent: Int) {
+        var results: [String : Int] = config.getUserDefaults().dictionary(forKey: key_TicketsResults) as? [String : Int] ?? [:]
+        results["\(ticketId)"] = completionPercent
+        config.getUserDefaults().set(results, forKey: key_TicketsResults)
+    }
+    
+    func getTicketsResults() -> [Int : Int] {
+        let results = config.getUserDefaults().dictionary(forKey: key_TicketsResults) as? [String : Int] ?? [:]
+        return results.reduce(into: [Int : Int](), {
+            if let key = Int($1.key) {
+                $0[key] = $1.value
+            }
+        })
+//        results.reduce([String : Int]) { partialResult, (key, value) in
+//            partialResult
+//        }
+    }
+
+    func getTicketResult(ticketId: Int) -> Int {
+        let results: [Int : Int] = config.getUserDefaults().dictionary(forKey: key_TicketsResults) as? [Int : Int] ?? [:]
+        return results[ticketId] ?? 0
     }
 }
 

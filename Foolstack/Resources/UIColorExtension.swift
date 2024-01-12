@@ -24,6 +24,8 @@ extension UIColor {
     static let themeTestingCell1 = UIColor(named: "Color8")!
     static let themeTestingCell2 = UIColor(named: "Color8_2")!
     static let themeShadow1 = UIColor(named: "ShadowColor1")!
+    static let themeStatGood = UIColor(named: "ColorGood")!
+    static let themeStatBad = UIColor(named: "ColorBad")!
 
     //MARK: Text
     static let themeTextMain = UIColor(named: "TextColor1")!

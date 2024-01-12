@@ -37,6 +37,12 @@ final class TestingVC : UIViewController {
         viewModel.load()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.loadResults()
+        reloadList()
+    }
+    
     private func reloadList() {
         tableView.reloadData()
     }
@@ -84,8 +90,9 @@ extension TestingVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //print("cell for row at: section \(indexPath.section), row \(indexPath.row)")
         let cellInfo = viewModel.items[indexPath.row]
-        let percents = "56%"
-        let subtitle = String(localized: "\(cellInfo.questions.count) bobs")
+        let percent = viewModel.getTicketCompletionPercents(ticketId: cellInfo.serverId)
+        let percents = "\(percent)%"
+        let subtitle = String(localized: "\(cellInfo.questions.count) questions")
         let subtitle2 = "30 сек на ответ"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TestingTableCell.CellID, for: indexPath) as! TestingTableCell

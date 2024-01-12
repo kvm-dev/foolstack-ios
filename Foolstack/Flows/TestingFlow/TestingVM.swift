@@ -15,6 +15,7 @@ final class TestingVM {
     private let userStorage: UserStorage
     private var selectedTags: [ServerKey] = []
     private(set) var items: [TicketEntity] = []
+    private(set) var completePercents: [Int : Int] = [:]
     
     init(cacheService: DataCacheService, userStorage: UserStorage) {
         self.cacheService = cacheService
@@ -43,6 +44,10 @@ final class TestingVM {
         }
     }
     
+    func loadResults() {
+        completePercents = userStorage.getTicketsResults()
+    }
+    
     func fetchEntitiesSuccess(items: [TicketEntity]) {
         self.items = items
         onItemsLoaded?()
@@ -56,5 +61,9 @@ final class TestingVM {
         let ticket = items[ticketIndex]
         let vm = ExaminationVM(ticket: ticket, cacheService: cacheService, userStorage: userStorage)
         return vm
+    }
+    
+    func getTicketCompletionPercents(ticketId: Int) -> Int {
+        return completePercents[ticketId] ?? 0
     }
 }

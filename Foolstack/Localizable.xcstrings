@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%lld bobs" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "variations" : {
@@ -52,6 +53,12 @@
           }
         }
       }
+    },
+    "%lld questions" : {
+
+    },
+    "%lld seconds left" : {
+
     },
     "Choice" : {
       "localizations" : {

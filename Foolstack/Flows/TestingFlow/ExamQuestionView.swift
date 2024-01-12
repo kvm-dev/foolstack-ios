@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ExamQuestionView: UIView {
     var onClose: (() -> Void)?
@@ -17,6 +18,7 @@ class ExamQuestionView: UIView {
     private var timerLabel: UILabel!
     
     private var viewModel: ExamQuestionVM!
+    private var subscriptions = Set<AnyCancellable>()
     
     init(viewModel: ExamQuestionVM, frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +26,7 @@ class ExamQuestionView: UIView {
         
         createHeader()
         createContent()
+        setupSubscriptions()
     }
     
     required init?(coder: NSCoder) {
@@ -133,6 +136,18 @@ class ExamQuestionView: UIView {
         
     }
     
+    private func setupSubscriptions() {
+        viewModel.$isConfirmEnabled
+            .assign(to: \.isEnabled, on: choiceButton)
+            .store(in: &subscriptions)
+        
+        viewModel.$timerText
+            .assign(to: \.text, on: timerLabel)
+            .store(in: &subscriptions)
+        
+        viewModel.onTimerFinished = { [unowned self] in self.choiceButtonTapped() }
+    }
+    
     private func createConfirmButton(title: String, color: UIColor) -> UIButton {
         let buttonPadding: CGFloat = 12
         let button = BorderButton(backgroundColor: color)
@@ -216,6 +231,9 @@ extension ExamQuestionView: UITableViewDataSource {
 
 extension ExamQuestionView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if viewModel.questionResult != nil {
+            return
+        }
         if !viewModel.isMultiSelection {
             tableView.visibleCells.compactMap{$0 as? ExamTableCell}.forEach{
                 $0.setToggled(false, isRadioButton: true)

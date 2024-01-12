@@ -48,7 +48,7 @@ class ExamTableCell: UITableViewCell {
         borderView.translatesAutoresizingMaskIntoConstraints = false
         borderView.backgroundColor = .clear
         borderView.layer.cornerRadius = 15
-        borderView.layer.borderColor = UIColor.themeAccent.cgColor
+        borderView.layer.borderColor = UIColor.themeBackgroundTop.cgColor
         borderView.layer.borderWidth = 2
         borderView.isHidden = true
         let borderPadding: CGFloat = 5
@@ -107,7 +107,7 @@ class ExamTableCell: UITableViewCell {
     }
     
     func highlight(isSuccess: Bool) {
-        bgrdView.backgroundColor = isSuccess ? .green : .red
+        bgrdView.backgroundColor = isSuccess ? .themeStatGood : .themeStatBad
     }
 }
 
