@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE02598A2B515AED0018F2C2 /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259892B515AED0018F2C2 /* PopupManager.swift */; };
+		CE02598C2B515B840018F2C2 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598B2B515B840018F2C2 /* PopupViewController.swift */; };
+		CE02598E2B515BB90018F2C2 /* PopupViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */; };
+		CE0259902B515BDB0018F2C2 /* PopupViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598F2B515BDB0018F2C2 /* PopupViewBase.swift */; };
+		CE0259932B515C330018F2C2 /* PopupTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259922B515C330018F2C2 /* PopupTransformer.swift */; };
+		CE0259952B515C570018F2C2 /* PopupTransformerRegular.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */; };
+		CE0259972B51607B0018F2C2 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */; };
+		CE0259992B51774F0018F2C2 /* ConfirmationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259982B51774F0018F2C2 /* ConfirmationPopup.swift */; };
+		CE02599B2B51778B0018F2C2 /* PopupButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */; };
+		CE02599D2B5180520018F2C2 /* PopupTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599C2B5180520018F2C2 /* PopupTextView.swift */; };
+		CE02599F2B518FC80018F2C2 /* PopupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */; };
 		CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */; };
 		CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C7812AFE882700E53297 /* NetworkClient.swift */; };
 		CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */; };
@@ -153,6 +164,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0259892B515AED0018F2C2 /* PopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
+		CE02598B2B515B840018F2C2 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewContainer.swift; sourceTree = "<group>"; };
+		CE02598F2B515BDB0018F2C2 /* PopupViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewBase.swift; sourceTree = "<group>"; };
+		CE0259922B515C330018F2C2 /* PopupTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransformer.swift; sourceTree = "<group>"; };
+		CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransformerRegular.swift; sourceTree = "<group>"; };
+		CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		CE0259982B51774F0018F2C2 /* ConfirmationPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopup.swift; sourceTree = "<group>"; };
+		CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButtonsView.swift; sourceTree = "<group>"; };
+		CE02599C2B5180520018F2C2 /* PopupTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTextView.swift; sourceTree = "<group>"; };
+		CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProtocols.swift; sourceTree = "<group>"; };
 		CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		CE17C7812AFE882700E53297 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
@@ -313,6 +335,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE0259882B515ABA0018F2C2 /* AlertViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE0259912B515C130018F2C2 /* PopupTransformer */,
+				CE0259892B515AED0018F2C2 /* PopupManager.swift */,
+				CE02598B2B515B840018F2C2 /* PopupViewController.swift */,
+				CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */,
+				CE02598F2B515BDB0018F2C2 /* PopupViewBase.swift */,
+				CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */,
+				CE02599C2B5180520018F2C2 /* PopupTextView.swift */,
+				CE0259982B51774F0018F2C2 /* ConfirmationPopup.swift */,
+				CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */,
+			);
+			path = AlertViews;
+			sourceTree = "<group>";
+		};
+		CE0259912B515C130018F2C2 /* PopupTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				CE0259922B515C330018F2C2 /* PopupTransformer.swift */,
+				CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */,
+			);
+			path = PopupTransformer;
+			sourceTree = "<group>";
+		};
 		CE17C7792AFE870000E53297 /* Cases */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +489,7 @@
 				CE8CFFC22B40A1700081E64B /* URL+Ext.swift */,
 				CED4690D2B434ED300283B43 /* StringExtension.swift */,
 				CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */,
+				CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -601,6 +649,7 @@
 		CEA1EDF82B04E1310050CA34 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE0259882B515ABA0018F2C2 /* AlertViews */,
 				CEF0AC9A2B4AD2C40000B241 /* TextViews */,
 				CEF0AC972B4A0DDA0000B241 /* SearchBar */,
 				CE8CFFBD2B40A0830081E64B /* WebImage */,
@@ -1000,6 +1049,8 @@
 				CEA1EDF42B04D6B50050CA34 /* UIView+Constraints.swift in Sources */,
 				CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */,
 				CEF0ACA12B4C078C0000B241 /* MainTabVC.swift in Sources */,
+				CE0259952B515C570018F2C2 /* PopupTransformerRegular.swift in Sources */,
+				CE0259932B515C330018F2C2 /* PopupTransformer.swift in Sources */,
 				CEC3DDB62B02B15F005B0A5F /* MockURLSession.swift in Sources */,
 				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
@@ -1015,6 +1066,7 @@
 				CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */,
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
 				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
+				CE02599B2B51778B0018F2C2 /* PopupButtonsView.swift in Sources */,
 				CED469142B44246500283B43 /* CatListViewBase.swift in Sources */,
 				CEA1EE0A2B0529220050CA34 /* FontExtension.swift in Sources */,
 				CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */,
@@ -1023,11 +1075,13 @@
 				CEF0ACA82B4C5EA30000B241 /* TicketEntity.swift in Sources */,
 				CEF0ACB22B4C94720000B241 /* TicketQuestionRLM.swift in Sources */,
 				CED469292B48960C00283B43 /* TagListCell.swift in Sources */,
+				CE02598A2B515AED0018F2C2 /* PopupManager.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
 				CEF0AC912B49747F0000B241 /* UserStorage.swift in Sources */,
 				CE8CFFBC2B4072010081E64B /* BorderButton.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
+				CE0259972B51607B0018F2C2 /* CGPoint+Extensions.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
 				CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */,
 				CED469122B4420E400283B43 /* CatSpecView.swift in Sources */,
@@ -1046,6 +1100,7 @@
 				CEA1EE032B051C0C0050CA34 /* ValueConstants.swift in Sources */,
 				CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
+				CE0259992B51774F0018F2C2 /* ConfirmationPopup.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
 				CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */,
@@ -1064,6 +1119,7 @@
 				CEF0AC992B4A0DED0000B241 /* SearchBarView.swift in Sources */,
 				CEA1EE052B051C7D0050CA34 /* UIImageExtensions.swift in Sources */,
 				CE8CFFC32B40A1700081E64B /* URL+Ext.swift in Sources */,
+				CE02599F2B518FC80018F2C2 /* PopupProtocols.swift in Sources */,
 				CEC3DDC52B04C347005B0A5F /* TagListVC.swift in Sources */,
 				CE8CFF842B3DD0940081E64B /* CatFlowBuilder.swift in Sources */,
 				CED469232B45FD4500283B43 /* CustomNavigationAnimator.swift in Sources */,
@@ -1071,11 +1127,15 @@
 				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
 				CE8CFFC12B40A1290081E64B /* PrintDebug.swift in Sources */,
 				CED469182B44A66600283B43 /* CatListVM.swift in Sources */,
+				CE02599D2B5180520018F2C2 /* PopupTextView.swift in Sources */,
+				CE02598C2B515B840018F2C2 /* PopupViewController.swift in Sources */,
 				CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */,
+				CE02598E2B515BB90018F2C2 /* PopupViewContainer.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
 				CEF0ACB42B4C9D110000B241 /* Ticket+RLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 				CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */,
+				CE0259902B515BDB0018F2C2 /* PopupViewBase.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
 				CEF0ACAA2B4C5EE30000B241 /* TicketRLM.swift in Sources */,
 				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
