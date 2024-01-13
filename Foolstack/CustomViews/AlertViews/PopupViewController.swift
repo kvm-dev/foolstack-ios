@@ -7,14 +7,17 @@
 
 import UIKit
 
+typealias CloseAction = () -> Void
+
 class PopupViewController: UIViewController {
     
     var onDismissFinished: (() -> Void)?
     
     private var popupConfigs: [PopupConfiguration] = []
-    private var popupViews: [PopupViewBase] = []
-    private weak var currentPopup: PopupViewBase?
-    
+    private var popupViews: [CustomPopupView] = []
+    private weak var currentPopup: CustomPopupView?
+    //private var dismissAction: CloseAction?
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,7 +31,7 @@ class PopupViewController: UIViewController {
     }
     
     deinit {
-        //print("MyTestViewController deinit")
+        print("PopupViewController deinit")
     }
     
     override func viewDidLoad() {
@@ -113,32 +116,35 @@ class PopupViewController: UIViewController {
     
     func showNextView() {
         if let nextView = popupConfigs.first {
+            popupConfigs.removeFirst()
             let popup = CustomPopupView(config: nextView)
             view.addSubview(popup)
-            popup.closeAction = onCloseView
+            popup.closeAction = { [weak self] popupView, action in
+                self?.onCloseView(popupView: popupView, onDismissFinished: action)
+            }
             showViewWithAnimation(popup)
             currentPopup = popup
         }
     }
     
-    func showViewWithAnimation(_ popupView: PopupViewBase) {
+    func showViewWithAnimation(_ popupView: CustomPopupView) {
         popupView.show(safeInsets: self.view.safeAreaInsets, animated: true)
     }
     
-    func onCloseView(popupView: PopupViewBase) {
-        if let index = popupViews.firstIndex(where: { $0 == popupView }) {
-            popupViews.remove(at: index)
-        }
-        if popupViews.count > 0 {
+    func onCloseView(popupView: CustomPopupView, onDismissFinished: CloseAction?) {
+        if popupConfigs.count > 0 {
             //showNextView()
-            popupView.hide(animated: true, completion: {
-                self.showNextView()
+            popupView.hide(animated: true, completion: { [weak self, weak popupView] in
+                popupView?.removeFromSuperview()
+                self?.showNextView()
             })
         } else {
-            popupView.hide(animated: true, completion: {
-                popupView.removeFromSuperview()
-                self.dismiss(animated: true, completion: { [unowned self] in
-                    self.onDismissFinished?()
+            let disAction = onDismissFinished
+            popupView.hide(animated: true, completion: { [weak self, weak popupView] in
+                popupView?.removeFromSuperview()
+                self?.dismiss(animated: true, completion: { [weak self, disAction] in
+                    disAction?()
+                    self?.onDismissFinished?()
                 })
             })
         }
@@ -148,6 +154,7 @@ class PopupViewController: UIViewController {
         if let popupView = currentPopup {
             popupView.closeView()
         } else {
+            popupViews.removeAll()
             popupConfigs.removeAll()
             self.dismiss(animated: true, completion: nil)
         }

@@ -116,6 +116,9 @@
         }
       }
     },
+    "Do you want to stop testing?" : {
+
+    },
     "Finish" : {
 
     },
@@ -214,6 +217,9 @@
           }
         }
       }
+    },
+    "The result will not be recorded" : {
+
     },
     "YES" : {
 

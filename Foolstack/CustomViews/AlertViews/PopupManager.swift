@@ -56,7 +56,7 @@ class PopupManager {
         }
     }
     
-    public func launch(view: PopupViewBase, superview: UIView, onClose: (() -> Void)? = nil) {
+    public func launch(view: CustomPopupView, superview: UIView, onClose: (() -> Void)? = nil) {
         
         let popupContainer = PopupViewContainer(popupView: view, superview: superview)
         if let onClose = onClose {
@@ -65,15 +65,30 @@ class PopupManager {
     }
     
     func topMostController() -> UIViewController? {
-        guard let rootVC = UIApplication.shared.windows.first?.rootViewController else { return nil }
-        
-        var topController = rootVC
-        
-        while let newTopController = topController.presentedViewController {
-            topController = newTopController
-        }
-        
-        return topController
+        return UIApplication.shared.topViewController
     }
     
 }
+
+
+extension UIApplication {
+    var topViewController: UIViewController? {
+        // Get connected scenes
+        let window = self.connectedScenes
+        // Keep only active scenes, onscreen and visible to the user
+            .filter { $0.activationState == .foregroundActive }
+        // Keep only the first `UIWindowScene`
+            .first(where: { $0 is UIWindowScene })
+        // Get its associated windows
+            .flatMap({ $0 as? UIWindowScene })?.windows
+        // Finally, keep only the key window
+            .first(where: \.isKeyWindow)
+        
+        var parentController = window?.rootViewController
+        while parentController?.presentedViewController != nil
+                && parentController != parentController?.presentedViewController {
+            parentController = parentController?.presentedViewController
+        }
+        
+        return parentController
+    }}

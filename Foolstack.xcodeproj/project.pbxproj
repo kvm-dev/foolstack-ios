@@ -10,14 +10,15 @@
 		CE02598A2B515AED0018F2C2 /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259892B515AED0018F2C2 /* PopupManager.swift */; };
 		CE02598C2B515B840018F2C2 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598B2B515B840018F2C2 /* PopupViewController.swift */; };
 		CE02598E2B515BB90018F2C2 /* PopupViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */; };
-		CE0259902B515BDB0018F2C2 /* PopupViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598F2B515BDB0018F2C2 /* PopupViewBase.swift */; };
 		CE0259932B515C330018F2C2 /* PopupTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259922B515C330018F2C2 /* PopupTransformer.swift */; };
 		CE0259952B515C570018F2C2 /* PopupTransformerRegular.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */; };
 		CE0259972B51607B0018F2C2 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */; };
-		CE0259992B51774F0018F2C2 /* ConfirmationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259982B51774F0018F2C2 /* ConfirmationPopup.swift */; };
+		CE0259992B51774F0018F2C2 /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259982B51774F0018F2C2 /* CustomPopupView.swift */; };
 		CE02599B2B51778B0018F2C2 /* PopupButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */; };
 		CE02599D2B5180520018F2C2 /* PopupTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599C2B5180520018F2C2 /* PopupTextView.swift */; };
 		CE02599F2B518FC80018F2C2 /* PopupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */; };
+		CE0259A22B51EA660018F2C2 /* PopupTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259A12B51EA660018F2C2 /* PopupTransition.swift */; };
+		CE0259A42B52CEF50018F2C2 /* ConfirmPopupConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259A32B52CEF50018F2C2 /* ConfirmPopupConfig.swift */; };
 		CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */; };
 		CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C7812AFE882700E53297 /* NetworkClient.swift */; };
 		CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */; };
@@ -167,14 +168,15 @@
 		CE0259892B515AED0018F2C2 /* PopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
 		CE02598B2B515B840018F2C2 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewContainer.swift; sourceTree = "<group>"; };
-		CE02598F2B515BDB0018F2C2 /* PopupViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewBase.swift; sourceTree = "<group>"; };
 		CE0259922B515C330018F2C2 /* PopupTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransformer.swift; sourceTree = "<group>"; };
 		CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransformerRegular.swift; sourceTree = "<group>"; };
 		CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		CE0259982B51774F0018F2C2 /* ConfirmationPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopup.swift; sourceTree = "<group>"; };
+		CE0259982B51774F0018F2C2 /* CustomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
 		CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButtonsView.swift; sourceTree = "<group>"; };
 		CE02599C2B5180520018F2C2 /* PopupTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTextView.swift; sourceTree = "<group>"; };
 		CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProtocols.swift; sourceTree = "<group>"; };
+		CE0259A12B51EA660018F2C2 /* PopupTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransition.swift; sourceTree = "<group>"; };
+		CE0259A32B52CEF50018F2C2 /* ConfirmPopupConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopupConfig.swift; sourceTree = "<group>"; };
 		CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		CE17C7812AFE882700E53297 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
@@ -338,15 +340,16 @@
 		CE0259882B515ABA0018F2C2 /* AlertViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE0259A02B51EA370018F2C2 /* PopupTransition */,
 				CE0259912B515C130018F2C2 /* PopupTransformer */,
+				CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */,
 				CE0259892B515AED0018F2C2 /* PopupManager.swift */,
 				CE02598B2B515B840018F2C2 /* PopupViewController.swift */,
 				CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */,
-				CE02598F2B515BDB0018F2C2 /* PopupViewBase.swift */,
+				CE0259982B51774F0018F2C2 /* CustomPopupView.swift */,
 				CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */,
 				CE02599C2B5180520018F2C2 /* PopupTextView.swift */,
-				CE0259982B51774F0018F2C2 /* ConfirmationPopup.swift */,
-				CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */,
+				CE0259A32B52CEF50018F2C2 /* ConfirmPopupConfig.swift */,
 			);
 			path = AlertViews;
 			sourceTree = "<group>";
@@ -358,6 +361,14 @@
 				CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */,
 			);
 			path = PopupTransformer;
+			sourceTree = "<group>";
+		};
+		CE0259A02B51EA370018F2C2 /* PopupTransition */ = {
+			isa = PBXGroup;
+			children = (
+				CE0259A12B51EA660018F2C2 /* PopupTransition.swift */,
+			);
+			path = PopupTransition;
 			sourceTree = "<group>";
 		};
 		CE17C7792AFE870000E53297 /* Cases */ = {
@@ -1055,6 +1066,7 @@
 				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
 				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
+				CE0259A22B51EA660018F2C2 /* PopupTransition.swift in Sources */,
 				CE667A972B50495C0061585C /* ExamQuestionVM.swift in Sources */,
 				CEA1EDF72B04E10E0050CA34 /* NibView.swift in Sources */,
 				CE40FED02B4D919500BC5F02 /* TestingTableCell.swift in Sources */,
@@ -1075,6 +1087,7 @@
 				CEF0ACA82B4C5EA30000B241 /* TicketEntity.swift in Sources */,
 				CEF0ACB22B4C94720000B241 /* TicketQuestionRLM.swift in Sources */,
 				CED469292B48960C00283B43 /* TagListCell.swift in Sources */,
+				CE0259A42B52CEF50018F2C2 /* ConfirmPopupConfig.swift in Sources */,
 				CE02598A2B515AED0018F2C2 /* PopupManager.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
@@ -1100,7 +1113,7 @@
 				CEA1EE032B051C0C0050CA34 /* ValueConstants.swift in Sources */,
 				CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
-				CE0259992B51774F0018F2C2 /* ConfirmationPopup.swift in Sources */,
+				CE0259992B51774F0018F2C2 /* CustomPopupView.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
 				CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */,
@@ -1135,7 +1148,6 @@
 				CEF0ACB42B4C9D110000B241 /* Ticket+RLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 				CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */,
-				CE0259902B515BDB0018F2C2 /* PopupViewBase.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
 				CEF0ACAA2B4C5EE30000B241 /* TicketRLM.swift in Sources */,
 				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
@@ -1266,6 +1278,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -1322,6 +1335,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -10,14 +10,14 @@ import UIKit
 class PopupViewContainer: UIView {
     var onDismissFinished: (() -> Void)?
     
-    private weak var currentPopup: PopupViewBase!
+    private weak var currentPopup: CustomPopupView!
     private var overlay: UIView!
     
     deinit {
         print("~ PopupViewContainer")
     }
     
-    init(popupView: PopupViewBase, superview: UIView) {
+    init(popupView: CustomPopupView, superview: UIView) {
         super.init(frame: .zero)
         
         superview.addSubview(self)
@@ -43,7 +43,7 @@ class PopupViewContainer: UIView {
         self.layoutIfNeeded()
         currentPopup.show(safeInsets: self.safeAreaInsets, animated: true)
         
-        currentPopup.closeAction = { [weak self] popup in
+        currentPopup.closeAction = { [weak self] popup, closedAction in
             self?.close()
         }
         

@@ -109,7 +109,17 @@ final class ExaminationVC : UIViewController {
     }
 
     func close(withAlert: Bool) {
-        self.navigationController?.popToRootViewController(animated: true)
+        let popupConfig = ConfirmationPopupConfig(
+            title: String(localized: "Do you want to stop testing?"),
+            text: String(localized: "The result will not be recorded"),
+            onConfirm: PopupButtonAction(onPress: {
+                return true
+            }, onDismissed: { [weak self] in
+                self?.navigationController?.popToRootViewController(animated: true)
+            }),
+            onCancel: PopupButtonAction()
+        )
+        PopupManager.shared.launch(view: popupConfig)
     }
     
 }

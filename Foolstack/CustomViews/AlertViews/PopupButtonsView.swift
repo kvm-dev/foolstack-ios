@@ -8,7 +8,9 @@
 import UIKit
 
 class PopupButtonsView: UIView {
-    
+    /// Parameter 1: Should dismiss
+    /// Parameter 2: Action on dismiss finished
+    var onPress: ((Bool, CloseAction?) -> Void)?
     weak var buttonsView: UIView!
     var buttonConfigs: [PopupButtonConfig] = []
     
@@ -39,6 +41,8 @@ class PopupButtonsView: UIView {
         self.buttonsView = buttonsView
         addSubview(buttonsView)
         buttonsView.translatesAutoresizingMaskIntoConstraints = false
+        buttonsView.axis = .horizontal
+        buttonsView.distribution = .fillEqually
         let constraints = [
             buttonsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             buttonsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -50,14 +54,16 @@ class PopupButtonsView: UIView {
     }
     
     private func createButton(_ buttonConfig: PopupButtonConfig) -> UIButton {
-        let button1 = BorderButton(backgroundColor: .themeBackgroundSecondary, borderColor: .themeBackgroundMain, borderWidth: 2, padding: 0)
+        let button1 = BorderButton(backgroundColor: .themeHeader, borderColor: .themeBackgroundMain, borderWidth: 8, padding: 0)
         button1.titleLabel?.font = CustomFonts.SFSemibold.font(size: .fontMainSize)
         button1.setTitle(buttonConfig.title, for: .normal)
         button1.setTitleColor(buttonConfig.style.normalTextColor, for: .normal)
         button1.setTitleColor(buttonConfig.style.disabledTextColor, for: .disabled)
-        button1.addAction(UIAction(handler: { action in
-            buttonConfig.action.onPress()
+        button1.addAction(UIAction(handler: { [weak self] action in
+            let needHide = buttonConfig.action.onPress()
+            self?.onPress?(needHide, buttonConfig.action.onDismissed)
         }), for: .touchUpInside)
+        button1.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
         return button1
     }
@@ -204,6 +210,11 @@ struct PopupButtonConfig {
 }
 
 struct PopupButtonAction {
-    let onPress: () -> Void
-    let onClosed: (() -> Void)?
+    let onPress: () -> Bool
+    let onDismissed: (() -> Void)?
+    
+    init(onPress: (() -> Bool)? = nil, onDismissed: (() -> Void)? = nil) {
+        self.onPress = onPress ?? { return true }
+        self.onDismissed = onDismissed
+    }
 }
