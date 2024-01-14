@@ -16,7 +16,6 @@ class CatSpecCell: UICollectionViewCell {
     var toggleImage: UIImageView!
     
     var index = 0
-    var onAction: ((Int) -> Bool)?
     
     override init(frame: CGRect) {
       super.init(frame: frame)

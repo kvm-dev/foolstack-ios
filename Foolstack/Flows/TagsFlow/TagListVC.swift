@@ -40,7 +40,7 @@ final class TagListVC: UIViewController {
         headerBar.titleLabel.textColor = .themeTextViewTitle
         headerBar.pinEdges(to: view.safeAreaLayoutGuide, leading: 8, trailing: -8, top: 37)
         
-        headerBar.titleLabel.text = NSLocalizedString("Knowledge area", comment: "")
+        headerBar.titleLabel.text = String(localized: "Knowledge area", comment: "")
         
         let backButton = UIButton.customBack()
         backButton.tintColor = .themeTextViewTitle
@@ -71,7 +71,7 @@ final class TagListVC: UIViewController {
         let confirmButton = BorderButton(backgroundColor: .themeAccent)
         view.addSubview(confirmButton)
         confirmButton.translatesAutoresizingMaskIntoConstraints = false
-        confirmButton.setTitle(NSLocalizedString("Choice", comment: ""), for: .normal)
+        confirmButton.setTitle(String(localized: "Choice", comment: ""), for: .normal)
         confirmButton.pinEdges(to: view.safeAreaLayoutGuide, leading: buttonPadding, trailing: -buttonPadding, bottom: -buttonPadding)
         confirmButton.pinSize(height: 56)
         confirmButton.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
@@ -79,7 +79,7 @@ final class TagListVC: UIViewController {
         let selectAllbutton = UIButton(type: .custom)
         view.addSubview(selectAllbutton)
         selectAllbutton.translatesAutoresizingMaskIntoConstraints = false
-        selectAllbutton.setTitle(NSLocalizedString("Select All", comment: ""), for: .normal)
+        selectAllbutton.setTitle(String(localized: "Select All", comment: ""), for: .normal)
         selectAllbutton.titleLabel?.font = CustomFonts.defaultRegular(size: 13)
         selectAllbutton.setTitleColor(.themeTextSecondary, for: .normal)
         NSLayoutConstraint.activate([

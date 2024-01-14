@@ -9,4 +9,5 @@ protocol NetworkService {
     func getWikis(tags: [ServerKey]) async throws -> [WikiData]?
     
     func getTags() async throws -> [TagData]?
+    func getTickets() async throws -> [TicketData]?
 }

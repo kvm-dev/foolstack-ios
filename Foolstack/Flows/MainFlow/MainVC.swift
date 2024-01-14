@@ -13,15 +13,15 @@ final class MainVC : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let controller = customizableViewControllers?.first as? UINavigationController else {
-            return
-        }
-
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let dir = urls[0]
-        print(dir)
-
-        showWikiFlow()
+//        guard let controller = customizableViewControllers?.first as? UINavigationController else {
+//            return
+//        }
+//
+//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        let dir = urls[0]
+//        print(dir)
+//
+//        showWikiFlow()
     }
     
     private func showWikiFlow() {

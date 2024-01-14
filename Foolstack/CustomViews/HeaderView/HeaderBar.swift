@@ -66,11 +66,11 @@ class HeaderBar: UIView {
         sliderView = UIView()
         self.addSubview(sliderView)
         sliderView.translatesAutoresizingMaskIntoConstraints = false
-        sliderView.backgroundColor = .red
+        sliderView.backgroundColor = .themeHeader
         
         NSLayoutConstraint.activate([
             sliderView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            sliderView.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 6),
+            sliderView.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 2),
             sliderView.widthAnchor.constraint(equalToConstant: 32),
             sliderView.heightAnchor.constraint(equalToConstant: 4)
         ])

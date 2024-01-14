@@ -14,14 +14,25 @@ extension UIColor {
     static let themeColor2 = UIColor(named: "Color2")!
     static let themeColor3 = UIColor(named: "Color3")!
     static let themeBackgroundMain = UIColor(named: "Color1")!
+    static let themeBackgroundSecondary = UIColor(named: "Color2")!
     static let themeBackgroundTop = UIColor(named: "Color4")!
+    static let themeBackgroundPopup = UIColor(named: "Color1")!
+    static let themeHeader = UIColor(named: "Color9")!
     static let themeStandartIcon = UIColor(named: "Color3")!
     static let themeAccent = UIColor(named: "Color5")!
     static let themeButtonUnselected = UIColor(named: "Color6")!
     static let themeButtonSelected = UIColor(named: "Color7")!
+    static let themeTestingCell1 = UIColor(named: "Color8")!
+    static let themeTestingCell2 = UIColor(named: "Color8_2")!
+    static let themeShadow1 = UIColor(named: "ShadowColor1")!
+    static let themeStatGood = UIColor(named: "ColorGood")!
+    static let themeStatBad = UIColor(named: "ColorBad")!
+    static let themeOverlay = UIColor(named: "OverlayColor")!
 
     //MARK: Text
     static let themeTextMain = UIColor(named: "TextColor1")!
+    static let themeTextMainAlpha50 = UIColor(named: "TextColor1")!.withAlphaComponent(0.5)
     static let themeTextSecondary = UIColor(named: "TextColor2")!
     static let themeTextViewTitle = UIColor(named: "Color4")!
+    static let themeTextDisabled = UIColor(named: "DisabledColor")!
 }

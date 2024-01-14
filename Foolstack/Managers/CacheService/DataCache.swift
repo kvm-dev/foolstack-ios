@@ -65,4 +65,17 @@ final class DataCacheImp : DataCacheService {
         }
         return []
     }
+    
+    func getTickets(for keys: [ServerKey]) async throws -> [TicketEntity] {
+        let storageTags = await storage.getTicketEntities(for: keys)
+        if !storageTags.isEmpty {
+            return storageTags
+        }
+        
+        if let networkData = try await network.getTickets() {
+            let storageEnts = await storage.addTickets(networkData)
+            return storageEnts
+        }
+        return []
+    }
 }

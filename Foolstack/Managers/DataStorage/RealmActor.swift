@@ -31,6 +31,7 @@ actor RealmActor {
     }
     
     //MARK: Wiki Item
+    
     func createOrUpdateWikiItem(serverId: ServerKey, ask: String, shortAnswer: String, isFullAnswer: Bool, fullAnswer: String?) async throws -> WikiItemRLM {
         let item = WikiItemRLM()
         item.serverId = serverId
@@ -57,20 +58,20 @@ actor RealmActor {
             realm.add(items, update: .modified)
         }
         
-//        var taggedItems: [Int:[WikiItemRLM]] = [:]
-//        data.forEach { d in
-//            if let item = items.first(where: { i in i.serverId == d.id }) {
-//                d.tags.forEach { t in
-//                    taggedItems[t, default: []].append(item)
-//                }
-//            }
-//        }
-//        
-//        for (key, value) in taggedItems {
-//            try await addItemsToTag(id: key, items: value)
-//        }
-//
-//        print(taggedItems)
+        //        var taggedItems: [Int:[WikiItemRLM]] = [:]
+        //        data.forEach { d in
+        //            if let item = items.first(where: { i in i.serverId == d.id }) {
+        //                d.tags.forEach { t in
+        //                    taggedItems[t, default: []].append(item)
+        //                }
+        //            }
+        //        }
+        //
+        //        for (key, value) in taggedItems {
+        //            try await addItemsToTag(id: key, items: value)
+        //        }
+        //
+        //        print(taggedItems)
         
         return convertWikiItemsToEntities(items)
     }
@@ -88,10 +89,10 @@ actor RealmActor {
         let predicate = NSPredicate(format: "ANY tags IN %@", tags)
         let result = realm.objects(WikiItemRLM.self)//.filter(predicate)
             .where {
-            $0.tags.containsAny(in: tags)
-        }
+                $0.tags.containsAny(in: tags)
+            }
         let res = Array(result)
-//        print(res)
+        //        print(res)
         return res
     }
     
@@ -103,24 +104,24 @@ actor RealmActor {
     func convertWikiItemsToEntities(_ items: [WikiItemRLM]) -> [WikiListEntity] {
         items.map { WikiListEntity(serverId: $0.serverId, ask: $0.ask, shortAnswer: $0.shortAnswer, fullAnswerExists: $0.fullAnswerExist, fullAnswer: $0.fullAnswer?.content, tags: Array($0.tags))}
     }
-
     
-//    func updateWikiItem(ask: String, shortAnswer: String, isFullAnswer: Bool, fullAnswer: String?) async throws -> WikiItemRLM {
-//        let item = WikiItemRLM()
-//        item.ask = ask
-//        item.shortAnswer = shortAnswer
-//        item.fullAnswerExist = isFullAnswer
-//        if let fullAnswer = fullAnswer {
-//            item.fullAnswer = WikiAnswerRLM(content: fullAnswer)
-//        }
-//        
-//        try await realm.asyncWrite {
-//            realm.add(item, update: .modified)
-//        }
-//        
-//        return item
-//    }
-
+    
+    //    func updateWikiItem(ask: String, shortAnswer: String, isFullAnswer: Bool, fullAnswer: String?) async throws -> WikiItemRLM {
+    //        let item = WikiItemRLM()
+    //        item.ask = ask
+    //        item.shortAnswer = shortAnswer
+    //        item.fullAnswerExist = isFullAnswer
+    //        if let fullAnswer = fullAnswer {
+    //            item.fullAnswer = WikiAnswerRLM(content: fullAnswer)
+    //        }
+    //
+    //        try await realm.asyncWrite {
+    //            realm.add(item, update: .modified)
+    //        }
+    //
+    //        return item
+    //    }
+    
     func deleteWikiItem(id: String) async throws {
         let objid = try ObjectId(string: id)
         let realm = try await getRealm()
@@ -141,7 +142,7 @@ actor RealmActor {
         try await realm.asyncWrite {
             realm.add(items, update: .modified)
         }
-
+        
         return convertTagsToEntities(items)
     }
     
@@ -187,7 +188,8 @@ actor RealmActor {
         let ents = tags.map { TagEntity(serverId: $0.serverId, name: $0.name)}
         return ents
     }
+    
+    
 }
-
 
 extension Realm: @unchecked Sendable {}

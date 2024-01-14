@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE02598A2B515AED0018F2C2 /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259892B515AED0018F2C2 /* PopupManager.swift */; };
+		CE02598C2B515B840018F2C2 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598B2B515B840018F2C2 /* PopupViewController.swift */; };
+		CE02598E2B515BB90018F2C2 /* PopupViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */; };
+		CE0259932B515C330018F2C2 /* PopupTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259922B515C330018F2C2 /* PopupTransformer.swift */; };
+		CE0259952B515C570018F2C2 /* PopupTransformerRegular.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */; };
+		CE0259972B51607B0018F2C2 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */; };
+		CE0259992B51774F0018F2C2 /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259982B51774F0018F2C2 /* CustomPopupView.swift */; };
+		CE02599B2B51778B0018F2C2 /* PopupButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */; };
+		CE02599D2B5180520018F2C2 /* PopupTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599C2B5180520018F2C2 /* PopupTextView.swift */; };
+		CE02599F2B518FC80018F2C2 /* PopupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */; };
+		CE0259A22B51EA660018F2C2 /* PopupTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259A12B51EA660018F2C2 /* PopupTransition.swift */; };
+		CE0259A42B52CEF50018F2C2 /* ConfirmPopupConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0259A32B52CEF50018F2C2 /* ConfirmPopupConfig.swift */; };
 		CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */; };
 		CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17C7812AFE882700E53297 /* NetworkClient.swift */; };
 		CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */; };
+		CE40FED02B4D919500BC5F02 /* TestingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */; };
+		CE40FED22B4DA89E00BC5F02 /* Mock_tickets_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */; };
+		CE40FED42B4DAD6A00BC5F02 /* TestingFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */; };
 		CE4E2DA62AF3E75C00108F53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA52AF3E75C00108F53 /* Realm */; };
 		CE4E2DA82AF3E75C00108F53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DA72AF3E75C00108F53 /* RealmSwift */; };
 		CE4E2DAB2AF3E83D00108F53 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E2DAA2AF3E83D00108F53 /* Alamofire */; };
-		CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */; };
-		CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */; };
-		CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */; };
 		CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB52AF5039500108F53 /* WikiListVC.swift */; };
 		CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */; };
 		CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */; };
@@ -23,9 +35,10 @@
 		CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4E2DBE2AF50B6800108F53 /* Wiki.storyboard */; };
 		CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC12AF52F6600108F53 /* MainVC.swift */; };
 		CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */; };
-		CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */; };
 		CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */; };
-		CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */; };
+		CE667A932B5044210061585C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE667A922B5044210061585C /* UIViewExtensions.swift */; };
+		CE667A952B5049200061585C /* ExamQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE667A942B5049200061585C /* ExamQuestionView.swift */; };
+		CE667A972B50495C0061585C /* ExamQuestionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE667A962B50495C0061585C /* ExamQuestionVM.swift */; };
 		CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */; };
 		CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */; };
 		CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF742B3C66650081E64B /* CatEntity.swift */; };
@@ -35,7 +48,6 @@
 		CE8CFF8F2B3EEC250081E64B /* DataCacheTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF8E2B3EEC250081E64B /* DataCacheTemp.swift */; };
 		CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF902B3EECB50081E64B /* Constants.swift */; };
 		CE8CFF982B3F071D0081E64B /* cache in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFF972B3F071C0081E64B /* cache */; };
-		CE8CFF9B2B3F4BED0081E64B /* HeaderBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFF9A2B3F4BED0081E64B /* HeaderBar.xib */; };
 		CE8CFF9F2B4052310081E64B /* CatProfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF9E2B4052310081E64B /* CatProfCell.swift */; };
 		CE8CFFAE2B4054F00081E64B /* sf-ui-text-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFFA22B4054F00081E64B /* sf-ui-text-regular.ttf */; };
 		CE8CFFAF2B4054F00081E64B /* sf-ui-text-heavy-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFFA32B4054F00081E64B /* sf-ui-text-heavy-italic.ttf */; };
@@ -107,8 +119,32 @@
 		CED469252B46E83100283B43 /* TagListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469242B46E83100283B43 /* TagListVM.swift */; };
 		CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469262B47008200283B43 /* TagsCollectionLayout.swift */; };
 		CED469292B48960C00283B43 /* TagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469282B48960C00283B43 /* TagListCell.swift */; };
+		CEE1DAD22B4DF65E00E70B70 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEE1DAD12B4DF65E00E70B70 /* Localizable.xcstrings */; };
+		CEE1DAD42B4EE17300E70B70 /* ExaminationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DAD32B4EE17300E70B70 /* ExaminationVC.swift */; };
+		CEE1DAD62B4EE23700E70B70 /* ExaminationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DAD52B4EE23700E70B70 /* ExaminationVM.swift */; };
+		CEE1DAD82B4EE3E600E70B70 /* ExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DAD72B4EE3E600E70B70 /* ExamTableCell.swift */; };
+		CEE1DADA2B4FF18A00E70B70 /* ExamFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DAD92B4FF18900E70B70 /* ExamFinishView.swift */; };
+		CEE1DADD2B50115300E70B70 /* UICounterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DADC2B50115300E70B70 /* UICounterLabel.swift */; };
+		CEE1DADF2B5015D400E70B70 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DADE2B5015D400E70B70 /* CircularProgressView.swift */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
+		CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */; };
+		CEF0AC912B49747F0000B241 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC902B49747F0000B241 /* UserStorage.swift */; };
+		CEF0AC932B4974D80000B241 /* UserStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */; };
+		CEF0AC962B49F1E20000B241 /* WikiListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC952B49F1E20000B241 /* WikiListCell.swift */; };
+		CEF0AC992B4A0DED0000B241 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */; };
+		CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */; };
+		CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */; };
+		CEF0ACA12B4C078C0000B241 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */; };
+		CEF0ACA42B4C40C30000B241 /* TestingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA32B4C40C30000B241 /* TestingVC.swift */; };
+		CEF0ACA62B4C40CD0000B241 /* TestingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA52B4C40CD0000B241 /* TestingVM.swift */; };
+		CEF0ACA82B4C5EA30000B241 /* TicketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA72B4C5EA30000B241 /* TicketEntity.swift */; };
+		CEF0ACAA2B4C5EE30000B241 /* TicketRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACA92B4C5EE30000B241 /* TicketRLM.swift */; };
+		CEF0ACAC2B4C5F330000B241 /* TicketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACAB2B4C5F330000B241 /* TicketData.swift */; };
+		CEF0ACAE2B4C60AB0000B241 /* TicketQuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACAD2B4C60AB0000B241 /* TicketQuestionData.swift */; };
+		CEF0ACB02B4C92E20000B241 /* TicketQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACAF2B4C92E20000B241 /* TicketQuestionEntity.swift */; };
+		CEF0ACB22B4C94720000B241 /* TicketQuestionRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACB12B4C94720000B241 /* TicketQuestionRLM.swift */; };
+		CEF0ACB42B4C9D110000B241 /* Ticket+RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0ACB32B4C9D110000B241 /* Ticket+RLM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,12 +165,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0259892B515AED0018F2C2 /* PopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
+		CE02598B2B515B840018F2C2 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewContainer.swift; sourceTree = "<group>"; };
+		CE0259922B515C330018F2C2 /* PopupTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransformer.swift; sourceTree = "<group>"; };
+		CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransformerRegular.swift; sourceTree = "<group>"; };
+		CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		CE0259982B51774F0018F2C2 /* CustomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
+		CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButtonsView.swift; sourceTree = "<group>"; };
+		CE02599C2B5180520018F2C2 /* PopupTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTextView.swift; sourceTree = "<group>"; };
+		CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProtocols.swift; sourceTree = "<group>"; };
+		CE0259A12B51EA660018F2C2 /* PopupTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransition.swift; sourceTree = "<group>"; };
+		CE0259A32B52CEF50018F2C2 /* ConfirmPopupConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopupConfig.swift; sourceTree = "<group>"; };
 		CE17C77F2AFE87E200E53297 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		CE17C7812AFE882700E53297 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		CE19DD5D2B012CF800541E93 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
-		CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFlowProtocols.swift; sourceTree = "<group>"; };
-		CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListPresenterImp.swift; sourceTree = "<group>"; };
-		CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListInteractor.swift; sourceTree = "<group>"; };
+		CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableCell.swift; sourceTree = "<group>"; };
+		CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_tickets_JSON.json; sourceTree = "<group>"; };
+		CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlowBuilder.swift; sourceTree = "<group>"; };
 		CE4E2DB52AF5039500108F53 /* WikiListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVC.swift; sourceTree = "<group>"; };
 		CE4E2DB72AF5083E00108F53 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		CE4E2DB92AF508A600108F53 /* NSObjectExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtenstions.swift; sourceTree = "<group>"; };
@@ -142,9 +190,10 @@
 		CE4E2DBE2AF50B6800108F53 /* Wiki.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wiki.storyboard; sourceTree = "<group>"; };
 		CE4E2DC12AF52F6600108F53 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiFlowBuilder.swift; sourceTree = "<group>"; };
-		CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListRouterImp.swift; sourceTree = "<group>"; };
 		CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntity.swift; sourceTree = "<group>"; };
-		CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListRepoImp.swift; sourceTree = "<group>"; };
+		CE667A922B5044210061585C /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		CE667A942B5049200061585C /* ExamQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionView.swift; sourceTree = "<group>"; };
+		CE667A962B50495C0061585C /* ExamQuestionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionVM.swift; sourceTree = "<group>"; };
 		CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncExtentions.swift; sourceTree = "<group>"; };
 		CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowProtocols.swift; sourceTree = "<group>"; };
 		CE8CFF742B3C66650081E64B /* CatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntity.swift; sourceTree = "<group>"; };
@@ -155,7 +204,6 @@
 		CE8CFF8E2B3EEC250081E64B /* DataCacheTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheTemp.swift; sourceTree = "<group>"; };
 		CE8CFF902B3EECB50081E64B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE8CFF972B3F071C0081E64B /* cache */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cache; sourceTree = "<group>"; };
-		CE8CFF9A2B3F4BED0081E64B /* HeaderBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderBar.xib; sourceTree = "<group>"; };
 		CE8CFF9E2B4052310081E64B /* CatProfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfCell.swift; sourceTree = "<group>"; };
 		CE8CFFA22B4054F00081E64B /* sf-ui-text-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf-ui-text-regular.ttf"; sourceTree = "<group>"; };
 		CE8CFFA32B4054F00081E64B /* sf-ui-text-heavy-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf-ui-text-heavy-italic.ttf"; sourceTree = "<group>"; };
@@ -229,8 +277,34 @@
 		CED469242B46E83100283B43 /* TagListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListVM.swift; sourceTree = "<group>"; };
 		CED469262B47008200283B43 /* TagsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionLayout.swift; sourceTree = "<group>"; };
 		CED469282B48960C00283B43 /* TagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListCell.swift; sourceTree = "<group>"; };
+		CEE1DACF2B4DF03200E70B70 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		CEE1DAD02B4DF03200E70B70 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CEE1DAD12B4DF65E00E70B70 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		CEE1DAD32B4EE17300E70B70 /* ExaminationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationVC.swift; sourceTree = "<group>"; };
+		CEE1DAD52B4EE23700E70B70 /* ExaminationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationVM.swift; sourceTree = "<group>"; };
+		CEE1DAD72B4EE3E600E70B70 /* ExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableCell.swift; sourceTree = "<group>"; };
+		CEE1DAD92B4FF18900E70B70 /* ExamFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamFinishView.swift; sourceTree = "<group>"; };
+		CEE1DADC2B50115300E70B70 /* UICounterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICounterLabel.swift; sourceTree = "<group>"; };
+		CEE1DADE2B5015D400E70B70 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
+		CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVM.swift; sourceTree = "<group>"; };
+		CEF0AC902B49747F0000B241 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageConfig.swift; sourceTree = "<group>"; };
+		CEF0AC952B49F1E20000B241 /* WikiListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListCell.swift; sourceTree = "<group>"; };
+		CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicExtensions.swift; sourceTree = "<group>"; };
+		CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		CEF0ACA32B4C40C30000B241 /* TestingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingVC.swift; sourceTree = "<group>"; };
+		CEF0ACA52B4C40CD0000B241 /* TestingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingVM.swift; sourceTree = "<group>"; };
+		CEF0ACA72B4C5EA30000B241 /* TicketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEntity.swift; sourceTree = "<group>"; };
+		CEF0ACA92B4C5EE30000B241 /* TicketRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRLM.swift; sourceTree = "<group>"; };
+		CEF0ACAB2B4C5F330000B241 /* TicketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketData.swift; sourceTree = "<group>"; };
+		CEF0ACAD2B4C60AB0000B241 /* TicketQuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuestionData.swift; sourceTree = "<group>"; };
+		CEF0ACAF2B4C92E20000B241 /* TicketQuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuestionEntity.swift; sourceTree = "<group>"; };
+		CEF0ACB12B4C94720000B241 /* TicketQuestionRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuestionRLM.swift; sourceTree = "<group>"; };
+		CEF0ACB32B4C9D110000B241 /* Ticket+RLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+RLM.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +337,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE0259882B515ABA0018F2C2 /* AlertViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE0259A02B51EA370018F2C2 /* PopupTransition */,
+				CE0259912B515C130018F2C2 /* PopupTransformer */,
+				CE02599E2B518FC80018F2C2 /* PopupProtocols.swift */,
+				CE0259892B515AED0018F2C2 /* PopupManager.swift */,
+				CE02598B2B515B840018F2C2 /* PopupViewController.swift */,
+				CE02598D2B515BB90018F2C2 /* PopupViewContainer.swift */,
+				CE0259982B51774F0018F2C2 /* CustomPopupView.swift */,
+				CE02599A2B51778A0018F2C2 /* PopupButtonsView.swift */,
+				CE02599C2B5180520018F2C2 /* PopupTextView.swift */,
+				CE0259A32B52CEF50018F2C2 /* ConfirmPopupConfig.swift */,
+			);
+			path = AlertViews;
+			sourceTree = "<group>";
+		};
+		CE0259912B515C130018F2C2 /* PopupTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				CE0259922B515C330018F2C2 /* PopupTransformer.swift */,
+				CE0259942B515C570018F2C2 /* PopupTransformerRegular.swift */,
+			);
+			path = PopupTransformer;
+			sourceTree = "<group>";
+		};
+		CE0259A02B51EA370018F2C2 /* PopupTransition */ = {
+			isa = PBXGroup;
+			children = (
+				CE0259A12B51EA660018F2C2 /* PopupTransition.swift */,
+			);
+			path = PopupTransition;
+			sourceTree = "<group>";
+		};
 		CE17C7792AFE870000E53297 /* Cases */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +390,7 @@
 		CE17C77B2AFE877900E53297 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0AC8F2B49742F0000B241 /* UserStorage */,
 				CEC4EF972B00B8B200A64604 /* DataStorage */,
 				CEC4EF922AFFEFFB00A64604 /* CacheService */,
 				CE17C77C2AFE878900E53297 /* Networking */,
@@ -339,10 +448,12 @@
 		CE4E2DAD2AF5004B00108F53 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0AC9F2B4C075D0000B241 /* MainTabController */,
 				CE8CFF712B3C64080081E64B /* CategoriesFlow */,
 				CE4E2DC02AF52F4200108F53 /* MainFlow */,
 				CE4E2DAE2AF5005800108F53 /* WikiFlow */,
 				CEC3DDC32B04C2CF005B0A5F /* TagsFlow */,
+				CEF0ACA22B4C403D0000B241 /* TestingFlow */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -350,13 +461,10 @@
 		CE4E2DAE2AF5005800108F53 /* WikiFlow */ = {
 			isa = PBXGroup;
 			children = (
-				CE4E2DAF2AF5008900108F53 /* WikiFlowProtocols.swift */,
-				CE4E2DB12AF5015600108F53 /* WikiListPresenterImp.swift */,
-				CE4E2DB32AF5026500108F53 /* WikiListInteractor.swift */,
-				CE4E2DC52AF5595A00108F53 /* WikiListRouterImp.swift */,
-				CE4E2DC92AF55C0400108F53 /* WikiListRepoImp.swift */,
-				CE4E2DB52AF5039500108F53 /* WikiListVC.swift */,
 				CE4E2DC32AF557F300108F53 /* WikiFlowBuilder.swift */,
+				CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */,
+				CE4E2DB52AF5039500108F53 /* WikiListVC.swift */,
+				CEF0AC942B49F12B0000B241 /* WikiListCell */,
 			);
 			path = WikiFlow;
 			sourceTree = "<group>";
@@ -391,6 +499,8 @@
 				CE8CFFC02B40A1290081E64B /* PrintDebug.swift */,
 				CE8CFFC22B40A1700081E64B /* URL+Ext.swift */,
 				CED4690D2B434ED300283B43 /* StringExtension.swift */,
+				CEF0AC9D2B4AD3520000B241 /* CoreGraphicExtensions.swift */,
+				CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,7 +535,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA1EDF92B04E14F0050CA34 /* HeaderBar.swift */,
-				CE8CFF9A2B3F4BED0081E64B /* HeaderBar.xib */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -497,6 +606,7 @@
 		CE907EBB2AF293B100BEB504 /* Foolstack */ = {
 			isa = PBXGroup;
 			children = (
+				CEE1DAD12B4DF65E00E70B70 /* Localizable.xcstrings */,
 				CEC4EF872AFED1EB00A64604 /* Model */,
 				CE17C77B2AFE877900E53297 /* Managers */,
 				CE4E2DAD2AF5004B00108F53 /* Flows */,
@@ -542,6 +652,7 @@
 			children = (
 				CEA1EDF62B04E10E0050CA34 /* NibView.swift */,
 				CEA1EDFB2B04E3250050CA34 /* UIButtonCustom.swift */,
+				CE667A922B5044210061585C /* UIViewExtensions.swift */,
 			);
 			path = "View Extensions";
 			sourceTree = "<group>";
@@ -549,10 +660,14 @@
 		CEA1EDF82B04E1310050CA34 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE0259882B515ABA0018F2C2 /* AlertViews */,
+				CEF0AC9A2B4AD2C40000B241 /* TextViews */,
+				CEF0AC972B4A0DDA0000B241 /* SearchBar */,
 				CE8CFFBD2B40A0830081E64B /* WebImage */,
 				CE8CFFBA2B4071320081E64B /* Buttons */,
 				CE8CFF992B3F4BB50081E64B /* HeaderView */,
 				CEA1EE062B0526920050CA34 /* TableViewCells */,
+				CEE1DADB2B50113700E70B70 /* AnimatedViews */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -636,6 +751,7 @@
 				CE8CFF782B3C689E0081E64B /* Mock_cats_JSON.json */,
 				CEC3DDB72B02B68B005B0A5F /* Mock_tags_JSON.json */,
 				CEC4EF8E2AFFCCF900A64604 /* Mock_wikis_JSON.json */,
+				CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -656,6 +772,7 @@
 				CEC4EF982B00B8D900A64604 /* DataStorage.swift */,
 				CEC4EF9A2B00B98700A64604 /* StorageConfig.swift */,
 				CEC4EF9E2B00D01700A64604 /* RealmActor.swift */,
+				CEF0ACB32B4C9D110000B241 /* Ticket+RLM.swift */,
 				CEC4EFA02B00D8B300A64604 /* Realm Model */,
 			);
 			path = DataStorage;
@@ -667,6 +784,8 @@
 				CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */,
 				CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */,
 				CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */,
+				CEF0ACA92B4C5EE30000B241 /* TicketRLM.swift */,
+				CEF0ACB12B4C94720000B241 /* TicketQuestionRLM.swift */,
 			);
 			path = "Realm Model";
 			sourceTree = "<group>";
@@ -679,12 +798,23 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
+		CEE1DADB2B50113700E70B70 /* AnimatedViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1DADC2B50115300E70B70 /* UICounterLabel.swift */,
+				CEE1DADE2B5015D400E70B70 /* CircularProgressView.swift */,
+			);
+			path = AnimatedViews;
+			sourceTree = "<group>";
+		};
 		CEE588CA2B02514500A7EEAE /* Server */ = {
 			isa = PBXGroup;
 			children = (
 				CEC4EF882AFED20B00A64604 /* WikiData.swift */,
 				CEE588C82B024F0900A7EEAE /* TagData.swift */,
 				CE8CFF762B3C66EF0081E64B /* CatData.swift */,
+				CEF0ACAB2B4C5F330000B241 /* TicketData.swift */,
+				CEF0ACAD2B4C60AB0000B241 /* TicketQuestionData.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -695,8 +825,68 @@
 				CEE588CB2B02516200A7EEAE /* TagEntity.swift */,
 				CE4E2DC72AF55A2200108F53 /* WikiEntity.swift */,
 				CE8CFF742B3C66650081E64B /* CatEntity.swift */,
+				CEF0ACA72B4C5EA30000B241 /* TicketEntity.swift */,
+				CEF0ACAF2B4C92E20000B241 /* TicketQuestionEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		CEF0AC8F2B49742F0000B241 /* UserStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC902B49747F0000B241 /* UserStorage.swift */,
+				CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */,
+			);
+			path = UserStorage;
+			sourceTree = "<group>";
+		};
+		CEF0AC942B49F12B0000B241 /* WikiListCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC952B49F1E20000B241 /* WikiListCell.swift */,
+			);
+			path = WikiListCell;
+			sourceTree = "<group>";
+		};
+		CEF0AC972B4A0DDA0000B241 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC982B4A0DED0000B241 /* SearchBarView.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		CEF0AC9A2B4AD2C40000B241 /* TextViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0AC9B2B4AD2E80000B241 /* CustomTextField.swift */,
+			);
+			path = TextViews;
+			sourceTree = "<group>";
+		};
+		CEF0AC9F2B4C075D0000B241 /* MainTabController */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0ACA02B4C078C0000B241 /* MainTabVC.swift */,
+			);
+			path = MainTabController;
+			sourceTree = "<group>";
+		};
+		CEF0ACA22B4C403D0000B241 /* TestingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */,
+				CEF0ACA32B4C40C30000B241 /* TestingVC.swift */,
+				CEF0ACA52B4C40CD0000B241 /* TestingVM.swift */,
+				CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */,
+				CEE1DAD32B4EE17300E70B70 /* ExaminationVC.swift */,
+				CEE1DAD52B4EE23700E70B70 /* ExaminationVM.swift */,
+				CE667A942B5049200061585C /* ExamQuestionView.swift */,
+				CE667A962B50495C0061585C /* ExamQuestionVM.swift */,
+				CEE1DAD72B4EE3E600E70B70 /* ExamTableCell.swift */,
+				CEE1DAD92B4FF18900E70B70 /* ExamFinishView.swift */,
+			);
+			path = TestingFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -792,6 +982,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE907EB02AF293B100BEB504;
 			packageReferences = (
@@ -823,13 +1014,14 @@
 				CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */,
 				CE8CFFB42B4054F00081E64B /* sf-ui-text-bold-italic.ttf in Resources */,
 				CE8CFFB82B4054F00081E64B /* sf-ui-text-semibold-italic.ttf in Resources */,
+				CE40FED22B4DA89E00BC5F02 /* Mock_tickets_JSON.json in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
 				CE8CFFB12B4054F00081E64B /* sf-ui-text-italic.ttf in Resources */,
 				CE8CFFB72B4054F00081E64B /* sf-ui-text-semibold.ttf in Resources */,
 				CE8CFFB92B4054F00081E64B /* sf-ui-text-light.ttf in Resources */,
 				CE8CFFB02B4054F00081E64B /* sf-ui-text-bold.ttf in Resources */,
-				CE8CFF9B2B3F4BED0081E64B /* HeaderBar.xib in Resources */,
 				CE4E2DBF2AF50B6800108F53 /* Wiki.storyboard in Resources */,
+				CEE1DAD22B4DF65E00E70B70 /* Localizable.xcstrings in Resources */,
 				CE907EC42AF293B100BEB504 /* Main.storyboard in Resources */,
 				CE8CFF982B3F071D0081E64B /* cache in Resources */,
 				CE8CFFB62B4054F00081E64B /* sf-ui-text-medium.ttf in Resources */,
@@ -861,60 +1053,86 @@
 			files = (
 				CED469102B4420D500283B43 /* CatProfView.swift in Sources */,
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
-				CE4E2DB02AF5008900108F53 /* WikiFlowProtocols.swift in Sources */,
 				CEA1EDFC2B04E3250050CA34 /* UIButtonCustom.swift in Sources */,
+				CEE1DAD42B4EE17300E70B70 /* ExaminationVC.swift in Sources */,
+				CEF0AC932B4974D80000B241 /* UserStorageConfig.swift in Sources */,
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
 				CEA1EDF42B04D6B50050CA34 /* UIView+Constraints.swift in Sources */,
 				CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */,
+				CEF0ACA12B4C078C0000B241 /* MainTabVC.swift in Sources */,
+				CE0259952B515C570018F2C2 /* PopupTransformerRegular.swift in Sources */,
+				CE0259932B515C330018F2C2 /* PopupTransformer.swift in Sources */,
 				CEC3DDB62B02B15F005B0A5F /* MockURLSession.swift in Sources */,
 				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
 				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
+				CE0259A22B51EA660018F2C2 /* PopupTransition.swift in Sources */,
+				CE667A972B50495C0061585C /* ExamQuestionVM.swift in Sources */,
 				CEA1EDF72B04E10E0050CA34 /* NibView.swift in Sources */,
+				CE40FED02B4D919500BC5F02 /* TestingTableCell.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
+				CE667A932B5044210061585C /* UIViewExtensions.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
+				CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */,
+				CEE1DAD62B4EE23700E70B70 /* ExaminationVM.swift in Sources */,
 				CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */,
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
-				CE4E2DC62AF5595A00108F53 /* WikiListRouterImp.swift in Sources */,
 				CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */,
+				CE02599B2B51778B0018F2C2 /* PopupButtonsView.swift in Sources */,
 				CED469142B44246500283B43 /* CatListViewBase.swift in Sources */,
 				CEA1EE0A2B0529220050CA34 /* FontExtension.swift in Sources */,
 				CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
+				CEF0ACA82B4C5EA30000B241 /* TicketEntity.swift in Sources */,
+				CEF0ACB22B4C94720000B241 /* TicketQuestionRLM.swift in Sources */,
 				CED469292B48960C00283B43 /* TagListCell.swift in Sources */,
+				CE0259A42B52CEF50018F2C2 /* ConfirmPopupConfig.swift in Sources */,
+				CE02598A2B515AED0018F2C2 /* PopupManager.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
+				CEF0AC912B49747F0000B241 /* UserStorage.swift in Sources */,
 				CE8CFFBC2B4072010081E64B /* BorderButton.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
+				CE0259972B51607B0018F2C2 /* CGPoint+Extensions.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
 				CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */,
 				CED469122B4420E400283B43 /* CatSpecView.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CEA1EE082B0527CB0050CA34 /* SimpleTableCell.swift in Sources */,
+				CEF0AC962B49F1E20000B241 /* WikiListCell.swift in Sources */,
+				CEE1DAD82B4EE3E600E70B70 /* ExamTableCell.swift in Sources */,
+				CEF0ACAC2B4C5F330000B241 /* TicketData.swift in Sources */,
+				CEE1DADF2B5015D400E70B70 /* CircularProgressView.swift in Sources */,
 				CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */,
 				CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */,
 				CE8CFF9F2B4052310081E64B /* CatProfCell.swift in Sources */,
 				CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */,
 				CEC3DDC22B03CE2B005B0A5F /* MockNetworkClient.swift in Sources */,
+				CEF0ACAE2B4C60AB0000B241 /* TicketQuestionData.swift in Sources */,
 				CEA1EE032B051C0C0050CA34 /* ValueConstants.swift in Sources */,
 				CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
+				CE0259992B51774F0018F2C2 /* CustomPopupView.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
-				CE4E2DB42AF5026500108F53 /* WikiListInteractor.swift in Sources */,
+				CEF0AC9E2B4AD3520000B241 /* CoreGraphicExtensions.swift in Sources */,
+				CEF0ACB02B4C92E20000B241 /* TicketQuestionEntity.swift in Sources */,
+				CE667A952B5049200061585C /* ExamQuestionView.swift in Sources */,
 				CE8CFFBF2B40A0A10081E64B /* WebImageView.swift in Sources */,
 				CEA1EDFA2B04E14F0050CA34 /* HeaderBar.swift in Sources */,
 				CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */,
+				CEE1DADA2B4FF18A00E70B70 /* ExamFinishView.swift in Sources */,
 				CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
 				CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */,
-				CE4E2DCA2AF55C0400108F53 /* WikiListRepoImp.swift in Sources */,
 				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,
+				CE40FED42B4DAD6A00BC5F02 /* TestingFlowBuilder.swift in Sources */,
 				CE4E2DBA2AF508A600108F53 /* NSObjectExtenstions.swift in Sources */,
+				CEF0AC992B4A0DED0000B241 /* SearchBarView.swift in Sources */,
 				CEA1EE052B051C7D0050CA34 /* UIImageExtensions.swift in Sources */,
 				CE8CFFC32B40A1700081E64B /* URL+Ext.swift in Sources */,
-				CE4E2DB22AF5015600108F53 /* WikiListPresenterImp.swift in Sources */,
+				CE02599F2B518FC80018F2C2 /* PopupProtocols.swift in Sources */,
 				CEC3DDC52B04C347005B0A5F /* TagListVC.swift in Sources */,
 				CE8CFF842B3DD0940081E64B /* CatFlowBuilder.swift in Sources */,
 				CED469232B45FD4500283B43 /* CustomNavigationAnimator.swift in Sources */,
@@ -922,12 +1140,21 @@
 				CEC4EF802AFEC65B00A64604 /* ApiEnvironment.swift in Sources */,
 				CE8CFFC12B40A1290081E64B /* PrintDebug.swift in Sources */,
 				CED469182B44A66600283B43 /* CatListVM.swift in Sources */,
+				CE02599D2B5180520018F2C2 /* PopupTextView.swift in Sources */,
+				CE02598C2B515B840018F2C2 /* PopupViewController.swift in Sources */,
 				CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */,
+				CE02598E2B515BB90018F2C2 /* PopupViewContainer.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
+				CEF0ACB42B4C9D110000B241 /* Ticket+RLM.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
+				CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
+				CEF0ACAA2B4C5EE30000B241 /* TicketRLM.swift in Sources */,
 				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
 				CED469252B46E83100283B43 /* TagListVM.swift in Sources */,
+				CEE1DADD2B50115300E70B70 /* UICounterLabel.swift in Sources */,
+				CEF0ACA42B4C40C30000B241 /* TestingVC.swift in Sources */,
+				CEF0ACA62B4C40CD0000B241 /* TestingVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +1200,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE907EC32AF293B100BEB504 /* Base */,
+				CEE1DACF2B4DF03200E70B70 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -981,6 +1209,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE907EC82AF293B300BEB504 /* Base */,
+				CEE1DAD02B4DF03200E70B70 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -993,6 +1222,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1048,6 +1278,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -1056,6 +1287,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1103,6 +1335,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
