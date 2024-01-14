@@ -37,9 +37,9 @@ class ConfirmationPopupConfig: PopupConfiguration, PopupButtonsConfiguration, Po
         self.textColor = type == .danger ? .themeTextSecondary : .themeTextMain
     }
     
-    deinit {
-        print("DEINIT. ConfirmationPopupConfig")
-    }
+//    deinit {
+//        print("DEINIT. ConfirmationPopupConfig")
+//    }
 
     var buttons: [PopupButtonConfig] {
         var buttons = [PopupButtonConfig]()

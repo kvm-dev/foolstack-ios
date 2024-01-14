@@ -56,13 +56,14 @@ class PopupManager {
         }
     }
     
-    public func launch(view: CustomPopupView, superview: UIView, onClose: (() -> Void)? = nil) {
-        
-        let popupContainer = PopupViewContainer(popupView: view, superview: superview)
-        if let onClose = onClose {
-            popupContainer.onDismissFinished = onClose
-        }
-    }
+    /// Not used
+//    public func launch(view: CustomPopupView, superview: UIView, onClose: (() -> Void)? = nil) {
+//        
+//        let popupContainer = PopupViewContainer(popupView: view, superview: superview)
+//        if let onClose = onClose {
+//            popupContainer.onDismissFinished = onClose
+//        }
+//    }
     
     func topMostController() -> UIViewController? {
         return UIApplication.shared.topViewController

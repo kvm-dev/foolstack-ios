@@ -25,9 +25,9 @@ class CustomPopupView: UIView {
         createContent()
     }
     
-    deinit {
-        print("DEINIT. ConfirmationPopup")
-    }
+//    deinit {
+//        print("DEINIT. ConfirmationPopup")
+//    }
     
     func createContent() {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -114,55 +114,7 @@ class CustomPopupView: UIView {
             self.closeAction?(self, closedAction)
         }
     }
-    
-    private func onConfirm() {
-//        confirmAction?()
-//        confirmAction = nil
-        closeView()
-    }
-    
-    private func onCancel() {
-//        cancelAction?()
-//        cancelAction = nil
-        closeView()
-    }
-    
-//    override func show(safeInsets: UIEdgeInsets = .zero, animated: Bool = true) {
-//        
-//        DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute: { [weak self] in
-//            guard let self = self, let parent = self.superview else {
-//                return
-//            }
-//            let parentSafeInsets = parent.safeAreaInsets
-//            let parentFrame = parent.frame.inset(by: parentSafeInsets)
-//            let isRegular = self.isRegular
-//            var bottomOffsetY = max(parentSafeInsets.bottom, .viewPadding)
-//            if isRegular {
-//                bottomOffsetY = (parentFrame.height - self.frame.height) * 0.5
-//            }
-//            
-//            //print("Show ConfirmationPopup. Offset \(bottomOffsetY), parent safeInsets \(parent.safeAreaInsets.bottom)")
-//            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: { [weak self] in
-//                if let self = self, let constr = self.topConstr {
-//                    if isRegular {
-//                        //constr.constant =
-//                    }
-//                    //          print("Show OneTextFieldView 2. offset \(-self.frame.height - bottomOffsetY)")
-//                    constr.constant = -self.frame.height - bottomOffsetY
-//                    self.superview?.layoutIfNeeded()
-//                }
-//            }, completion: nil)
-//        })
-//    }
-    
-    override func willMove(toSuperview newSuperview: UIView?) {
-        //print("Popup will move")
-        if newSuperview == nil {
-            //print("Popup will removed")
-        } else {
-        }
-    }
-    
+
     override func didMoveToSuperview() {
         if superview != nil {
             popupTransition = PopupTransition(popupView: self, position: .center, appearDirection: .bottom)
@@ -175,35 +127,20 @@ class CustomPopupView: UIView {
         closeAction = nil
     }
     
-    func show(safeInsets: UIEdgeInsets = .zero, animated: Bool = true) {
-        if let transformer = popupTransition {
-            transformer.show()
+    func show(animated: Bool = true) {
+        if animated {
+            popupTransition.show()
         } else {
-            DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute: { [weak self] in
-                guard let self = self else { return }
-                
-                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: { [weak self] in
-                    if let self = self, let constr = self.topConstr {
-                        constr.constant = -self.frame.height - self.superview!.safeAreaInsets.bottom
-                        self.superview?.layoutIfNeeded()
-                    }
-                }, completion: nil)
-            })
+            self.isHidden = false
         }
     }
     
-    open func hide(animated: Bool = true, completion: (() -> Void)? = nil) {
-        if let transformer = popupTransition {
-            transformer.hide(animated: animated, completion: completion)
+    func hide(animated: Bool = true, completion: (() -> Void)? = nil) {
+        if animated {
+            popupTransition.hide(animated: animated, completion: completion)
         } else {
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: { [weak self] in
-                if let self = self, let constr = self.topConstr {
-                    constr.constant = 0
-                    self.superview?.layoutIfNeeded()
-                }
-            }) { _ in
-                completion?()
-            }
+            self.isHidden = true
+            completion?()
         }
     }
 

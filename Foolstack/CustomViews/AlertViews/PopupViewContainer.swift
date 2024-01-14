@@ -41,7 +41,7 @@ class PopupViewContainer: UIView {
         overlay.pinEdges(to: self, padding: 0)
         
         self.layoutIfNeeded()
-        currentPopup.show(safeInsets: self.safeAreaInsets, animated: true)
+        currentPopup.show(animated: true)
         
         currentPopup.closeAction = { [weak self] popup, closedAction in
             self?.close()
