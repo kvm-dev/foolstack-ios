@@ -81,4 +81,26 @@ final class DataStorage: @unchecked Sendable {
         return []
     }
 
+    //MARK: Categories
+    
+    func addCategories(_ data: [CatData]) async -> [CatEntity] {
+        do {
+            let items = try await database.addCategories(data)
+            return items
+        } catch {
+            print("Create categories failed:", error)
+        }
+        return []
+    }
+    
+    func getCategoryEntities() async -> [CatEntity] {
+        do {
+            let items = try await database.getCategoryEntities()
+            return items
+        } catch {
+            printToConsole("Get categories failed:", error)
+        }
+        return []
+    }
+
 }

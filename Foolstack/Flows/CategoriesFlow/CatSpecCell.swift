@@ -44,14 +44,26 @@ class CatSpecCell: UICollectionViewCell {
 
         let padding: CGFloat = 12 + bgrdPadding
         let imageSize: CGFloat = 52
+
+        let imageViewContainer = UIView()
+        contentView.addSubview(imageViewContainer)
+        imageViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageViewContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: padding),
+            imageViewContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
+            imageViewContainer.widthAnchor.constraint(equalToConstant: imageSize),
+            imageViewContainer.heightAnchor.constraint(equalToConstant: imageSize),
+        ])
+
         imageView = WebImageView()
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
-            imageView.centerXAnchor.constraint(equalTo: contentView.leftAnchor, constant: padding + imageSize/2),
-            imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
-            //imageView.widthAnchor.constraint(equalTo: contentView.rightAnchor, constant: -padding),
+            imageView.centerXAnchor.constraint(equalTo: imageViewContainer.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: imageViewContainer.centerYAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 24),
+            imageView.heightAnchor.constraint(equalToConstant: 24),
         ])
 
         titleLabel = UILabel()

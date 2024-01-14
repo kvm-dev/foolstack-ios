@@ -16,34 +16,35 @@ final class CatChoiceVM: CatChoiceVMP {
     private let cacheService: DataCacheService
     private var collectionStack: [CatListVMP] = []
     
+    //private var categories: [CatEntity] = []
+    
     init(cacheService: DataCacheService) {
         self.cacheService = cacheService
 
-        
+    }
+    
+    func load() {
+        getCategories()
     }
 
-    func getCategories(parentIds: [ServerKey]) {
+    func getCategories() {
         Task { [weak self] in
             guard let self = self else {return}
             do {
-                let items = try await self.cacheService.getCategories(parentIds: parentIds)
-                self.fetchEntitiesSuccess(items: items, parentIds: parentIds)
+                let items = try await self.cacheService.getCategories()
+                self.fetchCategoriesSuccess(items: items)
             } catch {
                 self.fetchEntitiesFailure(error: error)
             }
         }
     }
     
-    func fetchEntitiesSuccess(items: [CatEntity], parentIds: [ServerKey]) {
-        if items.isEmpty {
-            getTags(parentIds: parentIds)
-        } else {
-            showCategories(items: items)
-        }
+    func fetchCategoriesSuccess(items: [CatEntity]) {
+        showCategories(items: items)
     }
     
     func fetchEntitiesFailure(error: Error) {
-        
+        print("Fetch categories failure: \(error)")
     }
     
     func getTags(parentIds: [ServerKey]) {
@@ -68,20 +69,28 @@ final class CatChoiceVM: CatChoiceVMP {
     
     func showCategories(items: [CatEntity]) {
         switch items.first!.type {
-        case .profession:
-            showProfetions(items: items)
+        case .superProfession, .profession:
+            showProfessions(items: items)
         case .specialisation:
             showSpecializations(items: items)
         }
     }
     
-    func showProfetions(items: [CatEntity]) {
+    func showProfessions(items: [CatEntity]) {
         let vm = CatProfListVM(entities: items) { [weak self] ent in
-            self?.getCategories(parentIds: [ent].map{$0.serverId})
+            self?.categoryChoiced(ent)
         }
         
         collectionStack.append(vm)
         onShowProfessions?(vm)
+    }
+    
+    private func categoryChoiced(_ entity: CatEntity) {
+        if !entity.categories.isEmpty {
+            showCategories(items: entity.categories)
+        } else {
+            getTags(parentIds: [entity.serverId])
+        }
     }
     
     func showSpecializations(items: [CatEntity]) {

@@ -7,21 +7,29 @@
 
 import Foundation
 
-struct CatData: Codable {
-    let id: ServerKey
+struct CatData: Codable, Sendable {
+    let professionId: ServerKey
+    let professionName: String
     let type: Int
-    let name: String
-    let image: String?
-    let categories: [CatData]
-    let tags: [TagData]
+    let icon: String?
+    let parent: ServerKey
+    let priority: Int
+    let subProfessions: [CatData]
 }
 
 extension CatData: Hashable {
     static func == (lhs: CatData, rhs: CatData) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.professionId == rhs.professionId
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(professionId)
     }
+}
+
+
+struct CatResponseData: Codable {
+    let success: Bool
+    let errorMsg: String
+    let professions: [CatData]
 }

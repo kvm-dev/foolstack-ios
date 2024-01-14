@@ -21,11 +21,24 @@ class MockNetworkClient: NetworkService {
             do {
                 return try decoder.decode(T.self, from: data)
             } catch {
+                printToConsole("JSON error: \(error)")
                 throw NetworkAPIError.invalidResponseFormat
             }
             
         case .failure(let error):
             throw error
+        }
+    }
+    
+    func getCategories() async throws -> [CatData]? {
+        let url = URL(string: "cats", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        let result = try await decodeResult(with: apiData, decode: CatResponseData.self)
+        if result.success {
+            return result.professions
+        } else {
+            throw NetworkAPIError.responseFailure(result.errorMsg)
         }
     }
     

@@ -1,102 +1,127 @@
-[
-    {
-        "id" : 1,
-        "type" : 1,
-        "name" : "Development",
-        "image" : "prof_1"
-        "categories" : [
-            {
-                "id" : 11,
-                "type" : 1,
-                "name" : "Backend",
-                "image" : "prof_11"
-            },
-            {
-                "id" : 12,
-                "type" : 1,
-                "name" : "Frontend",
-                "image" : "prof_12"
-            },
-            {
-                "id" : 13,
-                "type" : 1,
-                "name" : "Mobile",
-                "image" : "prof_13",
-                "categories" : [
-                    {
-                        "id" : 1,
-                        "type" : 2,
-                        "name" : "Android",
-                        "tags" : [
-                            {
-                                "id" : 1,
-                                "name" : "Tag 01"
-                            },
-                            {
-                                "name" : "Tag 02",
-                                "id" : 2,
-                            },
-                            {
-                                "name" : "Tag 03",
-                                "id" : 3,
-                            },
-                            {
-                                "name" : "Tag 04",
-                                "id" : 4,
-                            },
-                            {
-                                "name" : "Tag 05",
-                                "id" : 5,
-                            },
-                            {
-                                "name" : "Tag 06",
-                                "id" : 6,
-                            }
-                        ]
-                    },
-                    {
-                        "id" : 2,
-                        "type" : 2,
-                        "name" : "iOS",
-                        "tags" : [
-                            {
-                                "id" : 7,
-                                "name" : "Tag 07"
-                            },
-                            {
-                                "name" : "Tag 08",
-                                "id" : 8,
-                            },
-                            {
-                                "name" : "Tag 09",
-                                "id" : 9,
-                            }
-                        ]
-                    },
-                    {
-                        "id" : 3,
-                        "type" : 2,
-                        "name" : "Cross platform",
-                        "tags" : [
-                            {
-                                "id" : 10,
-                                "name" : "Tag 10"
-                            },
-                            {
-                                "name" : "Tag 11",
-                                "id" : 11,
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id" : 2,
-        "name" : "Design",
-        "image" : "prof_2",
-        "categories" : []
-    }
-    
-]
+{
+    "success": true,
+    "errorMsg": "",
+    "professions": [
+        {
+            "professionId": 1,
+            "professionName": "Develop",
+            "icon": null,
+            "type": 0,
+            "parent": 0,
+            "priority": 0,
+            "subProfessions": [
+                {
+                    "professionId": 4,
+                    "professionName": "Backend",
+                    "icon": "https://foolstack.ru/res/imgs/professions/backend.png",
+                    "type": 1,
+                    "parent": 1,
+                    "priority": 0,
+                    "subProfessions": [
+                        {
+                            "professionId": 7,
+                            "professionName": "Hardware",
+                            "icon": null,
+                            "type": 2,
+                            "parent": 4,
+                            "priority": 0,
+                            "subProfessions": []
+                        },
+                        {
+                            "professionId": 8,
+                            "professionName": "Software",
+                            "icon": null,
+                            "type": 2,
+                            "parent": 4,
+                            "priority": 0,
+                            "subProfessions": []
+                        }
+                    ]
+                },
+                {
+                    "professionId": 5,
+                    "professionName": "Frontend",
+                    "icon": "https://foolstack.ru/res/imgs/professions/frontend.png",
+                    "type": 1,
+                    "parent": 1,
+                    "priority": 0,
+                    "subProfessions": [
+                        {
+                            "professionId": 9,
+                            "professionName": "Web",
+                            "icon": null,
+                            "type": 2,
+                            "parent": 5,
+                            "priority": 0,
+                            "subProfessions": []
+                        },
+                        {
+                            "professionId": 10,
+                            "professionName": "Desktop",
+                            "icon": null,
+                            "type": 2,
+                            "parent": 5,
+                            "priority": 0,
+                            "subProfessions": []
+                        }
+                    ]
+                },
+                {
+                    "professionId": 6,
+                    "professionName": "Mobile",
+                    "icon": "https://foolstack.ru/res/imgs/professions/mobile.png",
+                    "type": 1,
+                    "parent": 1,
+                    "priority": 0,
+                    "subProfessions": [
+                        {
+                            "professionId": 11,
+                            "professionName": "iOS",
+                            "icon": "https://foolstack.ru/res/imgs/subprofessions/ios.png",
+                            "type": 2,
+                            "parent": 6,
+                            "priority": 0,
+                            "subProfessions": []
+                        },
+                        {
+                            "professionId": 12,
+                            "professionName": "Android",
+                            "icon": "https://foolstack.ru/res/imgs/subprofessions/android.png",
+                            "type": 2,
+                            "parent": 6,
+                            "priority": 0,
+                            "subProfessions": []
+                        },
+                        {
+                            "professionId": 13,
+                            "professionName": "Crossplatform",
+                            "icon": "https://foolstack.ru/res/imgs/subprofessions/crossplatform.png",
+                            "type": 2,
+                            "parent": 6,
+                            "priority": 0,
+                            "subProfessions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "professionId": 2,
+            "professionName": "Design",
+            "icon": null,
+            "type": 0,
+            "parent": 0,
+            "priority": 0,
+            "subProfessions": []
+        },
+        {
+            "professionId": 3,
+            "professionName": "Management",
+            "icon": null,
+            "type": 0,
+            "parent": 0,
+            "priority": 0,
+            "subProfessions": []
+        }
+    ]
+}

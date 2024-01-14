@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         print(dir)
 
         //let vc = WikiFlowBuilder.build()
-        let vc = MainTabVC()
+        //let vc = MainTabVC()
+        let vc = CatFlowBuilder.build()
         self.add(vc)
         self.view.addSubview(vc.view)
         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

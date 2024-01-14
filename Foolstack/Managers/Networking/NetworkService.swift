@@ -6,8 +6,8 @@
 //
 
 protocol NetworkService {
+    func getCategories() async throws -> [CatData]?
     func getWikis(tags: [ServerKey]) async throws -> [WikiData]?
-    
     func getTags() async throws -> [TagData]?
     func getTickets() async throws -> [TicketData]?
 }

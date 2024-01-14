@@ -46,7 +46,7 @@ final class CatListVC : UIViewController {
             self.showTags(viewModel: vm)
         }
 
-        viewModel.getCategories(parentIds: [])
+        viewModel.load()
     }
     
     private func createHeader() {

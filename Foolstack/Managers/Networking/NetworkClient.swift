@@ -10,6 +10,7 @@ import Foundation
 enum NetworkAPIError: Error {
     case nilRequest
     case invalidResponseFormat
+    case responseFailure(String)
 }
 
 class NetworkClient: NetworkService {
@@ -22,6 +23,24 @@ class NetworkClient: NetworkService {
     init(baseUrl: URL, session: URLSessionProtocol) {
         self.baseUrl = baseUrl
         self.session = session
+    }
+    
+    func getCategories() async throws -> [CatData]? {
+        let url = URL(string: "cats", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        switch apiData {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            do {
+                return try decoder.decode([CatData].self, from: data)
+            } catch {
+                throw NetworkAPIError.invalidResponseFormat
+            }
+            
+        case .failure(let error):
+            throw error
+        }
     }
     
     func getWikis(tags: [ServerKey]) async throws -> [WikiData]? {

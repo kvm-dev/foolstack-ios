@@ -10,6 +10,7 @@ import Foundation
 extension Data {
     static func fromJSON(fileName: String) -> Data? {
         guard let filePath = Bundle.main.path(forResource: fileName, ofType: "json") else {
+            printToConsole("JSON file '\(fileName)' not found")
             return nil
         }
         do {
