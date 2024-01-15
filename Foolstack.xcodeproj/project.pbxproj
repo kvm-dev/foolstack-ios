@@ -108,7 +108,7 @@
 		CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EF9E2B00D01700A64604 /* RealmActor.swift */; };
 		CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */; };
 		CEC4EFA42B00DFF400A64604 /* WikiAnswerRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */; };
-		CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */; };
+		CEC4EFA62B00E36C00A64604 /* TagRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4EFA52B00E36B00A64604 /* TagRLM.swift */; };
 		CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4690D2B434ED300283B43 /* StringExtension.swift */; };
 		CED469102B4420D500283B43 /* CatProfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4690F2B4420D500283B43 /* CatProfView.swift */; };
 		CED469122B4420E400283B43 /* CatSpecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED469112B4420E400283B43 /* CatSpecView.swift */; };
@@ -268,7 +268,7 @@
 		CEC4EF9E2B00D01700A64604 /* RealmActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmActor.swift; sourceTree = "<group>"; };
 		CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiItemRLM.swift; sourceTree = "<group>"; };
 		CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnswerRLM.swift; sourceTree = "<group>"; };
-		CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiTagRLM.swift; sourceTree = "<group>"; };
+		CEC4EFA52B00E36B00A64604 /* TagRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRLM.swift; sourceTree = "<group>"; };
 		CED4690D2B434ED300283B43 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CED4690F2B4420D500283B43 /* CatProfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfView.swift; sourceTree = "<group>"; };
 		CED469112B4420E400283B43 /* CatSpecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpecView.swift; sourceTree = "<group>"; };
@@ -787,7 +787,7 @@
 			children = (
 				CEC4EFA12B00DA3800A64604 /* WikiItemRLM.swift */,
 				CEC4EFA32B00DFF400A64604 /* WikiAnswerRLM.swift */,
-				CEC4EFA52B00E36B00A64604 /* WikiTagRLM.swift */,
+				CEC4EFA52B00E36B00A64604 /* TagRLM.swift */,
 				CEF0ACA92B4C5EE30000B241 /* TicketRLM.swift */,
 				CEF0ACB12B4C94720000B241 /* TicketQuestionRLM.swift */,
 				CE9C72E42B53E44400E84503 /* CatRLM.swift */,
@@ -1129,7 +1129,7 @@
 				CEA1EDFA2B04E14F0050CA34 /* HeaderBar.swift in Sources */,
 				CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */,
 				CEE1DADA2B4FF18A00E70B70 /* ExamFinishView.swift in Sources */,
-				CEC4EFA62B00E36C00A64604 /* WikiTagRLM.swift in Sources */,
+				CEC4EFA62B00E36C00A64604 /* TagRLM.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
 				CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */,
 				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,

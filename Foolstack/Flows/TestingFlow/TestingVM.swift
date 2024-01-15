@@ -29,7 +29,6 @@ final class TestingVM {
     
     private func loadTags() {
         self.selectedTags = userStorage.getSelectedTags()
-        self.selectedTags = [1,3,6,8]
     }
 
     func loadEntities() {

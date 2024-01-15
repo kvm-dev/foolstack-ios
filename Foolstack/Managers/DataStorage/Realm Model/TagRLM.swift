@@ -7,21 +7,31 @@
 
 import RealmSwift
 
-class WikiTagRLM: Object {
+class TagRLM: Object {
     @Persisted (primaryKey: true) var serverId: ServerKey
-    @Persisted var name = ""
-    @Persisted var items: List<WikiItemRLM>
+    @Persisted var name: String
+    @Persisted var parent: ServerKey
     
-    convenience init(serverId: Int, name: String = "", items: [WikiItemRLM]) {
+    convenience init(serverId: ServerKey, name: String, parent: ServerKey) {
         self.init()
         self.serverId = serverId
         self.name = name
-        self.items.append(objectsIn: items)
+        self.parent = parent
     }
     
     convenience init(_ data: TagData) {
         self.init()
         self.serverId = data.id
         self.name = data.name
+        self.parent = data.parent
+    }
+}
+
+
+extension TagEntity {
+    init(rlm: TagRLM) {
+        self.serverId = rlm.serverId
+        self.name = rlm.name
+        self.parent = rlm.parent
     }
 }

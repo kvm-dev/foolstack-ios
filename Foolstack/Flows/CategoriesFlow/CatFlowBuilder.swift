@@ -32,10 +32,13 @@ final class CatFlowBuilder {
         let cacheService = DataCacheImp(
             network: MockNetworkClient(),
             storageConfig: LocalStorageConfig())
-        let vm = CatChoiceVM(cacheService: cacheService)
+        let userStorage = UserStorage(config: LocalUserStarageConfig())
+        let vm = CatChoiceVM(cacheService: cacheService, userStorage: userStorage)
         
-        let view = CatListVC(viewModel: vm)
-        return view
+        let vc = CatListVC(viewModel: vm)
+        let nc = UINavigationController(rootViewController: vc)
+        nc.isNavigationBarHidden = true
+        return nc
     }
 }
 

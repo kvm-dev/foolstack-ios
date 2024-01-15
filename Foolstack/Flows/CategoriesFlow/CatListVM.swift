@@ -14,13 +14,14 @@ final class CatChoiceVM: CatChoiceVMP {
     var onShowTags: ((TagListVM) -> Void)?
 
     private let cacheService: DataCacheService
+    private let userStorage: UserStorage
     private var collectionStack: [CatListVMP] = []
     
     //private var categories: [CatEntity] = []
     
-    init(cacheService: DataCacheService) {
+    init(cacheService: DataCacheService, userStorage: UserStorage) {
         self.cacheService = cacheService
-
+        self.userStorage = userStorage
     }
     
     func load() {
@@ -103,7 +104,7 @@ final class CatChoiceVM: CatChoiceVMP {
     }
     
     func showTags(items: [TagEntity]) {
-        let vm = TagListVM(items: items, cacheService: cacheService)
+        let vm = TagListVM(items: items, cacheService: cacheService, userStorage: userStorage)
         onShowTags?(vm)
     }
 }

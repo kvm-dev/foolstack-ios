@@ -10,6 +10,7 @@ import Foundation
 struct TagData: Codable {
     let id: ServerKey
     let name: String
+    let parent: ServerKey
 }
 
 extension TagData: Hashable {

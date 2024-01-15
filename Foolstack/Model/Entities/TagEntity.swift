@@ -6,18 +6,21 @@
 //
 
 struct TagEntity {
-    let serverId: Int
+    let serverId: ServerKey
     let name: String
+    let parent: ServerKey
     
     //var selected: Bool
     
     init(data: TagData) {
         self.serverId = data.id
         self.name = data.name
+        self.parent = data.id
     }
     
-    init(serverId: Int, name: String) {
+    init(serverId: ServerKey, name: String, parent: ServerKey) {
         self.serverId = serverId
         self.name = name
+        self.parent = parent
     }
 }

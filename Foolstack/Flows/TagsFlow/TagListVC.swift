@@ -7,13 +7,15 @@
 
 import Foundation
 import UIKit
+import Combine
 
 final class TagListVC: UIViewController {
     private var headerBar: HeaderBar!
     private var collectionView: UICollectionView!
     
     var viewModel: TagListVM!
-    
+    private var subscriptions = Set<AnyCancellable>()
+
     init(viewModel: TagListVM) {
         super.init(nibName: nil, bundle: nil)
         
@@ -75,7 +77,11 @@ final class TagListVC: UIViewController {
         confirmButton.pinEdges(to: view.safeAreaLayoutGuide, leading: buttonPadding, trailing: -buttonPadding, bottom: -buttonPadding)
         confirmButton.pinSize(height: 56)
         confirmButton.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
-        
+
+        viewModel.$isConfirmEnabled
+            .assign(to: \.isEnabled, on: confirmButton)
+            .store(in: &subscriptions)
+
         let selectAllbutton = UIButton(type: .custom)
         view.addSubview(selectAllbutton)
         selectAllbutton.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +130,7 @@ final class TagListVC: UIViewController {
     }
     
     @objc func confirmButtonTapped() {
-        
+        viewModel.confirm()
     }
     
     @objc func selectAllButtonTapped() {

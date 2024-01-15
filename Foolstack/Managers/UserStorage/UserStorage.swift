@@ -21,6 +21,10 @@ final class UserStorage {
         config.getUserDefaults().array(forKey: key_SelectedTags) as? [Int] ?? []
     }
     
+    func saveSelectedTags(_ tags: [ServerKey]) {
+        config.getUserDefaults().set(tags, forKey: key_SelectedTags)
+    }
+    
     func saveTicketResult(ticketId: Int, completionPercent: Int) {
         var results: [String : Int] = config.getUserDefaults().dictionary(forKey: key_TicketsResults) as? [String : Int] ?? [:]
         results["\(ticketId)"] = completionPercent

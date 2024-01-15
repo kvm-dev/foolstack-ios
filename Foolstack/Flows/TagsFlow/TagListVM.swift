@@ -8,13 +8,22 @@
 import Foundation
 
 final class TagListVM {
+    var onConfirm: (() -> Void)?
+    @Published var isConfirmEnabled = false
+
     private(set) var items: [TagEntity]
     private let cacheService: DataCacheService
+    private let userStorage: UserStorage
     
-    private var selectedTags: [Int] = []
+    private var selectedTags: [Int] = [] {
+        didSet {
+            isConfirmEnabled = !selectedTags.isEmpty
+        }
+    }
     
-    init(items: [TagEntity], cacheService: DataCacheService) {
+    init(items: [TagEntity], cacheService: DataCacheService, userStorage: UserStorage) {
         self.cacheService = cacheService
+        self.userStorage = userStorage
         self.items = items
     }
     
@@ -40,5 +49,10 @@ final class TagListVM {
         } else {
             selectedTags.removeAll()
         }
+    }
+    
+    func confirm() {
+        userStorage.saveSelectedTags(selectedTags)
+        onConfirm?()
     }
 }

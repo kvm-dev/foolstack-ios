@@ -38,7 +38,6 @@ class WikiListVM {
     
     private func loadTags() {
         self.selectedTags = userStorage.getSelectedTags()
-        self.selectedTags = [1,3,6,8]
     }
 
     private func getEntities() {

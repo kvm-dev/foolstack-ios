@@ -146,7 +146,15 @@ final class CatListVC : UIViewController {
     
     private func showTags(viewModel: TagListVM) {
         let vc = TagListVC(viewModel: viewModel)
+        viewModel.onConfirm = { [weak self] in
+            self?.showMainFlow()
+        }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showMainFlow() {
+        let vc = MainTabVC()
+        self.navigationController?.setViewControllers([vc], animated: true)
     }
     
     private func animateTransitionImages() {
