@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 @MainActor
 final class CatListVC : UIViewController {
@@ -19,6 +20,7 @@ final class CatListVC : UIViewController {
     var bottomNC: UINavigationController!
     private let transition = CustomNavigationAnimator(operation: .push)
     private var transitionImages: [UIView] = []
+    private var subscriptions = Set<AnyCancellable>()
 
     init(viewModel: CatChoiceVM) {
         self.viewModel = viewModel
@@ -146,9 +148,11 @@ final class CatListVC : UIViewController {
     
     private func showTags(viewModel: TagListVM) {
         let vc = TagListVC(viewModel: viewModel)
-        viewModel.onConfirm = { [weak self] in
-            self?.showMainFlow()
-        }
+        viewModel.confirmPublisher
+            .sink(receiveValue: { [weak self] _ in
+                self?.showMainFlow()
+            })
+            .store(in: &subscriptions)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

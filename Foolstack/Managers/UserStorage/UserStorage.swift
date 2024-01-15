@@ -8,6 +8,7 @@
 import Foundation
 
 fileprivate let key_SelectedTags = "SelectedTags"
+fileprivate let key_SelectedSubCategories = "SelectedCats"
 fileprivate let key_TicketsResults = "TicketsResults"
 
 final class UserStorage {
@@ -17,12 +18,20 @@ final class UserStorage {
         self.config = config
     }
     
-    func getSelectedTags() -> [ServerKey] {
-        config.getUserDefaults().array(forKey: key_SelectedTags) as? [Int] ?? []
+    func saveSelectedSubCategories(_ cats: [ServerKey]) {
+        config.getUserDefaults().set(cats, forKey: key_SelectedSubCategories)
+    }
+    
+    func getSelectedSubCategories() -> [ServerKey] {
+        config.getUserDefaults().array(forKey: key_SelectedSubCategories) as? [Int] ?? []
     }
     
     func saveSelectedTags(_ tags: [ServerKey]) {
         config.getUserDefaults().set(tags, forKey: key_SelectedTags)
+    }
+    
+    func getSelectedTags() -> [ServerKey] {
+        config.getUserDefaults().array(forKey: key_SelectedTags) as? [Int] ?? []
     }
     
     func saveTicketResult(ticketId: Int, completionPercent: Int) {

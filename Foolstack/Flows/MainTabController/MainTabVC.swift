@@ -34,18 +34,15 @@ class MainTabVC: UITabBarController {
         vc1.tabBarItem.imageInsets = imageInsets
 
         let vc2 = UIViewController()
-        vc2.view.backgroundColor = .green
         vc2.tabBarItem = UITabBarItem(title: nil, image: .symbolImage(.hr, pointSize: 10), selectedImage: .symbolImage(.hrActive, pointSize: 18))
         vc2.tabBarItem.imageInsets = imageInsets
         
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.backgroundColor = .red
         vc2.view.addSubview(v)
         v.pinEdges(to: vc2.view.safeAreaLayoutGuide, padding: 0)
 
         let vc3 = TestingFlowBuilder.build()
-        vc3.view.backgroundColor = .blue
         vc3.tabBarItem = UITabBarItem(title: nil, image: .symbolImage(.tests, pointSize: 18), selectedImage: .symbolImage(.tests, pointSize: 18))
         vc3.tabBarItem.imageInsets = imageInsets
 

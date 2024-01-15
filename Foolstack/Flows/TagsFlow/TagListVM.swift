@@ -6,16 +6,20 @@
 //
 
 import Foundation
+import Combine
 
+@MainActor
 final class TagListVM {
-    var onConfirm: (() -> Void)?
+    //var onConfirm: ((TagListVM) -> Void)?
+    var onItemsLoaded: (() -> Void)?
     @Published var isConfirmEnabled = false
+    let confirmPublisher = PassthroughSubject<TagListVM, Never>()
 
     private(set) var items: [TagEntity]
     private let cacheService: DataCacheService
     private let userStorage: UserStorage
     
-    private var selectedTags: [Int] = [] {
+    var selectedTags: [Int] = [] {
         didSet {
             isConfirmEnabled = !selectedTags.isEmpty
         }
@@ -25,6 +29,34 @@ final class TagListVM {
         self.cacheService = cacheService
         self.userStorage = userStorage
         self.items = items
+        self.selectedTags = userStorage.getSelectedTags()
+        
+        if items.isEmpty {
+            loadAllTags()
+        }
+    }
+    
+    private func loadAllTags() {
+        let selectedCategories = userStorage.getSelectedSubCategories()
+        Task { [weak self] in
+            guard let self = self else {return}
+            do {
+                let items = try await self.cacheService.getTags(for: selectedCategories)
+                self.fetchTagsSuccess(items: items)
+            } catch {
+                self.fetchTagsFailure(error: error)
+            }
+        }
+    }
+    
+    private func fetchTagsSuccess(items: [TagEntity]) {
+        self.items = items
+        self.selectedTags = userStorage.getSelectedTags()
+        onItemsLoaded?()
+    }
+    
+    private func fetchTagsFailure(error: Error) {
+        
     }
     
     func toggleItemAt(index: Int) -> Bool {
@@ -53,6 +85,7 @@ final class TagListVM {
     
     func confirm() {
         userStorage.saveSelectedTags(selectedTags)
-        onConfirm?()
+        confirmPublisher.send(self)
+        confirmPublisher.send(completion: .finished)
     }
 }

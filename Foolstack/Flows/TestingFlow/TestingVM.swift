@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 @MainActor
 final class TestingVM {
@@ -16,6 +17,7 @@ final class TestingVM {
     private var selectedTags: [ServerKey] = []
     private(set) var items: [TicketEntity] = []
     private(set) var completePercents: [Int : Int] = [:]
+    var subscriptions = Set<AnyCancellable>()
     
     init(cacheService: DataCacheService, userStorage: UserStorage) {
         self.cacheService = cacheService
@@ -64,5 +66,20 @@ final class TestingVM {
     
     func getTicketCompletionPercents(ticketId: Int) -> Int {
         return completePercents[ticketId] ?? 0
+    }
+    
+    func createTagsViewModel() -> TagListVM {
+        let tagsVM = TagListVM(items: [], cacheService: cacheService, userStorage: userStorage)
+        tagsVM.confirmPublisher
+            .sink { [weak self] tagsVM in
+                self?.tagsSelected(tagsVM.selectedTags)
+            }
+            .store(in: &subscriptions)
+        return tagsVM
+    }
+    
+    private func tagsSelected(_ tags: [ServerKey]) {
+        userStorage.saveSelectedTags(tags)
+        load()
     }
 }

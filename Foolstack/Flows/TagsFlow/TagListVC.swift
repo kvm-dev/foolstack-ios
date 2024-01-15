@@ -31,27 +31,42 @@ final class TagListVC: UIViewController {
         
         configureHeader()
         setupView()
+        
+        viewModel.onItemsLoaded = { [weak self] in
+            self?.collectionView.reloadData()
+        }
     }
     
     private func configureHeader() {
-        headerBar = HeaderBar(withSlider: false)
+        let pres1 = self.presentedViewController != nil
+        let pres2 = self.presentationController != nil
+        let pres3 = self.presentingViewController != nil
+        let isModal = self.navigationController == nil
+        headerBar = HeaderBar(withSlider: isModal)
         view.addSubview(headerBar)
         headerBar.translatesAutoresizingMaskIntoConstraints = false
-        headerBar.color = .clear
-        headerBar.titleLabel.font = CustomFonts.defaultMedium(size: 22)
-        headerBar.titleLabel.textColor = .themeTextViewTitle
-        headerBar.pinEdges(to: view.safeAreaLayoutGuide, leading: 8, trailing: -8, top: 37)
+        if isModal {
+            headerBar.withSlider = true
+            headerBar.color = .themeHeader
+            //headerBar.titleLabel.font = CustomFonts.defaultMedium(size: .fontMainSize)
+            headerBar.pinEdges(to: view.safeAreaLayoutGuide, leading: 8, trailing: -8, top: 4)
+        } else {
+            headerBar.color = .clear
+            headerBar.titleLabel.font = CustomFonts.defaultMedium(size: 22)
+            headerBar.titleLabel.textColor = .themeTextViewTitle
+            headerBar.pinEdges(to: view.safeAreaLayoutGuide, leading: 8, trailing: -8, top: 37)
+        }
         
         headerBar.titleLabel.text = String(localized: "Knowledge area", comment: "")
         
-        let backButton = UIButton.customBack()
-        backButton.tintColor = .themeTextViewTitle
+        let backButton: UIButton = isModal ? UIButton.customClose() : UIButton.customBack()
+        backButton.tintColor = isModal ? .themeStandartIcon : .themeTextViewTitle
         headerBar.addLeftButton(button: backButton)
         backButton.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
     }
     
     private func setupView() {
-        view.backgroundColor = .themeBackgroundTop
+        view.backgroundColor = self.isBeingPresented ? .themeBackgroundMain : .themeBackgroundTop
         
         let bgrdView = UIView()
         self.view.insertSubview(bgrdView, at: 0)
@@ -126,7 +141,15 @@ final class TagListVC: UIViewController {
     }
     
     @objc func closePressed(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        let pres1 = self.presentedViewController != nil
+        let pres2 = self.presentationController != nil
+        let pres3 = self.presentingViewController != nil
+        let isModal = self.isBeingPresented
+        if self.navigationController == nil {
+            self.dismiss(animated: true)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func confirmButtonTapped() {
@@ -142,7 +165,6 @@ final class TagListVC: UIViewController {
 
 extension TagListVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("TagListVC. didSelectRow")
         let selected = viewModel.toggleItemAt(index: indexPath.row)
         let cell = collectionView.cellForItem(at: indexPath) as! TagListCell
         cell.setSelected(selected)

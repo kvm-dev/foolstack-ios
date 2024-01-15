@@ -82,7 +82,7 @@ final class WikiListVC : UIViewController {
         //collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
-        collectionView.backgroundColor = .orange//.themeBackgroundMain
+        collectionView.backgroundColor = nil//.themeBackgroundMain
         self.view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([

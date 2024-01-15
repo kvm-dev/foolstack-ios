@@ -27,6 +27,7 @@ enum IconNames {
     case hrActive
     case tests
     case testsActive
+    case filter
     
     var name: String {
         switch self {
@@ -49,7 +50,7 @@ enum IconNames {
         case .hrActive:       return "hr_interview.selected"
         case .tests:          return "tests"
         case .testsActive:    return "tests.selected"
-
+        case .filter:         return "filter.5"
         }
     }
     

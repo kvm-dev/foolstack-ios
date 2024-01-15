@@ -17,13 +17,27 @@ class ViewController: UIViewController {
         let dir = urls[0]
         print(dir)
 
+        let cacheService = DataCacheImp(
+            network: MockNetworkClient(),
+            storageConfig: LocalStorageConfig())
+        let userStorage = UserStorage(config: LocalUserStarageConfig())
+
         //let vc = WikiFlowBuilder.build()
         //let vc = MainTabVC()
-        let vc = CatFlowBuilder.build()
-        self.add(vc)
-        self.view.addSubview(vc.view)
-        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        vc.didMove(toParent: self)
+        var vc: UIViewController?
+        if userStorage.getSelectedSubCategories().isEmpty ||
+            userStorage.getSelectedTags().isEmpty {
+            vc = CatFlowBuilder.build()
+        } else {
+            vc = MainTabVC()
+        }
+        self.navigationController?.setViewControllers([vc!], animated: false)
+  
+//        nc.isNavigationBarHidden = true
+//        self.add(vc)
+//        self.view.addSubview(vc.view)
+//        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        vc.didMove(toParent: self)
     }    
 }
 

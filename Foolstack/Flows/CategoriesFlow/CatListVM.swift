@@ -6,18 +6,22 @@
 //
 
 import Foundation
+import Combine
 
 @MainActor
 final class CatChoiceVM: CatChoiceVMP {
     var onShowProfessions: ((CatProfListVM) -> Void)?
     var onShowSpecializations: ((CatSpecListVM) -> Void)?
     var onShowTags: ((TagListVM) -> Void)?
+    var onShowMainFlow: (() -> Void)?
 
     private let cacheService: DataCacheService
     private let userStorage: UserStorage
     private var collectionStack: [CatListVMP] = []
     
-    //private var categories: [CatEntity] = []
+    private var rootCategories: [CatEntity] = []
+    
+    private var subscriptions = Set<AnyCancellable>()
     
     init(cacheService: DataCacheService, userStorage: UserStorage) {
         self.cacheService = cacheService
@@ -41,6 +45,7 @@ final class CatChoiceVM: CatChoiceVMP {
     }
     
     func fetchCategoriesSuccess(items: [CatEntity]) {
+        rootCategories = items
         showCategories(items: items)
     }
     
@@ -61,7 +66,7 @@ final class CatChoiceVM: CatChoiceVMP {
     }
     
     func fetchTagsSuccess(items: [TagEntity], parentIds: [ServerKey]) {
-        showTags(items: items)
+        showTags(items: items, selectedSubCategories: parentIds)
     }
     
     func fetchTagsFailure(error: Error) {
@@ -103,9 +108,20 @@ final class CatChoiceVM: CatChoiceVMP {
         onShowSpecializations?(vm)
     }
     
-    func showTags(items: [TagEntity]) {
+    func showTags(items: [TagEntity], selectedSubCategories: [ServerKey]) {
         let vm = TagListVM(items: items, cacheService: cacheService, userStorage: userStorage)
+        vm.confirmPublisher
+            .sink(receiveValue: { [weak self] tagsVM in
+                self?.tagsSelected(selectedTags: tagsVM.selectedTags, selectedSubCategories: selectedSubCategories)
+            })
+            .store(in: &subscriptions)
         onShowTags?(vm)
+    }
+    
+    private func tagsSelected(selectedTags: [ServerKey], selectedSubCategories: [ServerKey]) {
+        userStorage.saveSelectedSubCategories(selectedSubCategories)
+        userStorage.saveSelectedTags(selectedTags)
+        onShowMainFlow?()
     }
 }
 

@@ -13,6 +13,7 @@ final class TestingVC : UIViewController {
     
     var viewModel: TestingVM!
     
+    var headerBar: HeaderBar!
     var tableView: UITableView!
     
     init(viewModel: TestingVM) {
@@ -32,7 +33,8 @@ final class TestingVC : UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        createViews()
+        setupHeader()
+        setupView()
         
         viewModel.load()
     }
@@ -47,7 +49,27 @@ final class TestingVC : UIViewController {
         tableView.reloadData()
     }
     
-    private func createViews() {
+    private func setupHeader() {
+        headerBar = HeaderBar(withSlider: false)
+        view.addSubview(headerBar)
+        headerBar.translatesAutoresizingMaskIntoConstraints = false
+        headerBar.color = .clear
+//        headerBar.titleLabel.font = CustomFonts.defaultMedium(size: 22)
+//        headerBar.titleLabel.textColor = .themeTextViewTitle
+        headerBar.pinEdges(to: view.safeAreaLayoutGuide, leading: 12, trailing: -12, top: 12)
+        
+//        headerBar.titleLabel.text = String(localized: "Knowledge area", comment: "")
+        
+        let filterButton = UIButton.custom(iconName: .filter)
+        filterButton.tintColor = .themeTextViewTitle
+        filterButton.backgroundColor = .themeHeader
+        filterButton.layer.cornerRadius = 8
+        headerBar.addRightButton(button: filterButton)
+        filterButton.addTarget(self, action: #selector(filterPressed), for: .touchUpInside)
+    }
+    
+    private func setupView() {
+        self.view.backgroundColor = .themeBackgroundMain
         
         tableView = UITableView(frame: .zero, style: .plain)
         self.view.addSubview(tableView)
@@ -56,7 +78,7 @@ final class TestingVC : UIViewController {
         tableView.backgroundColor = .themeBackgroundMain
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            tableView.topAnchor.constraint(equalTo: self.headerBar.bottomAnchor, constant: 12),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
@@ -72,6 +94,18 @@ final class TestingVC : UIViewController {
         let vm = viewModel.createExamination(ticketIndex: ticketIndex)
         let vc = ExaminationVC(viewModel: vm)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func filterPressed() {
+        let vm = viewModel.createTagsViewModel()
+        let vc = TagListVC(viewModel: vm)
+        vm.confirmPublisher
+            .sink(receiveValue: { [weak vc] _ in
+                vc?.dismiss(animated: true)
+            })
+            .store(in: &viewModel.subscriptions)
+
+        self.present(vc, animated: true)
     }
 }
 
