@@ -128,6 +128,8 @@ class StartVC: UIViewController {
     }
     
     @IBAction func signInPressed() {
+        let vc = AuthChoiceVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func guestPressed() {

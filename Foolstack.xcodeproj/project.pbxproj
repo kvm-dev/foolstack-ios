@@ -40,6 +40,9 @@
 		CE667A952B5049200061585C /* ExamQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE667A942B5049200061585C /* ExamQuestionView.swift */; };
 		CE667A972B50495C0061585C /* ExamQuestionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE667A962B50495C0061585C /* ExamQuestionVM.swift */; };
 		CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */; };
+		CE8CFA572B56E626007435A9 /* AuthChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA562B56E626007435A9 /* AuthChoiceVC.swift */; };
+		CE8CFA592B56E829007435A9 /* AuthChoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFA582B56E829007435A9 /* AuthChoiceView.xib */; };
+		CE8CFA5C2B5701E5007435A9 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA5B2B5701E5007435A9 /* KeyboardLayout.swift */; };
 		CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */; };
 		CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF742B3C66650081E64B /* CatEntity.swift */; };
 		CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF762B3C66EF0081E64B /* CatData.swift */; };
@@ -198,6 +201,9 @@
 		CE667A942B5049200061585C /* ExamQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionView.swift; sourceTree = "<group>"; };
 		CE667A962B50495C0061585C /* ExamQuestionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionVM.swift; sourceTree = "<group>"; };
 		CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncExtentions.swift; sourceTree = "<group>"; };
+		CE8CFA562B56E626007435A9 /* AuthChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChoiceVC.swift; sourceTree = "<group>"; };
+		CE8CFA582B56E829007435A9 /* AuthChoiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthChoiceView.xib; sourceTree = "<group>"; };
+		CE8CFA5B2B5701E5007435A9 /* KeyboardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowProtocols.swift; sourceTree = "<group>"; };
 		CE8CFF742B3C66650081E64B /* CatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntity.swift; sourceTree = "<group>"; };
 		CE8CFF762B3C66EF0081E64B /* CatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatData.swift; sourceTree = "<group>"; };
@@ -495,6 +501,7 @@
 		CE67BC8E2AF2CAA80096214C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE8CFA5A2B5701BD007435A9 /* KeyboardLayout */,
 				CED469212B45FD0B00283B43 /* Transitions */,
 				CEA1EDF52B04E0EB0050CA34 /* View Extensions */,
 				CE67BC8F2AF2CAF00096214C /* AsyncExtentions.swift */,
@@ -509,6 +516,14 @@
 				CE0259962B51607B0018F2C2 /* CGPoint+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE8CFA5A2B5701BD007435A9 /* KeyboardLayout */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA5B2B5701E5007435A9 /* KeyboardLayout.swift */,
+			);
+			path = KeyboardLayout;
 			sourceTree = "<group>";
 		};
 		CE8CFF712B3C64080081E64B /* CategoriesFlow */ = {
@@ -704,6 +719,8 @@
 			isa = PBXGroup;
 			children = (
 				CEA746872B569E6100FE9380 /* StartVC.swift */,
+				CE8CFA562B56E626007435A9 /* AuthChoiceVC.swift */,
+				CE8CFA582B56E829007435A9 /* AuthChoiceView.xib */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -1031,6 +1048,7 @@
 				CE40FED22B4DA89E00BC5F02 /* Mock_tickets_JSON.json in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
 				CE8CFFB12B4054F00081E64B /* sf-ui-text-italic.ttf in Resources */,
+				CE8CFA592B56E829007435A9 /* AuthChoiceView.xib in Resources */,
 				CE8CFFB72B4054F00081E64B /* sf-ui-text-semibold.ttf in Resources */,
 				CE8CFFB92B4054F00081E64B /* sf-ui-text-light.ttf in Resources */,
 				CE8CFFB02B4054F00081E64B /* sf-ui-text-bold.ttf in Resources */,
@@ -1068,6 +1086,7 @@
 			files = (
 				CED469102B4420D500283B43 /* CatProfView.swift in Sources */,
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
+				CE8CFA5C2B5701E5007435A9 /* KeyboardLayout.swift in Sources */,
 				CEA1EDFC2B04E3250050CA34 /* UIButtonCustom.swift in Sources */,
 				CEE1DAD42B4EE17300E70B70 /* ExaminationVC.swift in Sources */,
 				CEF0AC932B4974D80000B241 /* UserStorageConfig.swift in Sources */,
@@ -1113,6 +1132,7 @@
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
 				CE0259972B51607B0018F2C2 /* CGPoint+Extensions.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
+				CE8CFA572B56E626007435A9 /* AuthChoiceVC.swift in Sources */,
 				CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */,
 				CED469122B4420E400283B43 /* CatSpecView.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
