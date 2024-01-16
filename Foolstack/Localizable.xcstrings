@@ -119,6 +119,9 @@
     "Do you want to stop testing?" : {
 
     },
+    "ENTER AS A GUEST" : {
+
+    },
     "Finish" : {
 
     },
@@ -217,6 +220,9 @@
           }
         }
       }
+    },
+    "Sign in or Register" : {
+
     },
     "The result will not be recorded" : {
 

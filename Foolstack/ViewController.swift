@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         var vc: UIViewController?
         if userStorage.getSelectedSubCategories().isEmpty ||
             userStorage.getSelectedTags().isEmpty {
-            vc = CatFlowBuilder.build()
+            //vc = CatFlowBuilder.build()
+            vc = StartVC()
         } else {
             vc = MainTabVC()
         }
