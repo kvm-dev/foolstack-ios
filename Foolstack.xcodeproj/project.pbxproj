@@ -43,6 +43,42 @@
 		CE8CFA572B56E626007435A9 /* AuthChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA562B56E626007435A9 /* AuthChoiceVC.swift */; };
 		CE8CFA592B56E829007435A9 /* AuthChoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFA582B56E829007435A9 /* AuthChoiceView.xib */; };
 		CE8CFA5C2B5701E5007435A9 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA5B2B5701E5007435A9 /* KeyboardLayout.swift */; };
+		CE8CFA5E2B57DBD2007435A9 /* AuthVMBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA5D2B57DBD2007435A9 /* AuthVMBase.swift */; };
+		CE8CFA602B57DC52007435A9 /* AuthVM_SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA5F2B57DC52007435A9 /* AuthVM_SignIn.swift */; };
+		CE8CFA622B57E51A007435A9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA612B57E51A007435A9 /* UserData.swift */; };
+		CE8CFA642B57E9A6007435A9 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA632B57E9A6007435A9 /* UserProfile.swift */; };
+		CE8CFA672B57F46F007435A9 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA662B57F46F007435A9 /* AuthVC.swift */; };
+		CE8CFA6A2B5812A1007435A9 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA692B5812A1007435A9 /* CommonUtils.swift */; };
+		CE8CFA8C2B581496007435A9 /* StyleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA6E2B581496007435A9 /* StyleProtocol.swift */; };
+		CE8CFA8D2B581496007435A9 /* StyleRegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA6F2B581496007435A9 /* StyleRegEx.swift */; };
+		CE8CFA8E2B581496007435A9 /* StyleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA702B581496007435A9 /* StyleGroup.swift */; };
+		CE8CFA8F2B581496007435A9 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA712B581496007435A9 /* Style.swift */; };
+		CE8CFA902B581496007435A9 /* StylesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA722B581496007435A9 /* StylesManager.swift */; };
+		CE8CFA912B581496007435A9 /* AttributedString+FunctionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA742B581496007435A9 /* AttributedString+FunctionBuilder.swift */; };
+		CE8CFA922B581496007435A9 /* UIKit+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA752B581496007435A9 /* UIKit+Extras.swift */; };
+		CE8CFA932B581496007435A9 /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA762B581496007435A9 /* String+Subscript.swift */; };
+		CE8CFA942B581496007435A9 /* AttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA772B581496007435A9 /* AttributedString+Extension.swift */; };
+		CE8CFA952B581496007435A9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA782B581496007435A9 /* String+Ext.swift */; };
+		CE8CFA962B581496007435A9 /* AttributedString+Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA792B581496007435A9 /* AttributedString+Attachments.swift */; };
+		CE8CFA972B581496007435A9 /* SystemFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA7A2B581496007435A9 /* SystemFonts.swift */; };
+		CE8CFA982B581496007435A9 /* ColorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA7C2B581496007435A9 /* ColorConvertible.swift */; };
+		CE8CFA992B581496007435A9 /* FontInfoAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA7D2B581496007435A9 /* FontInfoAttribute.swift */; };
+		CE8CFA9A2B581496007435A9 /* URLRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA7E2B581496007435A9 /* URLRepresentable.swift */; };
+		CE8CFA9B2B581496007435A9 /* CommonsAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA7F2B581496007435A9 /* CommonsAttributes.swift */; };
+		CE8CFA9C2B581496007435A9 /* TextTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA802B581496007435A9 /* TextTransform.swift */; };
+		CE8CFA9D2B581496007435A9 /* FontConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA812B581496007435A9 /* FontConvertible.swift */; };
+		CE8CFA9E2B581496007435A9 /* DynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA822B581496007435A9 /* DynamicText.swift */; };
+		CE8CFA9F2B581496007435A9 /* FontData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA832B581496007435A9 /* FontData.swift */; };
+		CE8CFAA02B581496007435A9 /* AssociatedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA852B581496007435A9 /* AssociatedValues.swift */; };
+		CE8CFAA12B581496007435A9 /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA862B581496007435A9 /* Compatibility.swift */; };
+		CE8CFAA22B581496007435A9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA872B581496007435A9 /* Extensions.swift */; };
+		CE8CFAA32B581496007435A9 /* AsyncTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA882B581496007435A9 /* AsyncTextAttachment.swift */; };
+		CE8CFAA42B581496007435A9 /* XMLDynamicAttributesResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA892B581496007435A9 /* XMLDynamicAttributesResolver.swift */; };
+		CE8CFAA52B581496007435A9 /* XMLStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA8A2B581496007435A9 /* XMLStringBuilder.swift */; };
+		CE8CFAA62B581496007435A9 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFA8B2B581496007435A9 /* OrderedDictionary.swift */; };
+		CE8CFAA92B581CE3007435A9 /* HTMLSAXParser in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CFAA82B581CE3007435A9 /* HTMLSAXParser */; };
+		CE8CFAAB2B58375F007435A9 /* AuthVM_Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFAAA2B58375F007435A9 /* AuthVM_Code.swift */; };
+		CE8CFAAD2B5868C9007435A9 /* Mock_signIn_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFAAC2B5868C9007435A9 /* Mock_signIn_JSON.json */; };
 		CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */; };
 		CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF742B3C66650081E64B /* CatEntity.swift */; };
 		CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF762B3C66EF0081E64B /* CatData.swift */; };
@@ -204,6 +240,41 @@
 		CE8CFA562B56E626007435A9 /* AuthChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChoiceVC.swift; sourceTree = "<group>"; };
 		CE8CFA582B56E829007435A9 /* AuthChoiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthChoiceView.xib; sourceTree = "<group>"; };
 		CE8CFA5B2B5701E5007435A9 /* KeyboardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
+		CE8CFA5D2B57DBD2007435A9 /* AuthVMBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVMBase.swift; sourceTree = "<group>"; };
+		CE8CFA5F2B57DC52007435A9 /* AuthVM_SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM_SignIn.swift; sourceTree = "<group>"; };
+		CE8CFA612B57E51A007435A9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		CE8CFA632B57E9A6007435A9 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		CE8CFA662B57F46F007435A9 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		CE8CFA692B5812A1007435A9 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		CE8CFA6E2B581496007435A9 /* StyleProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleProtocol.swift; sourceTree = "<group>"; };
+		CE8CFA6F2B581496007435A9 /* StyleRegEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRegEx.swift; sourceTree = "<group>"; };
+		CE8CFA702B581496007435A9 /* StyleGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGroup.swift; sourceTree = "<group>"; };
+		CE8CFA712B581496007435A9 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		CE8CFA722B581496007435A9 /* StylesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylesManager.swift; sourceTree = "<group>"; };
+		CE8CFA742B581496007435A9 /* AttributedString+FunctionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributedString+FunctionBuilder.swift"; sourceTree = "<group>"; };
+		CE8CFA752B581496007435A9 /* UIKit+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extras.swift"; sourceTree = "<group>"; };
+		CE8CFA762B581496007435A9 /* String+Subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Subscript.swift"; sourceTree = "<group>"; };
+		CE8CFA772B581496007435A9 /* AttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extension.swift"; sourceTree = "<group>"; };
+		CE8CFA782B581496007435A9 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		CE8CFA792B581496007435A9 /* AttributedString+Attachments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributedString+Attachments.swift"; sourceTree = "<group>"; };
+		CE8CFA7A2B581496007435A9 /* SystemFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFonts.swift; sourceTree = "<group>"; };
+		CE8CFA7C2B581496007435A9 /* ColorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConvertible.swift; sourceTree = "<group>"; };
+		CE8CFA7D2B581496007435A9 /* FontInfoAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontInfoAttribute.swift; sourceTree = "<group>"; };
+		CE8CFA7E2B581496007435A9 /* URLRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRepresentable.swift; sourceTree = "<group>"; };
+		CE8CFA7F2B581496007435A9 /* CommonsAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonsAttributes.swift; sourceTree = "<group>"; };
+		CE8CFA802B581496007435A9 /* TextTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTransform.swift; sourceTree = "<group>"; };
+		CE8CFA812B581496007435A9 /* FontConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontConvertible.swift; sourceTree = "<group>"; };
+		CE8CFA822B581496007435A9 /* DynamicText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicText.swift; sourceTree = "<group>"; };
+		CE8CFA832B581496007435A9 /* FontData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontData.swift; sourceTree = "<group>"; };
+		CE8CFA852B581496007435A9 /* AssociatedValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedValues.swift; sourceTree = "<group>"; };
+		CE8CFA862B581496007435A9 /* Compatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compatibility.swift; sourceTree = "<group>"; };
+		CE8CFA872B581496007435A9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CE8CFA882B581496007435A9 /* AsyncTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTextAttachment.swift; sourceTree = "<group>"; };
+		CE8CFA892B581496007435A9 /* XMLDynamicAttributesResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLDynamicAttributesResolver.swift; sourceTree = "<group>"; };
+		CE8CFA8A2B581496007435A9 /* XMLStringBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLStringBuilder.swift; sourceTree = "<group>"; };
+		CE8CFA8B2B581496007435A9 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		CE8CFAAA2B58375F007435A9 /* AuthVM_Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM_Code.swift; sourceTree = "<group>"; };
+		CE8CFAAC2B5868C9007435A9 /* Mock_signIn_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_signIn_JSON.json; sourceTree = "<group>"; };
 		CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowProtocols.swift; sourceTree = "<group>"; };
 		CE8CFF742B3C66650081E64B /* CatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntity.swift; sourceTree = "<group>"; };
 		CE8CFF762B3C66EF0081E64B /* CatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatData.swift; sourceTree = "<group>"; };
@@ -324,6 +395,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8CFAA92B581CE3007435A9 /* HTMLSAXParser in Frameworks */,
 				CE4E2DA82AF3E75C00108F53 /* RealmSwift in Frameworks */,
 				CE8CFFC82B4322610081E64B /* SVGKitSwift in Frameworks */,
 				CE8CFFC62B4322610081E64B /* SVGKit in Frameworks */,
@@ -526,6 +598,96 @@
 			path = KeyboardLayout;
 			sourceTree = "<group>";
 		};
+		CE8CFA652B57F451007435A9 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA582B56E829007435A9 /* AuthChoiceView.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		CE8CFA682B58128B007435A9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA692B5812A1007435A9 /* CommonUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE8CFA6B2B581469007435A9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA6C2B581496007435A9 /* SwiftRichString */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE8CFA6C2B581496007435A9 /* SwiftRichString */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA6D2B581496007435A9 /* Style */,
+				CE8CFA732B581496007435A9 /* Extensions */,
+				CE8CFA7B2B581496007435A9 /* Attributes */,
+				CE8CFA842B581496007435A9 /* Support */,
+			);
+			path = SwiftRichString;
+			sourceTree = "<group>";
+		};
+		CE8CFA6D2B581496007435A9 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA6E2B581496007435A9 /* StyleProtocol.swift */,
+				CE8CFA6F2B581496007435A9 /* StyleRegEx.swift */,
+				CE8CFA702B581496007435A9 /* StyleGroup.swift */,
+				CE8CFA712B581496007435A9 /* Style.swift */,
+				CE8CFA722B581496007435A9 /* StylesManager.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		CE8CFA732B581496007435A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA742B581496007435A9 /* AttributedString+FunctionBuilder.swift */,
+				CE8CFA752B581496007435A9 /* UIKit+Extras.swift */,
+				CE8CFA762B581496007435A9 /* String+Subscript.swift */,
+				CE8CFA772B581496007435A9 /* AttributedString+Extension.swift */,
+				CE8CFA782B581496007435A9 /* String+Ext.swift */,
+				CE8CFA792B581496007435A9 /* AttributedString+Attachments.swift */,
+				CE8CFA7A2B581496007435A9 /* SystemFonts.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE8CFA7B2B581496007435A9 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA7C2B581496007435A9 /* ColorConvertible.swift */,
+				CE8CFA7D2B581496007435A9 /* FontInfoAttribute.swift */,
+				CE8CFA7E2B581496007435A9 /* URLRepresentable.swift */,
+				CE8CFA7F2B581496007435A9 /* CommonsAttributes.swift */,
+				CE8CFA802B581496007435A9 /* TextTransform.swift */,
+				CE8CFA812B581496007435A9 /* FontConvertible.swift */,
+				CE8CFA822B581496007435A9 /* DynamicText.swift */,
+				CE8CFA832B581496007435A9 /* FontData.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		CE8CFA842B581496007435A9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFA852B581496007435A9 /* AssociatedValues.swift */,
+				CE8CFA862B581496007435A9 /* Compatibility.swift */,
+				CE8CFA872B581496007435A9 /* Extensions.swift */,
+				CE8CFA882B581496007435A9 /* AsyncTextAttachment.swift */,
+				CE8CFA892B581496007435A9 /* XMLDynamicAttributesResolver.swift */,
+				CE8CFA8A2B581496007435A9 /* XMLStringBuilder.swift */,
+				CE8CFA8B2B581496007435A9 /* OrderedDictionary.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		CE8CFF712B3C64080081E64B /* CategoriesFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,11 +794,13 @@
 				CE17C77B2AFE877900E53297 /* Managers */,
 				CE4E2DAD2AF5004B00108F53 /* Flows */,
 				CE4E2DAC2AF3F23600108F53 /* Application */,
+				CE8CFA682B58128B007435A9 /* Utils */,
 				CE67BC8E2AF2CAA80096214C /* Extensions */,
 				CE4E2DBB2AF508EE00108F53 /* Storyboards */,
 				CEC4EF8D2AFFCCA200A64604 /* Mocks */,
 				CEA1EDF82B04E1310050CA34 /* CustomViews */,
 				CEA1EDFD2B0512D60050CA34 /* Resources */,
+				CE8CFA6B2B581469007435A9 /* Sources */,
 				CE907EBC2AF293B100BEB504 /* AppDelegate.swift */,
 				CE907EBE2AF293B100BEB504 /* SceneDelegate.swift */,
 				CE907EC02AF293B100BEB504 /* ViewController.swift */,
@@ -718,9 +882,13 @@
 		CEA746862B569E2F00FE9380 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				CE8CFA652B57F451007435A9 /* xib */,
 				CEA746872B569E6100FE9380 /* StartVC.swift */,
 				CE8CFA562B56E626007435A9 /* AuthChoiceVC.swift */,
-				CE8CFA582B56E829007435A9 /* AuthChoiceView.xib */,
+				CE8CFA662B57F46F007435A9 /* AuthVC.swift */,
+				CE8CFA5D2B57DBD2007435A9 /* AuthVMBase.swift */,
+				CE8CFA5F2B57DC52007435A9 /* AuthVM_SignIn.swift */,
+				CE8CFAAA2B58375F007435A9 /* AuthVM_Code.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -783,6 +951,7 @@
 				CEC3DDB72B02B68B005B0A5F /* Mock_tags_JSON.json */,
 				CEC4EF8E2AFFCCF900A64604 /* Mock_wikis_JSON.json */,
 				CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */,
+				CE8CFAAC2B5868C9007435A9 /* Mock_signIn_JSON.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -848,6 +1017,7 @@
 				CE8CFF762B3C66EF0081E64B /* CatData.swift */,
 				CEF0ACAB2B4C5F330000B241 /* TicketData.swift */,
 				CEF0ACAD2B4C60AB0000B241 /* TicketQuestionData.swift */,
+				CE8CFA612B57E51A007435A9 /* UserData.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -860,6 +1030,7 @@
 				CE8CFF742B3C66650081E64B /* CatEntity.swift */,
 				CEF0ACA72B4C5EA30000B241 /* TicketEntity.swift */,
 				CEF0ACAF2B4C92E20000B241 /* TicketQuestionEntity.swift */,
+				CE8CFA632B57E9A6007435A9 /* UserProfile.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -943,6 +1114,7 @@
 				CE4E2DA72AF3E75C00108F53 /* RealmSwift */,
 				CE8CFFC52B4322610081E64B /* SVGKit */,
 				CE8CFFC72B4322610081E64B /* SVGKitSwift */,
+				CE8CFAA82B581CE3007435A9 /* HTMLSAXParser */,
 			);
 			productName = Foolstack;
 			productReference = CE907EB92AF293B100BEB504 /* Foolstack.app */;
@@ -1020,6 +1192,7 @@
 			packageReferences = (
 				CE4E2DA42AF3E75C00108F53 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				CE8CFFC42B4322610081E64B /* XCRemoteSwiftPackageReference "SVGKit" */,
+				CE8CFAA72B581CE3007435A9 /* XCRemoteSwiftPackageReference "swift-htmlsaxparser" */,
 			);
 			productRefGroup = CE907EBA2AF293B100BEB504 /* Products */;
 			projectDirPath = "";
@@ -1044,6 +1217,7 @@
 				CEC4EF8F2AFFCCF900A64604 /* Mock_wikis_JSON.json in Resources */,
 				CE907EC92AF293B300BEB504 /* LaunchScreen.storyboard in Resources */,
 				CE8CFFB42B4054F00081E64B /* sf-ui-text-bold-italic.ttf in Resources */,
+				CE8CFAAD2B5868C9007435A9 /* Mock_signIn_JSON.json in Resources */,
 				CE8CFFB82B4054F00081E64B /* sf-ui-text-semibold-italic.ttf in Resources */,
 				CE40FED22B4DA89E00BC5F02 /* Mock_tickets_JSON.json in Resources */,
 				CE907EC62AF293B300BEB504 /* Assets.xcassets in Resources */,
@@ -1086,6 +1260,7 @@
 			files = (
 				CED469102B4420D500283B43 /* CatProfView.swift in Sources */,
 				CEC4EF7C2AFEAD0900A64604 /* URLSessionProtocol.swift in Sources */,
+				CE8CFA622B57E51A007435A9 /* UserData.swift in Sources */,
 				CE8CFA5C2B5701E5007435A9 /* KeyboardLayout.swift in Sources */,
 				CEA1EDFC2B04E3250050CA34 /* UIButtonCustom.swift in Sources */,
 				CEE1DAD42B4EE17300E70B70 /* ExaminationVC.swift in Sources */,
@@ -1093,23 +1268,30 @@
 				CE4E2DC22AF52F6600108F53 /* MainVC.swift in Sources */,
 				CEA1EDF42B04D6B50050CA34 /* UIView+Constraints.swift in Sources */,
 				CE8CFF912B3EECB50081E64B /* Constants.swift in Sources */,
+				CE8CFA9F2B581496007435A9 /* FontData.swift in Sources */,
 				CEF0ACA12B4C078C0000B241 /* MainTabVC.swift in Sources */,
 				CE0259952B515C570018F2C2 /* PopupTransformerRegular.swift in Sources */,
 				CE0259932B515C330018F2C2 /* PopupTransformer.swift in Sources */,
 				CEC3DDB62B02B15F005B0A5F /* MockURLSession.swift in Sources */,
+				CE8CFA5E2B57DBD2007435A9 /* AuthVMBase.swift in Sources */,
 				CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */,
+				CE8CFA942B581496007435A9 /* AttributedString+Extension.swift in Sources */,
 				CEC4EF992B00B8D900A64604 /* DataStorage.swift in Sources */,
 				CEC4EF892AFED20B00A64604 /* WikiData.swift in Sources */,
 				CE0259A22B51EA660018F2C2 /* PopupTransition.swift in Sources */,
 				CE667A972B50495C0061585C /* ExamQuestionVM.swift in Sources */,
 				CEA746882B569E6100FE9380 /* StartVC.swift in Sources */,
 				CEA1EDF72B04E10E0050CA34 /* NibView.swift in Sources */,
+				CE8CFA602B57DC52007435A9 /* AuthVM_SignIn.swift in Sources */,
 				CE40FED02B4D919500BC5F02 /* TestingTableCell.swift in Sources */,
 				CE907EC12AF293B100BEB504 /* ViewController.swift in Sources */,
+				CE8CFA9E2B581496007435A9 /* DynamicText.swift in Sources */,
 				CE667A932B5044210061585C /* UIViewExtensions.swift in Sources */,
 				CE9C72E72B53E71900E84503 /* Category+Realm.swift in Sources */,
 				CE907EBD2AF293B100BEB504 /* AppDelegate.swift in Sources */,
+				CE8CFAAB2B58375F007435A9 /* AuthVM_Code.swift in Sources */,
 				CEF0AC9C2B4AD2E80000B241 /* CustomTextField.swift in Sources */,
+				CE8CFA992B581496007435A9 /* FontInfoAttribute.swift in Sources */,
 				CEE1DAD62B4EE23700E70B70 /* ExaminationVM.swift in Sources */,
 				CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */,
 				CE4E2DBD2AF5090500108F53 /* StoryboardEnum.swift in Sources */,
@@ -1118,6 +1300,7 @@
 				CED469142B44246500283B43 /* CatListViewBase.swift in Sources */,
 				CEA1EE0A2B0529220050CA34 /* FontExtension.swift in Sources */,
 				CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */,
+				CE8CFA922B581496007435A9 /* UIKit+Extras.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,
 				CEF0ACA82B4C5EA30000B241 /* TicketEntity.swift in Sources */,
@@ -1125,16 +1308,22 @@
 				CED469292B48960C00283B43 /* TagListCell.swift in Sources */,
 				CE0259A42B52CEF50018F2C2 /* ConfirmPopupConfig.swift in Sources */,
 				CE02598A2B515AED0018F2C2 /* PopupManager.swift in Sources */,
+				CE8CFAA02B581496007435A9 /* AssociatedValues.swift in Sources */,
+				CE8CFA8D2B581496007435A9 /* StyleRegEx.swift in Sources */,
 				CEC4EF962AFFF08900A64604 /* DataCache.swift in Sources */,
 				CEC4EF942AFFF02A00A64604 /* DataCacheService.swift in Sources */,
+				CE8CFAA52B581496007435A9 /* XMLStringBuilder.swift in Sources */,
 				CEF0AC912B49747F0000B241 /* UserStorage.swift in Sources */,
 				CE8CFFBC2B4072010081E64B /* BorderButton.swift in Sources */,
 				CE17C7822AFE882700E53297 /* NetworkClient.swift in Sources */,
+				CE8CFA932B581496007435A9 /* String+Subscript.swift in Sources */,
 				CE0259972B51607B0018F2C2 /* CGPoint+Extensions.swift in Sources */,
 				CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */,
 				CE8CFA572B56E626007435A9 /* AuthChoiceVC.swift in Sources */,
+				CE8CFA902B581496007435A9 /* StylesManager.swift in Sources */,
 				CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */,
 				CED469122B4420E400283B43 /* CatSpecView.swift in Sources */,
+				CE8CFA9A2B581496007435A9 /* URLRepresentable.swift in Sources */,
 				CEC4EF912AFFD25F00A64604 /* DataExtensions.swift in Sources */,
 				CEA1EE082B0527CB0050CA34 /* SimpleTableCell.swift in Sources */,
 				CEF0AC962B49F1E20000B241 /* WikiListCell.swift in Sources */,
@@ -1142,15 +1331,20 @@
 				CEF0ACAC2B4C5F330000B241 /* TicketData.swift in Sources */,
 				CEE1DADF2B5015D400E70B70 /* CircularProgressView.swift in Sources */,
 				CED4691C2B44A8D000283B43 /* CatSpecListVM.swift in Sources */,
+				CE8CFA6A2B5812A1007435A9 /* CommonUtils.swift in Sources */,
 				CED469162B44615E00283B43 /* CatSpecCell.swift in Sources */,
+				CE8CFA952B581496007435A9 /* String+Ext.swift in Sources */,
 				CE8CFF9F2B4052310081E64B /* CatProfCell.swift in Sources */,
+				CE8CFA9D2B581496007435A9 /* FontConvertible.swift in Sources */,
 				CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */,
 				CEC3DDC22B03CE2B005B0A5F /* MockNetworkClient.swift in Sources */,
 				CEF0ACAE2B4C60AB0000B241 /* TicketQuestionData.swift in Sources */,
+				CE8CFAA32B581496007435A9 /* AsyncTextAttachment.swift in Sources */,
 				CEA1EE032B051C0C0050CA34 /* ValueConstants.swift in Sources */,
 				CED4690E2B434ED300283B43 /* StringExtension.swift in Sources */,
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE0259992B51774F0018F2C2 /* CustomPopupView.swift in Sources */,
+				CE8CFA9C2B581496007435A9 /* TextTransform.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,
 				CE9C72E52B53E44400E84503 /* CatRLM.swift in Sources */,
@@ -1159,9 +1353,12 @@
 				CE667A952B5049200061585C /* ExamQuestionView.swift in Sources */,
 				CE8CFFBF2B40A0A10081E64B /* WebImageView.swift in Sources */,
 				CEA1EDFA2B04E14F0050CA34 /* HeaderBar.swift in Sources */,
+				CE8CFA9B2B581496007435A9 /* CommonsAttributes.swift in Sources */,
 				CEC3DDC02B03CDB4005B0A5F /* NetworkService.swift in Sources */,
 				CEE1DADA2B4FF18A00E70B70 /* ExamFinishView.swift in Sources */,
+				CE8CFA8F2B581496007435A9 /* Style.swift in Sources */,
 				CEC4EFA62B00E36C00A64604 /* TagRLM.swift in Sources */,
+				CE8CFAA12B581496007435A9 /* Compatibility.swift in Sources */,
 				CE67BC902AF2CAF00096214C /* AsyncExtentions.swift in Sources */,
 				CEC4EF9B2B00B98700A64604 /* StorageConfig.swift in Sources */,
 				CEC4EF9F2B00D01700A64604 /* RealmActor.swift in Sources */,
@@ -1179,20 +1376,31 @@
 				CE8CFFC12B40A1290081E64B /* PrintDebug.swift in Sources */,
 				CED469182B44A66600283B43 /* CatListVM.swift in Sources */,
 				CE02599D2B5180520018F2C2 /* PopupTextView.swift in Sources */,
+				CE8CFAA22B581496007435A9 /* Extensions.swift in Sources */,
+				CE8CFA642B57E9A6007435A9 /* UserProfile.swift in Sources */,
 				CE02598C2B515B840018F2C2 /* PopupViewController.swift in Sources */,
 				CED469272B47008200283B43 /* TagsCollectionLayout.swift in Sources */,
+				CE8CFA982B581496007435A9 /* ColorConvertible.swift in Sources */,
 				CE02598E2B515BB90018F2C2 /* PopupViewContainer.swift in Sources */,
+				CE8CFA672B57F46F007435A9 /* AuthVC.swift in Sources */,
 				CEC4EFA22B00DA3800A64604 /* WikiItemRLM.swift in Sources */,
+				CE8CFAA42B581496007435A9 /* XMLDynamicAttributesResolver.swift in Sources */,
 				CEF0ACB42B4C9D110000B241 /* Ticket+RLM.swift in Sources */,
+				CE8CFA962B581496007435A9 /* AttributedString+Attachments.swift in Sources */,
 				CE4E2DC42AF557F300108F53 /* WikiFlowBuilder.swift in Sources */,
 				CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */,
 				CEA1EDFF2B05130C0050CA34 /* IconNames.swift in Sources */,
 				CEF0ACAA2B4C5EE30000B241 /* TicketRLM.swift in Sources */,
 				CE8CFF822B3DCFA80081E64B /* CatListVC.swift in Sources */,
+				CE8CFAA62B581496007435A9 /* OrderedDictionary.swift in Sources */,
 				CED469252B46E83100283B43 /* TagListVM.swift in Sources */,
+				CE8CFA972B581496007435A9 /* SystemFonts.swift in Sources */,
 				CEE1DADD2B50115300E70B70 /* UICounterLabel.swift in Sources */,
+				CE8CFA912B581496007435A9 /* AttributedString+FunctionBuilder.swift in Sources */,
+				CE8CFA8C2B581496007435A9 /* StyleProtocol.swift in Sources */,
 				CEF0ACA42B4C40C30000B241 /* TestingVC.swift in Sources */,
 				CEF0ACA62B4C40CD0000B241 /* TestingVM.swift in Sources */,
+				CE8CFA8E2B581496007435A9 /* StyleGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1568,6 +1776,14 @@
 				minimumVersion = 10.44.0;
 			};
 		};
+		CE8CFAA72B581CE3007435A9 /* XCRemoteSwiftPackageReference "swift-htmlsaxparser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raymccrae/swift-htmlsaxparser";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		CE8CFFC42B4322610081E64B /* XCRemoteSwiftPackageReference "SVGKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SVGKit/SVGKit";
@@ -1588,6 +1804,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE4E2DA42AF3E75C00108F53 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		CE8CFAA82B581CE3007435A9 /* HTMLSAXParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8CFAA72B581CE3007435A9 /* XCRemoteSwiftPackageReference "swift-htmlsaxparser" */;
+			productName = HTMLSAXParser;
 		};
 		CE8CFFC52B4322610081E64B /* SVGKit */ = {
 			isa = XCSwiftPackageProductDependency;

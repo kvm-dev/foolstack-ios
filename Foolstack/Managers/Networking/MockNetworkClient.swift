@@ -10,24 +10,8 @@ import Foundation
 class MockNetworkClient: NetworkService {
     let session: URLSessionProtocol = MockURLSession()
     let baseUrl: URL = URL(string: "https://mock_foolstack.ru/api/v1/")!
-
-    init() {
-    }
     
-    private func decodeResult<T>(with result: Result<Data, Error>, decode: T.Type) async throws -> T where T : Decodable {
-        switch result {
-        case .success(let data):
-            let decoder = JSONDecoder()
-            do {
-                return try decoder.decode(T.self, from: data)
-            } catch {
-                printToConsole("JSON error: \(error)")
-                throw NetworkAPIError.invalidResponseFormat
-            }
-            
-        case .failure(let error):
-            throw error
-        }
+    init() {
     }
     
     func getCategories() async throws -> [CatData]? {
@@ -86,4 +70,31 @@ class MockNetworkClient: NetworkService {
             throw error
         }
     }
+    
+    //MARK: AUTH
+    
+    func signIn(email: String) async throws -> LoginResponseData {
+        let url = URL(string: "signIn", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        let result = try await decodeResult(with: apiData, decode: LoginResponseData.self)
+        if result.success {
+            return result
+        } else {
+            throw NetworkAPIError.responseFailure(result.errorMsg ?? "Unknown error")
+        }
+    }
+    
+    func sendLoginCode(code: String) async throws -> UserProfile {
+        let url = URL(string: "sendCode", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        let result = try await decodeResult(with: apiData, decode: UserResponseData.self)
+        if result.success {
+            return UserProfile(data: result)
+        } else {
+            throw NetworkAPIError.responseFailure(result.errorMsg ?? "Unknown error")
+        }
+    }
+    
 }

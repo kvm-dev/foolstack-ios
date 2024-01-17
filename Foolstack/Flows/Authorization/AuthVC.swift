@@ -1,21 +1,28 @@
 //
-//  AuthChoiceVC.swift
+//  AuthVC.swift
 //  Foolstack
 //
-//  Created by Evgeniy Zolkin on 16.01.2024.
+//  Created by Evgeniy Zolkin on 17.01.2024.
 //
 
 import UIKit
+import Combine
 
-class AuthChoiceVC: UIViewController {
+class AuthVC: UIViewController {
     
-        private var keyboardLayoutGuide: KeyboardLayoutGuide!
+    private var keyboardLayoutGuide: KeyboardLayoutGuide!
     private var bottomConstraint: NSLayoutConstraint!
     private var prevKeyboardFrame: CGRect = .zero
     private var bottomView: UIView!
+    private var inputField: UITextField!
+    private var nextButton: UIButton!
     
-    init() {
+    private var viewModel: AuthVMBase!
+    private var subscriptions = Set<AnyCancellable>()
+    
+    init(viewModel: AuthVMBase) {
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +38,7 @@ class AuthChoiceVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //subscribeToKeyboardNotifications()
-//        firstField.becomeFirstResponder()
+        inputField.becomeFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -42,6 +49,11 @@ class AuthChoiceVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        initialize()
+    }
+    
+    private func setupViews() {
         view.backgroundColor = .themeBackgroundTop
         
         let bv = UIView()
@@ -71,7 +83,7 @@ class AuthChoiceVC: UIViewController {
         bv.addSubview(titleLabel)
         titleLabel.font = CustomFonts.defaultHeavy(size: 24)
         titleLabel.textColor = .themeTextViewTitle
-        titleLabel.text = String(localized: "Login or Registration")
+        titleLabel.text = viewModel.titleText
         titleLabel.numberOfLines = 1
         titleLabel.pinEdges(to: bv, top: 16, centerX: 0)
         
@@ -117,10 +129,10 @@ class AuthChoiceVC: UIViewController {
         mailLabel.text = "Email"
         mailLabel.numberOfLines = 1
         
-        let textField = CustomTextField(backgroundColor: .themeBackgroundMain)
-        textField.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        sv.addArrangedSubview(textField)
-        textField.placeholder = "Enter email"
+        inputField = CustomTextField(backgroundColor: .themeBackgroundMain)
+        inputField.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        sv.addArrangedSubview(inputField)
+        inputField.placeholder = "Enter email"
         
         let divider = UIView()
         divider.backgroundColor = .themeDivider
@@ -131,35 +143,70 @@ class AuthChoiceVC: UIViewController {
         v1.heightAnchor.constraint(equalToConstant: 22).isActive = true
         sv.addArrangedSubview(v1)
         
-        let loginButton = BorderButton(backgroundColor: .themeAccent)
-        sv.addArrangedSubview(loginButton)
-        loginButton.setTitle(String(localized: "Next", comment: ""), for: .normal)
-        loginButton.heightAnchor.constraint(equalToConstant: .buttonSize).isActive = true
-        loginButton.addTarget(self, action: #selector(signInPressed), for: .touchUpInside)
+        nextButton = BorderButton(backgroundColor: .themeAccent)
+        sv.addArrangedSubview(nextButton)
+        nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
+        nextButton.heightAnchor.constraint(equalToConstant: .buttonSize).isActive = true
+        nextButton.addTarget(self, action: #selector(signInPressed), for: .touchUpInside)
+        
+        viewModel.$nextButtonEnabled.assign(to: \.isEnabled, on: nextButton)
+            .store(in: &subscriptions)
         
         let v2 = UIView()
         v2.heightAnchor.constraint(equalToConstant: 16).isActive = true
         sv.addArrangedSubview(v2)
         
-        textField.becomeFirstResponder()
-        
-        //TODO: localize
-        
-        
-        
-        
-        
     }
     
-    @IBAction func signInPressed() {
+    private func initialize() {
+        inputField.keyboardType = viewModel.firstKeyboardType
+        viewModel.$firstFieldText.assign(to: \.text, on: inputField).store(in: &subscriptions)
+        viewModel.$firstFieldPlaceholder.assign(to: \.attributedPlaceholder, on: inputField).store(in: &subscriptions)
+        inputField.addTarget(self, action: #selector(firstFieldTextChanged(_:)), for: .editingChanged)
+
+        viewModel.$firstFieldError.sink { [unowned self] isErr in
+          //print("Recieved firstFieldError: \(isErr)")
+          //self.inputField.borderColor = isErr ? UIColor.themeDeleteIcon : .themeColor23
+          //self.inputField.textColor = isErr ? .themeDeleteIcon : .themeTextMain
+        }.store(in: &subscriptions)
+
+        viewModel.$nextButtonEnabled.assign(to: \.isEnabled, on: nextButton).store(in: &subscriptions)
+        viewModel.$nextButtonTitle.sink { [unowned self] str in
+          self.nextButton.setTitle(str, for: .normal)
+        }.store(in: &subscriptions)
+        
+        viewModel.onShowEnterCode = {[unowned self] vm in self.goToEnterCode(viewModel: vm)}
+//        viewModel.onShowSignIn = {[unowned self] vm in self.goToSignIn(vm)}
+//        viewModel.onBackToRoot = {[unowned self] in self.backToRoot()}
+//        viewModel.onBackToPrevious = {[unowned self] in self.backPressed()}
+//        viewModel.onComplete = {[unowned self] in self.launchApp()}
+//        viewModel.onDownloadProgress = { [unowned self] p in self.downloadIndicator?.setProgress(p) }
+//        viewModel.onSyncLoadError = { [weak self] mess, repeatCallback in self?.showSyncErrorPopup(mess, onRepeat: repeatCallback)}
+
+//        viewModel.onShowLoading = {[weak self] show in self?.showIndicator(show) }
     }
     
+    @objc func signInPressed() {
+        viewModel.doNext()
+    }
+    
+    @objc func firstFieldTextChanged(_ sender: UITextField) {
+      viewModel.firstFieldText = sender.text
+      if viewModel.firstFieldError {
+        viewModel.firstFieldError = false
+      }
+    }
+
+    private func goToEnterCode(viewModel: AuthVM_Code) {
+        let vc = AuthVC(viewModel: viewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 
 //MARK: Keyboard
 
-private extension AuthChoiceVC {
+private extension AuthVC {
     
     private func subscribeToKeyboardNotifications() {
         let notificationCenter = NotificationCenter.default

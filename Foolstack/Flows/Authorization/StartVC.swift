@@ -128,7 +128,7 @@ class StartVC: UIViewController {
     }
     
     @IBAction func signInPressed() {
-        let vc = AuthChoiceVC()
+        let vc = AuthVC(viewModel: AuthVM_SignIn(network: MockNetworkClient()))
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

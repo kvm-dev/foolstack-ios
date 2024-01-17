@@ -18,6 +18,7 @@ extension UIColor {
     static let themeBackgroundTop = UIColor(named: "Color4")!
     static let themeBackgroundPopup = UIColor(named: "Color1")!
     static let themeHeader = UIColor(named: "Color9")!
+    static let themeDivider = UIColor(named: "Color9")!
     static let themeStandartIcon = UIColor(named: "Color3")!
     static let themeAccent = UIColor(named: "Color5")!
     static let themeButtonUnselected = UIColor(named: "Color6")!
@@ -35,4 +36,6 @@ extension UIColor {
     static let themeTextSecondary = UIColor(named: "TextColor2")!
     static let themeTextViewTitle = UIColor(named: "Color4")!
     static let themeTextDisabled = UIColor(named: "DisabledColor")!
+    static let themeTextError = UIColor(named: "ColorBad")!
+    static let themeTextLink = UIColor.blue//(named: "ColorBad")!
 }

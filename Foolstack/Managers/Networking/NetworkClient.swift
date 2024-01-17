@@ -96,4 +96,32 @@ class NetworkClient: NetworkService {
             throw error
         }
     }
+    
+    //MARK: AUTH
+    
+    func signIn(email: String) async throws -> LoginResponseData {
+        let url = URL(string: "signIn", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        let result = try await decodeResult(with: apiData, decode: LoginResponseData.self)
+        if result.success {
+            return result
+        } else {
+            throw NetworkAPIError.responseFailure(result.errorMsg ?? "Unknown error")
+        }
+    }
+    
+    func sendLoginCode(code: String) async throws -> UserProfile {
+        let url = URL(string: "sendCode", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        let result = try await decodeResult(with: apiData, decode: UserResponseData.self)
+        if result.success {
+            return UserProfile(data: result)
+        } else {
+            throw NetworkAPIError.responseFailure(result.errorMsg ?? "Unknown error")
+        }
+    }
+
+
 }

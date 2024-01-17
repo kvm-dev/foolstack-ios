@@ -122,6 +122,9 @@
     "ENTER AS A GUEST" : {
 
     },
+    "Enter your password" : {
+
+    },
     "Finish" : {
 
     },
@@ -204,6 +207,9 @@
         }
       }
     },
+    "Password must be at least 6 characters." : {
+
+    },
     "Search" : {
       "localizations" : {
         "ru" : {
@@ -231,6 +237,9 @@
 
     },
     "YES" : {
+
+    },
+    "Your email address" : {
 
     }
   },
