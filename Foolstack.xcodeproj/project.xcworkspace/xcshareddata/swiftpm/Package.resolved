@@ -37,6 +37,15 @@
       }
     },
     {
+      "identity" : "swift-htmlsaxparser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raymccrae/swift-htmlsaxparser",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d743aa105b1d04f82f8154c3187abc71f11676fd"
+      }
+    },
+    {
       "identity" : "swift-log",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log.git",
