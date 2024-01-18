@@ -79,6 +79,7 @@
 		CE8CFAA92B581CE3007435A9 /* HTMLSAXParser in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CFAA82B581CE3007435A9 /* HTMLSAXParser */; };
 		CE8CFAAB2B58375F007435A9 /* AuthVM_Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFAAA2B58375F007435A9 /* AuthVM_Code.swift */; };
 		CE8CFAAD2B5868C9007435A9 /* Mock_signIn_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8CFAAC2B5868C9007435A9 /* Mock_signIn_JSON.json */; };
+		CE8CFAB02B586B91007435A9 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFAAF2B586B91007435A9 /* PasscodeView.swift */; };
 		CE8CFF732B3C64850081E64B /* CatFlowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */; };
 		CE8CFF752B3C66650081E64B /* CatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF742B3C66650081E64B /* CatEntity.swift */; };
 		CE8CFF772B3C66EF0081E64B /* CatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CFF762B3C66EF0081E64B /* CatData.swift */; };
@@ -275,6 +276,7 @@
 		CE8CFA8B2B581496007435A9 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		CE8CFAAA2B58375F007435A9 /* AuthVM_Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM_Code.swift; sourceTree = "<group>"; };
 		CE8CFAAC2B5868C9007435A9 /* Mock_signIn_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_signIn_JSON.json; sourceTree = "<group>"; };
+		CE8CFAAF2B586B91007435A9 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		CE8CFF722B3C64850081E64B /* CatFlowProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFlowProtocols.swift; sourceTree = "<group>"; };
 		CE8CFF742B3C66650081E64B /* CatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntity.swift; sourceTree = "<group>"; };
 		CE8CFF762B3C66EF0081E64B /* CatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatData.swift; sourceTree = "<group>"; };
@@ -688,6 +690,14 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		CE8CFAAE2B586B6C007435A9 /* PasscodeView */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CFAAF2B586B91007435A9 /* PasscodeView.swift */,
+			);
+			path = PasscodeView;
+			sourceTree = "<group>";
+		};
 		CE8CFF712B3C64080081E64B /* CategoriesFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,6 +855,7 @@
 		CEA1EDF82B04E1310050CA34 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE8CFAAE2B586B6C007435A9 /* PasscodeView */,
 				CE0259882B515ABA0018F2C2 /* AlertViews */,
 				CEF0AC9A2B4AD2C40000B241 /* TextViews */,
 				CEF0AC972B4A0DDA0000B241 /* SearchBar */,
@@ -1300,6 +1311,7 @@
 				CED469142B44246500283B43 /* CatListViewBase.swift in Sources */,
 				CEA1EE0A2B0529220050CA34 /* FontExtension.swift in Sources */,
 				CED4691A2B44A7A700283B43 /* CatProfListVM.swift in Sources */,
+				CE8CFAB02B586B91007435A9 /* PasscodeView.swift in Sources */,
 				CE8CFA922B581496007435A9 /* UIKit+Extras.swift in Sources */,
 				CE907EBF2AF293B100BEB504 /* SceneDelegate.swift in Sources */,
 				CE4E2DC82AF55A2200108F53 /* WikiEntity.swift in Sources */,

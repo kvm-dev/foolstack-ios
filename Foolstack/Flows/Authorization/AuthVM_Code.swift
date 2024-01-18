@@ -20,6 +20,7 @@ final class AuthVM_Code: AuthVMBase {
         //            googleConfig = GIDConfiguration.init(clientID: clientId)
         //        }
         
+        self.inputType = .pin
         self.titleText = String(localized: "Login or Registration")
         firstKeyboardType = .emailAddress
         //        updateFirstPlaceholder(isError: false, newPlaceholder: NSLocalizedString("Your email address", comment: ""))

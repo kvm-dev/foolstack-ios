@@ -14,8 +14,9 @@ class AuthVC: UIViewController {
     private var bottomConstraint: NSLayoutConstraint!
     private var prevKeyboardFrame: CGRect = .zero
     private var bottomView: UIView!
-    private var inputField: UITextField!
+    private var inputField: TextInputField!
     private var nextButton: UIButton!
+    private var additionalButton: UIButton!
     
     private var viewModel: AuthVMBase!
     private var subscriptions = Set<AnyCancellable>()
@@ -104,47 +105,21 @@ class AuthVC: UIViewController {
             contentLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -padding),
         ])
         
-        
-        let sv = UIStackView()
-        bottomView = sv
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(sv)
-        sv.axis = .vertical
+        let bottomView = UIView()
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bottomView)
         NSLayoutConstraint.activate([
-            sv.leftAnchor.constraint(equalTo: view.leftAnchor, constant: padding),
-            sv.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -padding),
+            bottomView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: padding),
+            bottomView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -padding),
         ])
-        bottomConstraint = sv.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -11)
-        //bottomConstraint.isActive = true
-        
-        keyboardLayoutGuide = KeyboardLayoutGuide(parentView: sv)
+        keyboardLayoutGuide = KeyboardLayoutGuide(parentView: bottomView)
         let constr = keyboardLayoutGuide.topGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         constr.priority = .defaultHigh
         constr.isActive = true
-        
-        let mailLabel = UILabel()
-        sv.addArrangedSubview(mailLabel)
-        mailLabel.font = CustomFonts.defaultRegular(size: 13)
-        mailLabel.textColor = .themeTextViewTitle
-        mailLabel.text = "Email"
-        mailLabel.numberOfLines = 1
-        
-        inputField = CustomTextField(backgroundColor: .themeBackgroundMain)
-        inputField.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        sv.addArrangedSubview(inputField)
-        inputField.placeholder = "Enter email"
-        
-        let divider = UIView()
-        divider.backgroundColor = .themeDivider
-        divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        sv.addArrangedSubview(divider)
-        
-        let v1 = UIView()
-        v1.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        sv.addArrangedSubview(v1)
-        
+
         nextButton = BorderButton(backgroundColor: .themeAccent)
-        sv.addArrangedSubview(nextButton)
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.addSubview(nextButton)
         nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
         nextButton.heightAnchor.constraint(equalToConstant: .buttonSize).isActive = true
         nextButton.addTarget(self, action: #selector(signInPressed), for: .touchUpInside)
@@ -152,10 +127,67 @@ class AuthVC: UIViewController {
         viewModel.$nextButtonEnabled.assign(to: \.isEnabled, on: nextButton)
             .store(in: &subscriptions)
         
-        let v2 = UIView()
-        v2.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        sv.addArrangedSubview(v2)
+        NSLayoutConstraint.activate([
+            nextButton.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 0),
+            nextButton.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: 0),
+            nextButton.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -12)
+        ])
+        bottomConstraint = nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -11)
+        //bottomConstraint.isActive = true
         
+        let fieldStack = UIStackView()
+        fieldStack.translatesAutoresizingMaskIntoConstraints = false
+        fieldStack.axis = .vertical
+        fieldStack.alignment = .leading
+        bottomView.addSubview(fieldStack)
+        fieldStack.backgroundColor = .brown
+        
+        NSLayoutConstraint.activate([
+            fieldStack.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 0),
+            fieldStack.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: 0),
+            fieldStack.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -22)
+        ])
+
+        let fieldLabel = UILabel()
+        fieldLabel.font = CustomFonts.defaultRegular(size: 13)
+        fieldLabel.textColor = .themeTextViewTitle
+        fieldLabel.text = "Weqwe"
+        fieldLabel.numberOfLines = 1
+
+        fieldStack.addArrangedSubview(fieldLabel)
+
+        if viewModel.inputType == .pin {
+
+            let field = PasscodeView(length: 4)
+            fieldStack.addArrangedSubview(field)
+            //field.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            field.configView(
+                labelFont: CustomFonts.defaultBold(size: 30),
+                labelColor: .themeTextMain,
+                cornerRadius: 8,
+                pinColor: .themeBackgroundMain,
+                pinBorderColor: .themeHeader,
+                pinBorderWidth: 1)
+            field.setPinSize(.init(60, 60), spacing: 20)
+            self.inputField = field
+        } else {
+            let textField = CustomTextField(backgroundColor: .themeBackgroundMain)
+            textField.heightAnchor.constraint(equalToConstant: 36).isActive = true
+            fieldStack.addArrangedSubview(textField)
+            //textField.attributedPlaceholder
+            self.inputField = textField
+            
+            let divider = UIView()
+            divider.backgroundColor = .themeDivider
+            divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
+            fieldStack.addArrangedSubview(divider)
+        }
+        
+        let additionalButton = UIButton()
+        additionalButton.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.addSubview(additionalButton)
+        
+
     }
     
     private func initialize() {
@@ -279,4 +311,18 @@ private extension AuthVC {
             self?.bottomConstraint.constant = 0
         }
     }
+}
+
+
+@MainActor
+protocol TextInputField: NSCoding {
+    func becomeFirstResponder() -> Bool
+    var keyboardType: UIKeyboardType { get set }
+    var text: String? { get set }
+    var attributedPlaceholder: NSAttributedString? { get set }
+    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event)
+}
+
+extension UITextField: TextInputField {
+    
 }

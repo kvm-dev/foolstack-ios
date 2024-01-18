@@ -11,6 +11,11 @@ import Combine
 
 @MainActor
 class AuthVMBase {
+    enum TextInputType {
+        case text
+        case pin
+    }
+
     var titleText = ""
     var firstKeyboardType: UIKeyboardType = .emailAddress
     @Published var firstFieldText: String?
@@ -20,6 +25,7 @@ class AuthVMBase {
     @Published var messageText: NSAttributedString?
     @Published var nextButtonTitle: String!
     @Published var nextButtonEnabled = false
+    var inputType: TextInputType = .text
     
     var onShowEnterCode: ((AuthVM_Code) -> Void)?
     var onShowSignIn: ((AuthVM_SignIn?) -> Void)?
