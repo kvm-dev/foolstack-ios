@@ -17,7 +17,9 @@ class AuthVC: UIViewController {
     private var inputField: TextInputField!
     private var nextButton: UIButton!
     private var additionalButton: UIButton!
-    
+    private var fieldLabel: UILabel!
+    private var descriptionLabel: UILabel!
+
     private var viewModel: AuthVMBase!
     private var subscriptions = Set<AnyCancellable>()
     
@@ -31,7 +33,7 @@ class AuthVC: UIViewController {
     }
     
     deinit {
-        //print("DEINIT. LauncherStartVC")
+        print("DEINIT. AuthVC")
     }
     
     // MARK: Life Cycle
@@ -42,6 +44,11 @@ class AuthVC: UIViewController {
         inputField.becomeFirstResponder()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showIndicator(false)
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -79,6 +86,16 @@ class AuthVC: UIViewController {
         logoLabel.text = "FoolStack"
         logoLabel.pinEdges(to: view.safeAreaLayoutGuide, top: 25, centerX: 0)
         
+        let backButton = UIButton.custom(systemName: .back, color: .themeTextLight, size: .buttonSize, imagePoints: 32)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(backButton)
+        backButton.pinEdges(to: view.layoutMarginsGuide, leading: 0)
+        backButton.pinEdges(to: logoLabel, centerY: 0)
+        backButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.backPressed()
+        }), for: .touchUpInside)
+        //backButton.pinSize(width: .buttonSize, height: .buttonSize)
+        
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         bv.addSubview(titleLabel)
@@ -88,21 +105,17 @@ class AuthVC: UIViewController {
         titleLabel.numberOfLines = 1
         titleLabel.pinEdges(to: bv, top: 16, centerX: 0)
         
-        let contentLabel = UILabel()
-        contentLabel.translatesAutoresizingMaskIntoConstraints = false
-        bv.addSubview(contentLabel)
-        contentLabel.font = CustomFonts.defaultRegular(size: 17)
-        contentLabel.textColor = .themeTextMain
-        contentLabel.text =
-        """
-        Введи адрес электронной почты, чтобы мы могли определить есть ли у тебя учетная запись в нашем сервисе.  В случае если учетной записи у тебя нет, мы сможем тебя зарегистрировать.
-        """
-        contentLabel.numberOfLines = 0
-        contentLabel.textAlignment = .center
+        descriptionLabel = UILabel()
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        bv.addSubview(descriptionLabel)
+//        descriptionLabel.font = CustomFonts.defaultRegular(size: 17)
+//        descriptionLabel.textColor = .themeTextMain
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.textAlignment = .center
         NSLayoutConstraint.activate([
-            contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            contentLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: padding),
-            contentLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -padding),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            descriptionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: padding),
+            descriptionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -padding),
         ])
         
         let bottomView = UIView()
@@ -140,24 +153,16 @@ class AuthVC: UIViewController {
         fieldStack.axis = .vertical
         fieldStack.alignment = .leading
         bottomView.addSubview(fieldStack)
-        fieldStack.backgroundColor = .brown
-        
-        NSLayoutConstraint.activate([
-            fieldStack.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 0),
-            fieldStack.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: 0),
-            fieldStack.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -22)
-        ])
 
-        let fieldLabel = UILabel()
+        fieldLabel = UILabel()
         fieldLabel.font = CustomFonts.defaultRegular(size: 13)
-        fieldLabel.textColor = .themeTextViewTitle
-        fieldLabel.text = "Weqwe"
-        fieldLabel.numberOfLines = 1
+        fieldLabel.numberOfLines = 0
 
         fieldStack.addArrangedSubview(fieldLabel)
 
         if viewModel.inputType == .pin {
-
+            fieldStack.spacing = 12
+            
             let field = PasscodeView(length: 4)
             fieldStack.addArrangedSubview(field)
             //field.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -169,8 +174,16 @@ class AuthVC: UIViewController {
                 pinBorderColor: .themeHeader,
                 pinBorderWidth: 1)
             field.setPinSize(.init(60, 60), spacing: 20)
+            field.keyboardType = .decimalPad
             self.inputField = field
+            
+            NSLayoutConstraint.activate([
+                fieldStack.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor, constant: 0),
+                fieldStack.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -12)
+            ])
         } else {
+            fieldStack.alignment = .fill
+
             let textField = CustomTextField(backgroundColor: .themeBackgroundMain)
             textField.heightAnchor.constraint(equalToConstant: 36).isActive = true
             fieldStack.addArrangedSubview(textField)
@@ -181,20 +194,40 @@ class AuthVC: UIViewController {
             divider.backgroundColor = .themeDivider
             divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
             fieldStack.addArrangedSubview(divider)
+
+            NSLayoutConstraint.activate([
+                fieldStack.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 0),
+                fieldStack.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: 0),
+                fieldStack.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -22)
+            ])
         }
         
-        let additionalButton = UIButton()
+        additionalButton = UIButton()
         additionalButton.translatesAutoresizingMaskIntoConstraints = false
         bottomView.addSubview(additionalButton)
-        
+        NSLayoutConstraint.activate([
+            additionalButton.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 0),
+            additionalButton.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: 0),
+            additionalButton.bottomAnchor.constraint(equalTo: fieldStack.topAnchor, constant: -10),
+            additionalButton.heightAnchor.constraint(greaterThanOrEqualToConstant: .buttonSizeSmall),
+        ])
 
+        bottomView.topAnchor.constraint(equalTo: additionalButton.topAnchor).isActive = true
+//        fieldStack.backgroundColor = .yellow
+//        bottomView.backgroundColor = .orange
+//        additionalButton.backgroundColor = .magenta
     }
     
     private func initialize() {
         inputField.keyboardType = viewModel.firstKeyboardType
         viewModel.$firstFieldText.assign(to: \.text, on: inputField).store(in: &subscriptions)
         viewModel.$firstFieldPlaceholder.assign(to: \.attributedPlaceholder, on: inputField).store(in: &subscriptions)
-        inputField.addTarget(self, action: #selector(firstFieldTextChanged(_:)), for: .editingChanged)
+        inputField.addAction({ [unowned self] str in
+            self.firstFieldTextChanged(str)
+        }, for: .editingChanged)
+
+        viewModel.$descriptionText.assign(to: \.attributedText, on: descriptionLabel).store(in: &subscriptions)
+        viewModel.$messageText.assign(to: \.attributedText, on: fieldLabel).store(in: &subscriptions)
 
         viewModel.$firstFieldError.sink { [unowned self] isErr in
           //print("Recieved firstFieldError: \(isErr)")
@@ -206,7 +239,12 @@ class AuthVC: UIViewController {
         viewModel.$nextButtonTitle.sink { [unowned self] str in
           self.nextButton.setTitle(str, for: .normal)
         }.store(in: &subscriptions)
-        
+
+        viewModel.$additionalButtonEnabled.assign(to: \.isEnabled, on: additionalButton).store(in: &subscriptions)
+        viewModel.$additionalButtonTitle.sink { [unowned self] str in
+            self.additionalButton.setAttributedTitle(str, for: .normal)
+        }.store(in: &subscriptions)
+
         viewModel.onShowEnterCode = {[unowned self] vm in self.goToEnterCode(viewModel: vm)}
 //        viewModel.onShowSignIn = {[unowned self] vm in self.goToSignIn(vm)}
 //        viewModel.onBackToRoot = {[unowned self] in self.backToRoot()}
@@ -215,14 +253,25 @@ class AuthVC: UIViewController {
 //        viewModel.onDownloadProgress = { [unowned self] p in self.downloadIndicator?.setProgress(p) }
 //        viewModel.onSyncLoadError = { [weak self] mess, repeatCallback in self?.showSyncErrorPopup(mess, onRepeat: repeatCallback)}
 
-//        viewModel.onShowLoading = {[weak self] show in self?.showIndicator(show) }
+        viewModel.onShowLoading = {[weak self] show in self?.showIndicator(show) }
     }
     
     @objc func signInPressed() {
         viewModel.doNext()
     }
     
-    @objc func firstFieldTextChanged(_ sender: UITextField) {
+    private func backPressed() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func firstFieldTextChanged(_ text: String?) {
+      viewModel.firstFieldText = text
+      if viewModel.firstFieldError {
+        viewModel.firstFieldError = false
+      }
+    }
+
+    @objc func passcodeTextChanged(_ sender: PasscodeView) {
       viewModel.firstFieldText = sender.text
       if viewModel.firstFieldError {
         viewModel.firstFieldError = false
@@ -233,96 +282,21 @@ class AuthVC: UIViewController {
         let vc = AuthVC(viewModel: viewModel)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-
-//MARK: Keyboard
-
-private extension AuthVC {
     
-    private func subscribeToKeyboardNotifications() {
-        let notificationCenter = NotificationCenter.default
-        //notificationCenter.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        //    notificationCenter.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardDidChangeFrame), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
-        
-    }
+    private(set) var downloadIndicator: SpinnerProgressVC?
     
-    @objc
-    func keyboardDidChangeFrame(_ notification: Notification) {
-        keyboardFrameChanged(notification)
-    }
-    
-    func keyboardFrameChanged(_ notification: Notification) {
-        let owningView: UIView = self.bottomView
-        //guard let owningView = self.topGuide.owningView else { return }
-        guard let window = owningView.window else { return }
-        guard let keyboardInfo = KeyboardInfo(userInfo: notification.userInfo),
-              keyboardInfo.endFrame != prevKeyboardFrame
-        else { return }
-        
-        prevKeyboardFrame = keyboardInfo.endFrame
-        
-        var owningViewFrame = window.convert(owningView.frame, from: owningView.superview)
-        owningViewFrame.origin.x = 0
-        var coveredFrame = owningViewFrame.intersection(keyboardInfo.endFrame)
-        coveredFrame = window.convert(coveredFrame, to: owningView.superview)
-        
-        let bottomSafeY = view.safeAreaInsets.bottom
-        let keybTop = window.frame.height - keyboardInfo.endFrame.minY
-//        let keybBottom = window.frame.height - keyboardInfo.endFrame.maxY
-//        let fieldTop = window.frame.height - bottomView.frame.maxY + 44
-//        let fieldBottom = window.frame.height - bottomView.frame.maxY
-//        let diff = keybBottom - fieldTop
-        //print("keyboardFrameChanged. keyboard frame \(keyboardInfo.endFrame)\n\twindow.frame \(window.frame)\n\tUIScreen.bounds \(UIScreen.main.bounds)\n\tMain frame \(bottomView.frame)\n\tMainFram MaxY \(bottomView.frame.maxY)\n\tCoveredFrame \(coveredFrame)\n\tOwningViewFrame \(owningViewFrame)\n\tKeyboard top \(keybTop) - field bottom \(fieldBottom) = \(keybTop - fieldBottom)\n\t Is keyboard attached? \(keyboardInfo.isAttached)")
-        
-        if keybTop > 0 /*&& diff < 0*/ && keyboardInfo.endFrame.width > 300 {
-            keyboardInfo.animateAlongsideKeyboard { [unowned self] in
-                if keyboardInfo.isAttached {
-                    self.bottomConstraint.constant = -keyboardInfo.endFrame.height + bottomSafeY// -coveredFrame.height + bottomSafeY// -(keybTop - fieldBottom)
-                } else {
-                    self.bottomConstraint.constant = 0
+    private func showIndicator(_ show: Bool) {
+        if show {
+            if self.downloadIndicator == nil {
+                self.downloadIndicator = SpinnerProgressVC(type: .simple, parent: self, autolayoutView: self.view.superview!, size: 100, color: nil) { [unowned self] in
+                    //self.cancelDownloading()
                 }
-                //owningView.layoutIfNeeded()
             }
         } else {
-            keyboardInfo.animateAlongsideKeyboard { [unowned self] in
-                self.bottomConstraint.constant = 0
-                //owningView.layoutIfNeeded()
-            }
-            
+            self.downloadIndicator?.close()
+            self.downloadIndicator = nil
         }
     }
-    
-    @objc
-    func keyboardWillShow(_ notification: Notification) {
-        //guard let keyboardInfo = KeyboardInfo(userInfo: notification.userInfo) else { return }
-        //print("keyboardWillShow. keyboard frame \(keyboardInfo.endFrame)")
-        keyboardFrameChanged(notification)
-    }
-    
-    @objc
-    func keyboardWillHide(_ notification: Notification) {
-        guard let keyboardInfo = KeyboardInfo(userInfo: notification.userInfo) else { return }
-        //print("keyboardWillHide. keyboard frame \(keyboardInfo.endFrame)")
-        keyboardInfo.animateAlongsideKeyboard { [weak self] in
-            self?.bottomConstraint.constant = 0
-        }
-    }
+
 }
 
-
-@MainActor
-protocol TextInputField: NSCoding {
-    func becomeFirstResponder() -> Bool
-    var keyboardType: UIKeyboardType { get set }
-    var text: String? { get set }
-    var attributedPlaceholder: NSAttributedString? { get set }
-    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event)
-}
-
-extension UITextField: TextInputField {
-    
-}

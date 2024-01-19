@@ -77,6 +77,7 @@ class MockNetworkClient: NetworkService {
         let url = URL(string: "signIn", relativeTo: baseUrl)!
         
         let apiData = try await session.get(with: url)
+        try await Task.sleep(2.0)
         let result = try await decodeResult(with: apiData, decode: LoginResponseData.self)
         if result.success {
             return result
@@ -87,8 +88,10 @@ class MockNetworkClient: NetworkService {
     
     func sendLoginCode(code: String) async throws -> UserProfile {
         let url = URL(string: "sendCode", relativeTo: baseUrl)!
-        
+//        throw NetworkAPIError.responseFailure("Test error")
+
         let apiData = try await session.get(with: url)
+        try await Task.sleep(2.0)
         let result = try await decodeResult(with: apiData, decode: UserResponseData.self)
         if result.success {
             return UserProfile(data: result)

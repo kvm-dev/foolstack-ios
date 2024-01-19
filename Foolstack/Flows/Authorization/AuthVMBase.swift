@@ -23,8 +23,11 @@ class AuthVMBase {
     @Published var firstFieldPlaceholder: NSAttributedString?
     @Published var firstFieldError = false
     @Published var messageText: NSAttributedString?
+    @Published var descriptionText: NSAttributedString?
     @Published var nextButtonTitle: String!
     @Published var nextButtonEnabled = false
+    @Published var additionalButtonTitle: NSAttributedString?
+    @Published var additionalButtonEnabled = false
     var inputType: TextInputType = .text
     
     var onShowEnterCode: ((AuthVM_Code) -> Void)?
@@ -66,10 +69,10 @@ class AuthVMBase {
         messageText = text.set(style: st)
     }
     
-    func getAttributedText(_ text: String, fontColor: UIColor, fontSize: CGFloat) -> NSAttributedString {
+    func getAttributedText(_ text: String, fontColor: UIColor, font: UIFont = CustomFonts.defaultRegular(size: 17)) -> NSAttributedString {
         let styleBase = Style({
             $0.color = fontColor
-            $0.font = CustomFonts.defaultSemiBold(size: fontSize)
+            $0.font = font
         })
         let styleError = Style({
             $0.color = UIColor.themeTextError
@@ -82,7 +85,7 @@ class AuthVMBase {
     }
     
     func getPlaceholderAttribText(_ text: String) -> NSAttributedString {
-        getAttributedText(text, fontColor: UIColor.themeTextSecondary, fontSize: 17)
+        getAttributedText(text, fontColor: UIColor.themeTextSecondary)
     }
     
     func updateFirstPlaceholder(isError: Bool, newPlaceholder: String? = nil) {

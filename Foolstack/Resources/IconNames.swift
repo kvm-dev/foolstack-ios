@@ -33,7 +33,7 @@ enum IconNames {
         switch self {
         case .none:           return ""
         case .close:          return "xmark.app"
-        case .back:           return "chevron-left"
+        case .back:           return "arrowshape.turn.up.backward"//"arrowshape.turn.up.backward"//"chevron-left"
         case .sort:           return "sort.1"
         case .plus:           return "plus.1"
         case .delete:         return "delete.1"

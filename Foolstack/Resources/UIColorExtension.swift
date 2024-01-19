@@ -29,6 +29,7 @@ extension UIColor {
     static let themeStatGood = UIColor(named: "ColorGood")!
     static let themeStatBad = UIColor(named: "ColorBad")!
     static let themeOverlay = UIColor(named: "OverlayColor")!
+    static let themeIndicator = UIColor(named: "IndicatorColor")!
 
     //MARK: Text
     static let themeTextMain = UIColor(named: "TextColor1")!
@@ -38,4 +39,5 @@ extension UIColor {
     static let themeTextDisabled = UIColor(named: "DisabledColor")!
     static let themeTextError = UIColor(named: "ColorBad")!
     static let themeTextLink = UIColor.blue//(named: "ColorBad")!
+    static let themeTextLight = UIColor(named: "TextColor3")!
 }

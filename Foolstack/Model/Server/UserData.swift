@@ -10,7 +10,6 @@ struct UserResponseData: Codable {
     let userName: String
     let userEmail: String?
     let userType: String
-    let isVerified: Bool
     let success: Bool
     let errorMsg: String?
 }

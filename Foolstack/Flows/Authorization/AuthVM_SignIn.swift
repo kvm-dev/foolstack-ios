@@ -27,8 +27,10 @@ final class AuthVM_SignIn: AuthVMBase {
 //            googleConfig = GIDConfiguration.init(clientID: clientId)
 //        }
         
-        self.titleText = String(localized: "Login or Registration")
         firstKeyboardType = .emailAddress
+        titleText = String(localized: "Login or Registration")
+        //TODO: localize
+        descriptionText = getAttributedText("Введи адрес электронной почты, чтобы мы могли определить есть ли у тебя учетная запись в нашем сервисе.\n\nВ случае если учетной записи у тебя нет, мы сможем тебя зарегистрировать.", fontColor: .themeTextMain, font: CustomFonts.defaultRegular(size: 15))
 //        updateFirstPlaceholder(isError: false, newPlaceholder: NSLocalizedString("Your email address", comment: ""))
 //        updateSecondPlaceholder(isError: false, newPlaceholder: NSLocalizedString("Enter your password", comment: ""))
 //        //messageText = getAttributedText("Password must be at least 6 characters.")
@@ -86,7 +88,7 @@ final class AuthVM_SignIn: AuthVMBase {
     
     private func loginSucces(result: LoginResponseData) {
         print("Passcode: \(result.code)")
-        let vm = AuthVM_Code(network: network)
+        let vm = AuthVM_Code(email: firstFieldText!, network: network)
         onShowEnterCode?(vm)
     }
  

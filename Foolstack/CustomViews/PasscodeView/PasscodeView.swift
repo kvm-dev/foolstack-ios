@@ -19,10 +19,13 @@ class PasscodeView: UIView {
     var keyboardType: UIKeyboardType = .numberPad
     let stack = UIStackView()
     
+    private var actions: [TextAction] = []
+
     init(length: Int) {
         super.init(frame: .zero)
         self.maxLength = length
         setupUI()
+        showKeyboardIfNeed()
     }
     
     required init?(coder: NSCoder) {
@@ -80,6 +83,11 @@ class PasscodeView: UIView {
             pin.label.text = "\(char)"
         }
     }
+    
+    private func textChanged() {
+        let acts = self.actions.filter { $0.event.contains(.editingChanged)}
+        acts.forEach { $0.action(self.text) }
+    }
 }
 
 
@@ -113,16 +121,28 @@ extension PasscodeView: UIKeyInput {
         self.text = code
         print("Insert text '\(text)'. Code = '\(code)'")
         
+        textChanged()
         updateStack()
     }
     
     func deleteBackward() {
         if hasText {
             text?.removeLast()
+            textChanged()
             updateStack()
         }
         print("DeleteBackward'. Code = '\(text)'")
     }
+    
+//    var keyboardType: UIKeyboardType {
+//        get {
+//            return _keyboardType
+//        }
+//        set {
+//            _keyboardType = newValue
+//        }
+//    }
+
 }
 
 
@@ -136,10 +156,10 @@ extension PasscodeView: TextInputField {
         }
     }
     
-    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
+    func addAction(_ action: @escaping (String?) -> Void, for controlEvents: UIControl.Event) {
+        self.actions.append(TextAction(event: controlEvents, action: action))
     }
-    
-    
+
 }
 
 

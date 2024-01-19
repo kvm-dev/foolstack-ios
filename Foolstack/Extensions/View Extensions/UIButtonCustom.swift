@@ -42,7 +42,7 @@ extension UIButton {
         custom(systemName: IconNames.close, imagePoints: 24)
     }
     static func customBack() -> UIButton {
-        custom(iconName: IconNames.back)
+        custom(systemName: IconNames.back)
     }
     //  static func customDelete() -> UIButton {
     //    custom(iconName: IconNames.delete, color: .themeDeleteIcon)

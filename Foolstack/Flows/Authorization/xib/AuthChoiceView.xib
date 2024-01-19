@@ -91,6 +91,10 @@
                                 </stackView>
                             </subviews>
                         </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowshape.turn.up.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="01w-I9-ZuL">
+                            <rect key="frame" x="36" y="372" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -126,6 +130,7 @@
         </view>
     </objects>
     <resources>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="104"/>
         <namedColor name="Color4">
             <color red="0.054901960784313725" green="0.75686274509803919" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

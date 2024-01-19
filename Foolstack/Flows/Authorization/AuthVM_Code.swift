@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import Combine
 
 final class AuthVM_Code: AuthVMBase {
     private var userAuthData: UserResponseData?
@@ -13,7 +15,10 @@ final class AuthVM_Code: AuthVMBase {
     //    private(set) var googleConfig: GIDConfiguration?
     private var appleNonce = ""
     
-    override init(network: NetworkService) {
+    private var timerSubscription: AnyCancellable?
+    private var secondsLeft = 60
+    
+    init(email: String, network: NetworkService) {
         super.init(network: network)
         
         //        if let clientId = FirebaseApp.app()?.options.clientID {
@@ -22,7 +27,7 @@ final class AuthVM_Code: AuthVMBase {
         
         self.inputType = .pin
         self.titleText = String(localized: "Login or Registration")
-        firstKeyboardType = .emailAddress
+        firstKeyboardType = .numberPad
         //        updateFirstPlaceholder(isError: false, newPlaceholder: NSLocalizedString("Your email address", comment: ""))
         //        updateSecondPlaceholder(isError: false, newPlaceholder: NSLocalizedString("Enter your password", comment: ""))
         //        //messageText = getAttributedText("Password must be at least 6 characters.")
@@ -30,23 +35,29 @@ final class AuthVM_Code: AuthVMBase {
         //firstFieldText = "jackowlson100@gmail.com"
         //secondFieldText = "qqq"
         
+        descriptionText = getAttributedText("Мы отправили тебе письмо на электронную почту <lnk>“\(email)”</lnk> в письме код из 4х цифр, введи код ниже и сможешь подтвердить свою учетную запись.\n\nОбращаем внимание, что код подтверждения действителен в течение суток.", fontColor: .themeTextMain, font: CustomFonts.defaultRegular(size: 15))
+
         //setMessageText("<err>Error text.</err> This is a <a href=\"https://yandex.ru\">link</a>")
-        //setMessageText(NSLocalizedString("Password must be at least 6 characters.", comment: ""))
+        setMessageText("Код подтверждения")
         
+        additionalButtonTitle = getButtonText("RESEND CODE", withUnderline: true)
         nextButtonTitle = String(localized: "Next", comment: "")
         
-        //    $firstFieldText.sink { str in
-        //      print("Received first text '\(str)'")
-        //    }.store(in: &subscriptions)
+        $firstFieldText.sink { str in
+            print("Received first text '\(str)'")
+            self.nextButtonEnabled = str?.count == 4
+        }.store(in: &subscriptions)
+
+        $firstFieldError.sink { [unowned self] isErr in
+            if !isErr {
+                self.setMessageText("Код подтверждения")
+            }
+        }.store(in: &subscriptions)
+
+        codeWasSend()
     }
     
     override func doNext() {
-        if !isValidEmail(firstFieldText ?? "") {
-            firstFieldError = true
-            handleError(nil)
-            return
-        }
-        
         Task {
             self.onShowLoading?(true)
             do {
@@ -74,13 +85,61 @@ final class AuthVM_Code: AuthVMBase {
                 break
             }
         }
-        setMessageText("<err>Invalid email address or password. Please check your email address or password and try again.</err>")
+        setMessageText("<err>Неверный код.</err>")
     }
     
     private func loginSucces(result: UserProfile) {
         print("login success: userID \(result.userId)")
         //let vm = AuthVM_Code()
         //onShowSignIn?(vm)
+    }
+    
+    //MARK: Resend timer
+    
+    private func codeWasSend() {
+        launchTimer()
+    }
+    
+    private func codeWasResend() {
+        launchTimer()
+    }
+    
+    private func launchTimer() {
+        secondsLeft = 60
+        self.setTimerButtonText(seconds: self.secondsLeft)
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        timerSubscription = timer.sink { [weak self] output in
+            guard let self = self else {return}
+            self.secondsLeft -= 1
+            //print("Seconds left \(self.secondsLeft)")
+            self.setTimerButtonText(seconds: self.secondsLeft)
+            if self.secondsLeft <= 0 {
+                self.timerFinished()
+            }
+        }
+    }
+    
+    private func setTimerButtonText(seconds: Int) {
+        let enabled = seconds <= 0
+        additionalButtonEnabled = enabled
+        let color = enabled ? UIColor.themeAccent : UIColor.themeIndicator
+        let styleBase = Style{
+            $0.font = CustomFonts.defaultSemiBold(size: .fontMainSize)
+            $0.underline = (NSUnderlineStyle.thick, nil)
+            $0.color = color
+        }
+        let styleTimer = Style({
+            $0.font = CustomFonts.defaultRegular(size: 12)
+            $0.color = color
+        })
+        let st = StyleXML.init(base: styleBase, ["i" : styleTimer])
+        let text = NSLocalizedString("RESEND CODE", comment: "") + (enabled ? "" : "<i> (\(seconds) sec)</i>")
+        additionalButtonTitle = text.set(style: st)
+    }
+    
+    private func timerFinished() {
+        self.timerSubscription?.cancel()
+        self.timerSubscription = nil
     }
     
 }

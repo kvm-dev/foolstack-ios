@@ -210,6 +210,9 @@
     "Password must be at least 6 characters." : {
 
     },
+    "RESEND CODE" : {
+
+    },
     "Search" : {
       "localizations" : {
         "ru" : {

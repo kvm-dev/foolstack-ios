@@ -1,0 +1,8 @@
+{
+    "userId" : 1,
+    "userName" : "Gonzo",
+    "userEmail" : "dd@ff.cc",
+    "userType" : "client",
+    "success" : true,
+    "errorMsg" : null
+}

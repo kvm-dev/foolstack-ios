@@ -7,7 +7,14 @@
 
 import UIKit
 
+struct TextAction {
+    let event: UIControl.Event
+    let action: (String?) -> Void
+}
+
 class CustomTextField: UITextField {
+    
+    private var actions: [TextAction] = []
     
     var padding: UIEdgeInsets {
         get {
@@ -91,6 +98,8 @@ class CustomTextField: UITextField {
         //    layer.cornerRadius = cornerRadius + borderWidth
         self.textColor = .themeTextMain
         self.font = CustomFonts.defaultRegular(size: 17)
+        
+        self.addTarget(self, action: #selector(textChanged), for: .editingChanged)
     }
     
     private func initialize() {
@@ -121,4 +130,16 @@ class CustomTextField: UITextField {
         }
     }*/
     
+    @objc private func textChanged() {
+        let acts = self.actions.filter { $0.event.contains(.editingChanged)}
+        acts.forEach { $0.action(self.text) }
+    }
+
+    func addAction(_ action: @escaping (String?) -> Void, for controlEvents: UIControl.Event) {
+        self.actions.append(TextAction(event: controlEvents, action: action))
+    }
+
 }
+
+
+extension CustomTextField: TextInputField {}

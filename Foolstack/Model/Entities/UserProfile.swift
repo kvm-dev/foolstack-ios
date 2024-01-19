@@ -9,7 +9,6 @@ struct UserProfile {
     let userId: Int
     let userName: String
     let userEmail: String?
-    let isVerified: Bool
     let userType: UserType
     
     init(data: UserResponseData) {
@@ -17,7 +16,6 @@ struct UserProfile {
         self.userName = data.userName
         self.userEmail = data.userEmail
         self.userType = UserType(name: "client")
-        self.isVerified = data.isVerified
     }
 }
 
