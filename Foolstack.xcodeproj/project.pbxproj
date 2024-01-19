@@ -548,6 +548,7 @@
 		CE17C77A2AFE872900E53297 /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				CE297F3D2B5AF73000E9CA7C /* Authorization */,
 				CEC3DDBB2B0359E4005B0A5F /* Helpers */,
 				CE17C77D2AFE879800E53297 /* Managers */,
 			);
@@ -666,6 +667,13 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		CE297F3D2B5AF73000E9CA7C /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		CE4E2DAC2AF3F23600108F53 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,7 +762,6 @@
 		CE8CFA682B58128B007435A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CE297EEB2B5AA8D100E9CA7C /* NVActivityIndicatorView */,
 				CE8CFA692B5812A1007435A9 /* CommonUtils.swift */,
 			);
 			path = Utils;
@@ -763,6 +770,7 @@
 		CE8CFA6B2B581469007435A9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CE297EEB2B5AA8D100E9CA7C /* NVActivityIndicatorView */,
 				CE8CFA6C2B581496007435A9 /* SwiftRichString */,
 			);
 			path = Sources;
