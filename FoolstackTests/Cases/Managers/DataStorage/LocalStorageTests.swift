@@ -23,6 +23,7 @@ final class LocalStorageTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
+        sut.clearDB()
         sut = nil
         
         try super.tearDownWithError()
@@ -36,7 +37,7 @@ final class LocalStorageTests: XCTestCase {
     }
     
     func createSomeTags() -> [TagData] {
-        let tags: [TagData] = (1...6).map{i in TagData(id: i, name: "Tag \(i)")}
+        let tags: [TagData] = (1...6).map{i in TagData(id: i, name: "Tag \(i)", parent: 1)}
         return tags
     }
     
@@ -83,12 +84,13 @@ final class LocalStorageTests: XCTestCase {
         let itemsTagIds = Array(Set(itemData.flatMap{$0.tags}))
 
         _ = await sut.addItems(itemData)
-        let itemsTags = await sut.getTagEntities(for: itemsTagIds)
+        let itemsTags = await sut.getTagEntities(for: [])
+        let filteredRealmTags = itemsTags.filter{ itemsTagIds.contains($0.serverId) }
         let filteredTagsData = data.filter{ itemsTagIds.contains($0.id) }
         
         let wikiEnts = await sut.getWikiEntities(for: itemsTagIds)
 
-        let convertedData = convertRealmTagsToServerData(itemsTags)
+        let convertedData = convertRealmTagsToServerData(filteredRealmTags)
         let convertedWikiData = convertRealmItemsToServerData(wikiEnts)
         
         XCTAssertEqual(filteredTagsData, convertedData)

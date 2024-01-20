@@ -30,6 +30,14 @@ actor RealmActor {
         try await Realm(configuration: config, actor: self)
     }
     
+    func clearDB() async throws {
+        //let realm = try! Realm(configuration: RealmDatabase.config)
+        let realm = try await getRealm()
+        try await realm.asyncWrite {
+            realm.deleteAll()
+        }
+    }
+    
     //MARK: Wiki Item
     
     func createOrUpdateWikiItem(serverId: ServerKey, ask: String, shortAnswer: String, isFullAnswer: Bool, fullAnswer: String?) async throws -> WikiItemRLM {

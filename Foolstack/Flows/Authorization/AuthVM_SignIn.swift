@@ -35,8 +35,7 @@ final class AuthVM_SignIn: AuthVMBase {
 //        updateSecondPlaceholder(isError: false, newPlaceholder: NSLocalizedString("Enter your password", comment: ""))
 //        //messageText = getAttributedText("Password must be at least 6 characters.")
         
-        firstFieldText = "jackowlson100@gmail.com"
-        //secondFieldText = "qqq"
+        //firstFieldText = "jackowlson100@gmail.com"
         
         //setMessageText("<err>Error text.</err> This is a <a href=\"https://yandex.ru\">link</a>")
         //setMessageText(NSLocalizedString("Password must be at least 6 characters.", comment: ""))

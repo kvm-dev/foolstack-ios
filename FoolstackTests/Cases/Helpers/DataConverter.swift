@@ -12,5 +12,5 @@ func convertRealmItemsToServerData(_ items: [WikiListEntity]) -> [WikiData] {
 }
 
 func convertRealmTagsToServerData(_ items: [TagEntity]) -> [TagData] {
-    items.map { TagData(id: $0.serverId, name: $0.name)}
+    items.map { TagData(id: $0.serverId, name: $0.name, parent: $0.parent)}
 }

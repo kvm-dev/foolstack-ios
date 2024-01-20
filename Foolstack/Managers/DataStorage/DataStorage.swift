@@ -17,6 +17,24 @@ final class DataStorage: @unchecked Sendable {
         self.database = RealmActor(config: realmConfig)
     }
     
+    func clearDB() async {
+        do {
+            try await database.clearDB()
+        } catch {
+            print("Clear DB error:", error)
+        }
+    }
+
+    func clearDB() {
+        Task {
+            do {
+                try await database.clearDB()
+            } catch {
+                print("Clear DB error:", error)
+            }
+        }
+    }
+
     func addItems(_ data: [WikiData]) async -> [WikiListEntity] {
         do {
             let items = try await database.addWikiItems(data)

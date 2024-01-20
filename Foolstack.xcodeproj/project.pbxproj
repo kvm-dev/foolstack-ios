@@ -64,6 +64,7 @@
 		CE297F382B5AAD1300E9CA7C /* NVActivityIndicatorAnimationCircleStrokeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297F372B5AAD1300E9CA7C /* NVActivityIndicatorAnimationCircleStrokeProgress.swift */; };
 		CE297F3A2B5AB4F700E9CA7C /* Mock_sendCode_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CE297F392B5AB4F700E9CA7C /* Mock_sendCode_JSON.json */; };
 		CE297F3C2B5AB75000E9CA7C /* TextInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297F3B2B5AB75000E9CA7C /* TextInputProtocol.swift */; };
+		CE297F412B5AF85300E9CA7C /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297F402B5AF85300E9CA7C /* AuthTests.swift */; };
 		CE40FED02B4D919500BC5F02 /* TestingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */; };
 		CE40FED22B4DA89E00BC5F02 /* Mock_tickets_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */; };
 		CE40FED42B4DAD6A00BC5F02 /* TestingFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */; };
@@ -305,6 +306,7 @@
 		CE297F372B5AAD1300E9CA7C /* NVActivityIndicatorAnimationCircleStrokeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationCircleStrokeProgress.swift; sourceTree = "<group>"; };
 		CE297F392B5AB4F700E9CA7C /* Mock_sendCode_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_sendCode_JSON.json; sourceTree = "<group>"; };
 		CE297F3B2B5AB75000E9CA7C /* TextInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputProtocol.swift; sourceTree = "<group>"; };
+		CE297F402B5AF85300E9CA7C /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 		CE40FECF2B4D919500BC5F02 /* TestingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTableCell.swift; sourceTree = "<group>"; };
 		CE40FED12B4DA89E00BC5F02 /* Mock_tickets_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock_tickets_JSON.json; sourceTree = "<group>"; };
 		CE40FED32B4DAD6A00BC5F02 /* TestingFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlowBuilder.swift; sourceTree = "<group>"; };
@@ -670,6 +672,7 @@
 		CE297F3D2B5AF73000E9CA7C /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				CE297F402B5AF85300E9CA7C /* AuthTests.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -1620,6 +1623,7 @@
 				CE19DD5E2B012CF800541E93 /* LocalStorageTests.swift in Sources */,
 				CEC3DDBA2B02C666005B0A5F /* CacheServiceTests.swift in Sources */,
 				CEC4EF7E2AFEB4C600A64604 /* URLSessionProtocolTests.swift in Sources */,
+				CE297F412B5AF85300E9CA7C /* AuthTests.swift in Sources */,
 				CEC3DDBD2B035A00005B0A5F /* DataConverter.swift in Sources */,
 				CE17C7802AFE87E200E53297 /* NetworkClientTests.swift in Sources */,
 			);
