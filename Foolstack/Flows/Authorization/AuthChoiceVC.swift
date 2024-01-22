@@ -6,16 +6,15 @@
 //
 
 import UIKit
+import AuthenticationServices
 
-class AuthChoiceVC: UIViewController {
+@MainActor
+final class AuthChoiceVC: UIViewController {
+    var viewModel: AuthChoiceVM!
     
-        private var keyboardLayoutGuide: KeyboardLayoutGuide!
-    private var bottomConstraint: NSLayoutConstraint!
-    private var prevKeyboardFrame: CGRect = .zero
-    private var bottomView: UIView!
-    
-    init() {
+    init(viewModel: AuthChoiceVM) {
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -31,14 +30,14 @@ class AuthChoiceVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //subscribeToKeyboardNotifications()
-//        firstField.becomeFirstResponder()
+        //        firstField.becomeFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,170 +65,250 @@ class AuthChoiceVC: UIViewController {
         logoLabel.text = "FoolStack"
         logoLabel.pinEdges(to: view.safeAreaLayoutGuide, top: 25, centerX: 0)
         
+        let sv = UIStackView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        bv.addSubview(sv)
+        sv.axis = .vertical
+        sv.distribution = .equalSpacing
+        NSLayoutConstraint.activate([
+            sv.leftAnchor.constraint(equalTo: bv.leftAnchor, constant: padding),
+            sv.rightAnchor.constraint(equalTo: bv.rightAnchor, constant: -padding),
+            sv.topAnchor.constraint(equalTo: bv.topAnchor, constant: 16),
+            sv.bottomAnchor.constraint(equalTo: bv.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        ])
+        
         let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        bv.addSubview(titleLabel)
+        sv.addArrangedSubview(titleLabel)
         titleLabel.font = CustomFonts.defaultHeavy(size: 24)
         titleLabel.textColor = .themeTextViewTitle
         titleLabel.text = String(localized: "Login or Registration")
         titleLabel.numberOfLines = 1
-        titleLabel.pinEdges(to: bv, top: 16, centerX: 0)
+        titleLabel.textAlignment = .center
         
         let contentLabel = UILabel()
-        contentLabel.translatesAutoresizingMaskIntoConstraints = false
-        bv.addSubview(contentLabel)
+        sv.addArrangedSubview(contentLabel)
         contentLabel.font = CustomFonts.defaultRegular(size: 17)
         contentLabel.textColor = .themeTextMain
-        contentLabel.text =
-        """
-        Введи адрес электронной почты, чтобы мы могли определить есть ли у тебя учетная запись в нашем сервисе.  В случае если учетной записи у тебя нет, мы сможем тебя зарегистрировать.
-        """
+        contentLabel.text = String(localized: "AUTH_CHOICE_DESCRIPTION")
         contentLabel.numberOfLines = 0
         contentLabel.textAlignment = .center
-        NSLayoutConstraint.activate([
-            contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            contentLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: padding),
-            contentLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -padding),
-        ])
         
+        let buttonsStack = createButtonsStack()
+        sv.addArrangedSubview(buttonsStack)
         
+        let termsStack = createTermsStack()
+        sv.addArrangedSubview(termsStack)
+    }
+    
+    private func createButtonsStack() -> UIView {
         let sv = UIStackView()
-        bottomView = sv
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(sv)
         sv.axis = .vertical
+        sv.spacing = 20
+        
+        sv.addArrangedSubview(createButton(color: UIColor(named: "MailButton")!, icon: .email, title: "Email", action: #selector(emailPressed)))
+        sv.addArrangedSubview(createButton(color: UIColor(named: "GoogleButton")!, icon: .google, title: "Google", action: #selector(googlePressed)))
+        sv.addArrangedSubview(createButton(color: UIColor(named: "AppleButton")!, icon: .apple, title: "Apple", action: #selector(applePressed)))
+        
+        let guestButton = UIButton()
+        sv.addArrangedSubview(guestButton)
+        guestButton.setTitle(String(localized: "ENTER AS A GUEST", comment: ""), for: .normal)
+        guestButton.heightAnchor.constraint(equalToConstant: .buttonSize).isActive = true
+        guestButton.addTarget(self, action: #selector(guestPressed), for: .touchUpInside)
+        
+        sv.addArrangedSubview(guestButton)
+
+        return sv
+    }
+    
+    private func createButton(color: UIColor, icon: IconNames, title: String, action: Selector) -> UIView {
+        let v = UIView()
+        v.backgroundColor = color
+        v.layer.cornerRadius = 12
+        v.pinSize(height: .buttonSize)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: action)
+        v.addGestureRecognizer(gesture)
+        
+        let img = UIImageView(image: UIImage.systemImage(iconName: icon))
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.contentMode = .center
+        img.tintColor = .themeTextLight
+        v.addSubview(img)
+        img.pinEdges(to: v, leading: 0, centerY: 0)
+        img.pinSize(width: .buttonSize, height: .buttonSize)
+        
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        v.addSubview(titleLabel)
+        titleLabel.font = CustomFonts.defaultHeavy(size: .fontMainSize)
+        titleLabel.textColor = .themeTextLight
+        titleLabel.text = title
+        titleLabel.numberOfLines = 1
+        titleLabel.textAlignment = .center
         NSLayoutConstraint.activate([
-            sv.leftAnchor.constraint(equalTo: view.leftAnchor, constant: padding),
-            sv.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -padding),
+            titleLabel.centerXAnchor.constraint(equalTo: v.centerXAnchor, constant: 0),
+            titleLabel.centerYAnchor.constraint(equalTo: v.centerYAnchor)
         ])
-        bottomConstraint = sv.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -11)
-        //bottomConstraint.isActive = true
         
-        keyboardLayoutGuide = KeyboardLayoutGuide(parentView: sv)
-        let constr = keyboardLayoutGuide.topGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
-        constr.priority = .defaultHigh
-        constr.isActive = true
+        return v
+    }
+    
+    private func createTermsStack() -> UIView {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.spacing = 10
         
-        let mailLabel = UILabel()
-        sv.addArrangedSubview(mailLabel)
-        mailLabel.font = CustomFonts.defaultRegular(size: 13)
-        mailLabel.textColor = .themeTextViewTitle
-        mailLabel.text = "Email"
-        mailLabel.numberOfLines = 1
+        let titleLabel = UILabel()
+        sv.addArrangedSubview(titleLabel)
+        titleLabel.font = CustomFonts.defaultHeavy(size: 14)
+        titleLabel.textColor = .themeTextSecondary
+        titleLabel.text = String(localized: "By creating an account, you agree to")
+        titleLabel.numberOfLines = 0
+
+        //let label1 = createLinkLabel(prefix: " • ", linkText: NSLocalizedString("Link_StoreTermsOfUse", comment: "link"), callback: #selector(tapOnStoreTerms))
         
-        let textField = CustomTextField(backgroundColor: .themeBackgroundMain)
-        textField.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        sv.addArrangedSubview(textField)
-        textField.placeholder = "Enter email"
+        let label2 = createLinkLabel(prefix: " • ", linkText: String(localized:"Link_TermsOfUse", comment: "link"), callback: #selector(tapOnTerms))
         
-        let divider = UIView()
-        divider.backgroundColor = .themeDivider
-        divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        sv.addArrangedSubview(divider)
+        let label3 = createLinkLabel(prefix: " • ", linkText: String(localized:"Link_PrivacyPolicy", comment: "link"), callback: #selector(tapOnPrivacy))
         
-        let v1 = UIView()
-        v1.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        sv.addArrangedSubview(v1)
+        sv.addArrangedSubview(label2)
+        sv.addArrangedSubview(label3)
+        //termsStack.addArrangedSubview(label1)
         
-        let loginButton = BorderButton(backgroundColor: .themeAccent)
-        sv.addArrangedSubview(loginButton)
-        loginButton.setTitle(String(localized: "Next", comment: ""), for: .normal)
-        loginButton.heightAnchor.constraint(equalToConstant: .buttonSize).isActive = true
-        loginButton.addTarget(self, action: #selector(signInPressed), for: .touchUpInside)
+        return sv
+    }
+    
+    private func createLinkLabel(prefix: String, linkText: String, callback: Selector) -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.heightAnchor.constraint(greaterThanOrEqualToConstant: 28).isActive = true
+        label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
         
-        let v2 = UIView()
-        v2.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        sv.addArrangedSubview(v2)
+        let textColor = UIColor.themeTextSecondary
         
-        textField.becomeFirstResponder()
+        let styleBase = Style({
+            $0.color = textColor
+            $0.font = CustomFonts.defaultSemiBold(size: 14)
+        })
+        let styleLink = Style({
+            $0.color = UIColor.themeTextLink
+            $0.underline = (NSUnderlineStyle.thick, nil)
+        })
+        let st = StyleXML.init(base: styleBase, ["lnk" : styleLink])
         
-        //TODO: localize
+        label.attributedText = (prefix + linkText).set(style: st)
         
-        
-        
-        
+        let gesture = UITapGestureRecognizer(target: self, action: callback)
+        label.addGestureRecognizer(gesture)
+        return label
+    }
+    
+    //MARK: Actions
+    
+    @objc func guestPressed() {
         
     }
     
-    @IBAction func signInPressed() {
+    @objc func emailPressed() {
+        let vm = viewModel.createEmailViewModel()
+        let vc = AuthVC(viewModel: vm)
+        navigationController?.setViewControllers([vc], animated: true)
     }
     
+    @objc func googlePressed() {
+        viewModel.googleSignIn(viewController: self)
+    }
+    
+    @objc func applePressed() {
+        let provider = ASAuthorizationAppleIDProvider()
+        let request = provider.createRequest()
+        request.requestedScopes = [.fullName,.email]
+        
+        request.nonce = viewModel.generateNonceFoApple()
+        
+        let authController = ASAuthorizationController(authorizationRequests: [request])
+        authController.presentationContextProvider = self
+        authController.delegate = self
+        
+        authController.performRequests()
+    }
+    
+    @objc func tapOnStoreTerms() {
+        print("Tap on Store terms")
+    }
+    @objc func tapOnTerms() {
+        print("Tap on Terms")
+        let url = URL(string: kLink_Terms)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    @objc func tapOnPrivacy() {
+        print("Tap on Privacy")
+        let url = URL(string: kLink_Policy)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    private(set) var downloadIndicator: SpinnerProgressVC?
+    
+    private func showIndicator(_ show: Bool) {
+        if show {
+            if self.downloadIndicator == nil {
+                self.downloadIndicator = SpinnerProgressVC(type: .simple, parent: self, autolayoutView: self.view.superview!, size: 100, color: nil)
+            }
+        } else {
+            self.downloadIndicator?.close()
+            self.downloadIndicator = nil
+        }
+    }
+
 }
 
 
-//MARK: Keyboard
+//MARK: APPLE AUTH
 
-private extension AuthChoiceVC {
-    
-    private func subscribeToKeyboardNotifications() {
-        let notificationCenter = NotificationCenter.default
-        //notificationCenter.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        //    notificationCenter.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardDidChangeFrame), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
-        
+extension AuthChoiceVC: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
     }
-    
-    @objc
-    func keyboardDidChangeFrame(_ notification: Notification) {
-        keyboardFrameChanged(notification)
-    }
-    
-    func keyboardFrameChanged(_ notification: Notification) {
-        let owningView: UIView = self.bottomView
-        //guard let owningView = self.topGuide.owningView else { return }
-        guard let window = owningView.window else { return }
-        guard let keyboardInfo = KeyboardInfo(userInfo: notification.userInfo),
-              keyboardInfo.endFrame != prevKeyboardFrame
-        else { return }
+}
+
+extension AuthChoiceVC: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("Apple authorization error")
+        guard let error = error as? ASAuthorizationError else {
+            return
+        }
         
-        prevKeyboardFrame = keyboardInfo.endFrame
-        
-        var owningViewFrame = window.convert(owningView.frame, from: owningView.superview)
-        owningViewFrame.origin.x = 0
-        var coveredFrame = owningViewFrame.intersection(keyboardInfo.endFrame)
-        coveredFrame = window.convert(coveredFrame, to: owningView.superview)
-        
-        let bottomSafeY = view.safeAreaInsets.bottom
-        let keybTop = window.frame.height - keyboardInfo.endFrame.minY
-//        let keybBottom = window.frame.height - keyboardInfo.endFrame.maxY
-//        let fieldTop = window.frame.height - bottomView.frame.maxY + 44
-//        let fieldBottom = window.frame.height - bottomView.frame.maxY
-//        let diff = keybBottom - fieldTop
-        //print("keyboardFrameChanged. keyboard frame \(keyboardInfo.endFrame)\n\twindow.frame \(window.frame)\n\tUIScreen.bounds \(UIScreen.main.bounds)\n\tMain frame \(bottomView.frame)\n\tMainFram MaxY \(bottomView.frame.maxY)\n\tCoveredFrame \(coveredFrame)\n\tOwningViewFrame \(owningViewFrame)\n\tKeyboard top \(keybTop) - field bottom \(fieldBottom) = \(keybTop - fieldBottom)\n\t Is keyboard attached? \(keyboardInfo.isAttached)")
-        
-        if keybTop > 0 /*&& diff < 0*/ && keyboardInfo.endFrame.width > 300 {
-            keyboardInfo.animateAlongsideKeyboard { [unowned self] in
-                if keyboardInfo.isAttached {
-                    self.bottomConstraint.constant = -keyboardInfo.endFrame.height + bottomSafeY// -coveredFrame.height + bottomSafeY// -(keybTop - fieldBottom)
-                } else {
-                    self.bottomConstraint.constant = 0
-                }
-                //owningView.layoutIfNeeded()
-            }
-        } else {
-            keyboardInfo.animateAlongsideKeyboard { [unowned self] in
-                self.bottomConstraint.constant = 0
-                //owningView.layoutIfNeeded()
-            }
-            
+        switch error.code {
+        case .canceled:
+            print("Canceled")
+        case .unknown:
+            print("Unknown")
+        case .invalidResponse:
+            print("invalidResponse")
+        case .notHandled:
+            print("notHandled")
+        case .failed:
+            print("failed")
+        case .notInteractive:
+            print("notInteractive")
+        @unknown default:
+            print("default")
         }
     }
     
-    @objc
-    func keyboardWillShow(_ notification: Notification) {
-        //guard let keyboardInfo = KeyboardInfo(userInfo: notification.userInfo) else { return }
-        //print("keyboardWillShow. keyboard frame \(keyboardInfo.endFrame)")
-        keyboardFrameChanged(notification)
-    }
-    
-    @objc
-    func keyboardWillHide(_ notification: Notification) {
-        guard let keyboardInfo = KeyboardInfo(userInfo: notification.userInfo) else { return }
-        //print("keyboardWillHide. keyboard frame \(keyboardInfo.endFrame)")
-        keyboardInfo.animateAlongsideKeyboard { [weak self] in
-            self?.bottomConstraint.constant = 0
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let userId = credential.user
+            let email = credential.email
+            let fullName = credential.fullName?.givenName
+            
+            var tokenString: String?
+            if let token = credential.identityToken {
+                tokenString = String(data: token, encoding: .utf8)
+            }
+            
+            viewModel.signedInByApple(userId: userId, email: email, name: fullName, token: tokenString)
         }
     }
 }

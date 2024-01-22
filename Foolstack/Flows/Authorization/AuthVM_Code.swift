@@ -18,9 +18,9 @@ final class AuthVM_Code: AuthVMBase {
     private var timerSubscription: AnyCancellable?
     private var secondsLeft = 60
     
-    init(email: String, network: NetworkService) {
-        super.init(network: network)
-        
+    init(email: String, network: NetworkService, userStorage: UserStorage) {
+        super.init(network: network, userStorage: userStorage)
+
         //        if let clientId = FirebaseApp.app()?.options.clientID {
         //            googleConfig = GIDConfiguration.init(clientID: clientId)
         //        }
@@ -90,8 +90,7 @@ final class AuthVM_Code: AuthVMBase {
     
     private func loginSucces(result: UserProfile) {
         print("login success: userID \(result.userId)")
-        //let vm = AuthVM_Code()
-        //onShowSignIn?(vm)
+        loginWasComplete(authData: result)
     }
     
     //MARK: Resend timer

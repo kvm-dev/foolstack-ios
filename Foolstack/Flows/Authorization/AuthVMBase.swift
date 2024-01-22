@@ -34,20 +34,20 @@ class AuthVMBase {
     var onShowSignIn: ((AuthVM_SignIn?) -> Void)?
     var onBackToRoot: EmptyCallback?
     var onBackToPrevious: EmptyCallback?
-    var onComplete: EmptyCallback?
+    var onLaunchCategoriesFlow: EmptyCallback?
+    var onLaunchMainFlow: EmptyCallback?
     var onDebugError: ((String) -> Void)?
-    var onSyncLoadError:((String, EmptyCallback?) -> Void)?
     /// Show loading indicator
     var onShowLoading: ((Bool) -> Void)?
-    var onDownloadProgress: ((Float) -> Void)?
     
-    var connectSubscription: AnyCancellable?
     var subscriptions = Set<AnyCancellable>()
     
     private(set) var network: NetworkService
+    private(set) var userStorage: UserStorage
 
-    init(network: NetworkService) {
+    init(network: NetworkService, userStorage: UserStorage) {
         self.network = network
+        self.userStorage = userStorage
         
         $firstFieldError.sink { [weak self] isError in
             self?.updateFirstPlaceholder(isError: isError)
@@ -126,7 +126,13 @@ class AuthVMBase {
     func additionalPressed() {}
     
     func loginWasComplete(authData: UserProfile) {
-        onComplete?()
+        userStorage.saveUserToken("555")
+        if userStorage.getSelectedSubCategories().isEmpty ||
+            userStorage.getSelectedTags().isEmpty {
+            onLaunchCategoriesFlow?()
+        } else {
+            onLaunchMainFlow?()
+        }
         //NotificationCenter.default.post(name: .notifLoginComplete, object: nil)
     }
     

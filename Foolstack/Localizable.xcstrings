@@ -60,6 +60,26 @@
     "%lld seconds left" : {
 
     },
+    "AUTH_CHOICE_DESCRIPTION" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войди с помощью электронной почты или интернет сервиса, в котором у тебя есть аккаунт, чтобы мы могли определить есть ли у тебя учетная запись в нашем сервисе.  В случае если учетной записи у тебя нет, мы сможем тебя зарегистрировать."
+          }
+        }
+      }
+    },
+    "By creating an account, you agree to" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создавая учетную запись, вы соглашаетесь c"
+          }
+        }
+      }
+    },
     "Choice" : {
       "localizations" : {
         "ru" : {
@@ -120,7 +140,14 @@
 
     },
     "ENTER AS A GUEST" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войти как Гость"
+          }
+        }
+      }
     },
     "Enter your password" : {
 
@@ -141,8 +168,40 @@
     "learn the next %d words" : {
 
     },
+    "Link_PrivacyPolicy" : {
+      "comment" : "link",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "<lnk>Политикой конфиденциальноссти Foolstack</lnk>"
+          }
+        }
+      }
+    },
+    "Link_StoreTermsOfUse" : {
+      "comment" : "link"
+    },
+    "Link_TermsOfUse" : {
+      "comment" : "link",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "<lnk>Условиями и Положения Foolstack</lnk>"
+          }
+        }
+      }
+    },
     "Login or Registration" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вход или Регистрация"
+          }
+        }
+      }
     },
     "Next" : {
 

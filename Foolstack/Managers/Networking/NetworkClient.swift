@@ -123,5 +123,31 @@ class NetworkClient: NetworkService {
         }
     }
 
+    func signedInViaGoogle(email: String, name: String) async throws -> UserProfile {
+        let urlStr = "auth.php?action=login_soc&login=\(email)&name=\(name)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: "sendCode", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        let result = try await decodeResult(with: apiData, decode: UserResponseData.self)
+        if result.success {
+            return UserProfile(data: result)
+        } else {
+            throw NetworkAPIError.responseFailure(result.errorMsg ?? "Unknown error")
+        }
+    }
+    
+    func signedInViaApple(userId: String, email: String?, name: String?) async throws -> UserProfile {
+        //let urlStr = "auth.php?action=login_soc&login=\(email)&name=\(name)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: "sendCode", relativeTo: baseUrl)!
+        
+        let apiData = try await session.get(with: url)
+        let result = try await decodeResult(with: apiData, decode: UserResponseData.self)
+        if result.success {
+            return UserProfile(data: result)
+        } else {
+            throw NetworkAPIError.responseFailure(result.errorMsg ?? "Unknown error")
+        }
+    }
+    
 
 }

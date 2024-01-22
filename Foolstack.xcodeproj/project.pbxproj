@@ -213,6 +213,7 @@
 		CEE1DADF2B5015D400E70B70 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DADE2B5015D400E70B70 /* CircularProgressView.swift */; };
 		CEE588C92B024F0900A7EEAE /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588C82B024F0900A7EEAE /* TagData.swift */; };
 		CEE588CC2B02516200A7EEAE /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE588CB2B02516200A7EEAE /* TagEntity.swift */; };
+		CEE919B82B5DBBD500164950 /* AuthChoiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE919B72B5DBBD500164950 /* AuthChoiceVM.swift */; };
 		CEF0AC8E2B4969EF0000B241 /* WikiListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */; };
 		CEF0AC912B49747F0000B241 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC902B49747F0000B241 /* UserStorage.swift */; };
 		CEF0AC932B4974D80000B241 /* UserStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */; };
@@ -457,6 +458,7 @@
 		CEE1DADE2B5015D400E70B70 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		CEE588C82B024F0900A7EEAE /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		CEE588CB2B02516200A7EEAE /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
+		CEE919B72B5DBBD500164950 /* AuthChoiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChoiceVM.swift; sourceTree = "<group>"; };
 		CEF0AC8D2B4969EF0000B241 /* WikiListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiListVM.swift; sourceTree = "<group>"; };
 		CEF0AC902B49747F0000B241 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		CEF0AC922B4974D80000B241 /* UserStorageConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageConfig.swift; sourceTree = "<group>"; };
@@ -1052,6 +1054,7 @@
 				CE8CFA652B57F451007435A9 /* xib */,
 				CEA746872B569E6100FE9380 /* StartVC.swift */,
 				CE8CFA562B56E626007435A9 /* AuthChoiceVC.swift */,
+				CEE919B72B5DBBD500164950 /* AuthChoiceVM.swift */,
 				CE8CFA662B57F46F007435A9 /* AuthVC.swift */,
 				CE8CFA5D2B57DBD2007435A9 /* AuthVMBase.swift */,
 				CE8CFA5F2B57DC52007435A9 /* AuthVM_SignIn.swift */,
@@ -1542,6 +1545,7 @@
 				CE4E2DB82AF5083E00108F53 /* UIViewControllerExtensions.swift in Sources */,
 				CE297F162B5AA8D100E9CA7C /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				CE0259992B51774F0018F2C2 /* CustomPopupView.swift in Sources */,
+				CEE919B82B5DBBD500164950 /* AuthChoiceVM.swift in Sources */,
 				CE8CFA9C2B581496007435A9 /* TextTransform.swift in Sources */,
 				CE4E2DB62AF5039500108F53 /* WikiListVC.swift in Sources */,
 				CEA1EE012B05176F0050CA34 /* UIColorExtension.swift in Sources */,

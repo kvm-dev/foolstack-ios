@@ -14,6 +14,8 @@ protocol NetworkService {
     func getTickets() async throws -> [TicketData]?
     func signIn(email: String) async throws -> LoginResponseData
     func sendLoginCode(code: String) async throws -> UserProfile
+    func signedInViaGoogle(email: String, name: String) async throws -> UserProfile
+    func signedInViaApple(userId: String, email: String?, name: String?) async throws -> UserProfile
 }
 
 

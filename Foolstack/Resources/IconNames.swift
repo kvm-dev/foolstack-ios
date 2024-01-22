@@ -28,6 +28,9 @@ enum IconNames {
     case tests
     case testsActive
     case filter
+    case apple
+    case google
+    case email
     
     var name: String {
         switch self {
@@ -51,6 +54,9 @@ enum IconNames {
         case .tests:          return "tests"
         case .testsActive:    return "tests.selected"
         case .filter:         return "filter.5"
+        case .apple:          return "apple.logo"
+        case .google:         return "g.circle"
+        case .email:          return "at"
         }
     }
     

@@ -249,7 +249,8 @@ class AuthVC: UIViewController {
 //        viewModel.onShowSignIn = {[unowned self] vm in self.goToSignIn(vm)}
 //        viewModel.onBackToRoot = {[unowned self] in self.backToRoot()}
 //        viewModel.onBackToPrevious = {[unowned self] in self.backPressed()}
-//        viewModel.onComplete = {[unowned self] in self.launchApp()}
+        viewModel.onLaunchCategoriesFlow = {[unowned self] in self.launchCategoriesFlow()}
+        viewModel.onLaunchMainFlow = {[unowned self] in self.launchMainFlow()}
 //        viewModel.onDownloadProgress = { [unowned self] p in self.downloadIndicator?.setProgress(p) }
 //        viewModel.onSyncLoadError = { [weak self] mess, repeatCallback in self?.showSyncErrorPopup(mess, onRepeat: repeatCallback)}
 
@@ -262,6 +263,16 @@ class AuthVC: UIViewController {
     
     private func backPressed() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func launchCategoriesFlow() {
+        let vc = CatFlowBuilder.build()
+        navigationController?.setViewControllers([vc], animated: true)
+    }
+    
+    private func launchMainFlow() {
+        let vc = MainTabVC()
+        navigationController?.setViewControllers([vc], animated: true)
     }
     
     private func firstFieldTextChanged(_ text: String?) {

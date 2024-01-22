@@ -25,10 +25,11 @@ class ViewController: UIViewController {
         //let vc = WikiFlowBuilder.build()
         //let vc = MainTabVC()
         var vc: UIViewController?
-        if userStorage.getSelectedSubCategories().isEmpty ||
-            userStorage.getSelectedTags().isEmpty {
-            //vc = CatFlowBuilder.build()
+        if userStorage.getUserToken() == nil {
             vc = StartVC()
+        } else if userStorage.getSelectedSubCategories().isEmpty ||
+            userStorage.getSelectedTags().isEmpty {
+            vc = CatFlowBuilder.build()
         } else {
             vc = MainTabVC()
         }
