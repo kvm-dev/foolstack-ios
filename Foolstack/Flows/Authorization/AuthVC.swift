@@ -57,8 +57,31 @@ class AuthVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupHeader()
         setupViews()
         initialize()
+    }
+    
+    private func setupHeader() {
+        let logoLabel = UILabel()
+        logoLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(logoLabel)
+        logoLabel.font = CustomFonts.defaultHeavy(size: 32)
+        logoLabel.textColor = .white
+        logoLabel.text = "FoolStack"
+        logoLabel.pinEdges(to: view.safeAreaLayoutGuide, top: 25, centerX: 0)
+        
+//        if self.navigationController?.viewControllers.count ?? 0 > 1 {
+            let backButton = UIButton.custom(systemName: .back, color: .themeTextLight, size: .buttonSize, imagePoints: 32)
+            backButton.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(backButton)
+            backButton.pinEdges(to: view.layoutMarginsGuide, leading: 0)
+            backButton.pinEdges(to: logoLabel, centerY: 0)
+            backButton.addAction(UIAction(handler: { [weak self] _ in
+                self?.backPressed()
+            }), for: .touchUpInside)
+            //backButton.pinSize(width: .buttonSize, height: .buttonSize)
+//        }
     }
     
     private func setupViews() {
@@ -77,24 +100,6 @@ class AuthVC: UIViewController {
         ])
         
         let padding: CGFloat = 24
-        
-        let logoLabel = UILabel()
-        logoLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(logoLabel)
-        logoLabel.font = CustomFonts.defaultHeavy(size: 32)
-        logoLabel.textColor = .white
-        logoLabel.text = "FoolStack"
-        logoLabel.pinEdges(to: view.safeAreaLayoutGuide, top: 25, centerX: 0)
-        
-        let backButton = UIButton.custom(systemName: .back, color: .themeTextLight, size: .buttonSize, imagePoints: 32)
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(backButton)
-        backButton.pinEdges(to: view.layoutMarginsGuide, leading: 0)
-        backButton.pinEdges(to: logoLabel, centerY: 0)
-        backButton.addAction(UIAction(handler: { [weak self] _ in
-            self?.backPressed()
-        }), for: .touchUpInside)
-        //backButton.pinSize(width: .buttonSize, height: .buttonSize)
         
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

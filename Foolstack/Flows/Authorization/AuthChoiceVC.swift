@@ -213,7 +213,7 @@ final class AuthChoiceVC: UIViewController {
     @objc func emailPressed() {
         let vm = viewModel.createEmailViewModel()
         let vc = AuthVC(viewModel: vm)
-        navigationController?.setViewControllers([vc], animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func googlePressed() {
